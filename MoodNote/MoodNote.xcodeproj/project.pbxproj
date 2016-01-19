@@ -13,6 +13,7 @@
 		CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9E81C4E3392005C9C93 /* Main.storyboard */; };
 		CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */; };
 		CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */; };
+		CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEEE9EE1C4E3392005C9C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCEEE9F01C4E3392005C9C93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiangkuang.png; sourceTree = "<group>"; };
+		CCEEE9FF1C4E4D39005C9C93 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +61,11 @@
 		CCEEE9DE1C4E3392005C9C93 /* MoodNote */ = {
 			isa = PBXGroup;
 			children = (
-				CCEEE9E21C4E3392005C9C93 /* AppDelegate.h */,
-				CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */,
-				CCEEE9E51C4E3392005C9C93 /* ViewController.h */,
-				CCEEE9E61C4E3392005C9C93 /* ViewController.m */,
-				CCEEE9E81C4E3392005C9C93 /* Main.storyboard */,
-				CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */,
-				CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */,
-				CCEEE9F01C4E3392005C9C93 /* Info.plist */,
+				CCEEE9FA1C4E3444005C9C93 /* Others */,
+				CCEEE9F91C4E343D005C9C93 /* Tools */,
+				CCEEE9F81C4E33EA005C9C93 /* Models */,
+				CCEEE9F71C4E33E4005C9C93 /* Views */,
+				CCEEE9F61C4E33D7005C9C93 /* Controllers */,
 				CCEEE9DF1C4E3392005C9C93 /* Supporting Files */,
 			);
 			path = MoodNote;
@@ -74,9 +74,54 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */,
+				CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */,
+				CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */,
+				CCEEE9F01C4E3392005C9C93 /* Info.plist */,
 				CCEEE9E01C4E3392005C9C93 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CCEEE9F61C4E33D7005C9C93 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCEEE9E51C4E3392005C9C93 /* ViewController.h */,
+				CCEEE9E61C4E3392005C9C93 /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CCEEE9F71C4E33E4005C9C93 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCEEE9E81C4E3392005C9C93 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CCEEE9F81C4E33EA005C9C93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CCEEE9F91C4E343D005C9C93 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		CCEEE9FA1C4E3444005C9C93 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				CCEEE9E21C4E3392005C9C93 /* AppDelegate.h */,
+				CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */,
+				CCEEE9FF1C4E4D39005C9C93 /* Common.h */,
+			);
+			name = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +183,7 @@
 			files = (
 				CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
+				CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
