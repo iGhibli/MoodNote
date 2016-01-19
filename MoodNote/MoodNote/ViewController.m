@@ -11,13 +11,14 @@
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, strong) NSMutableArray *ContentArray;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadDatas];
     [self CreateAndSetUpSubViews];
 }
 
@@ -38,6 +39,22 @@
         _tableView.backgroundColor = [UIColor redColor];
     }
     return _tableView;
+}
+
+#pragma mark - CustomMethod
+
+- (void)loadDatas
+{
+    //获取当前时间，日期
+    NSDate *currentDate = [NSDate date];
+    //初始化一个时间格式化工具
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    //设置时间格式
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    //将当前时间按照格式转化为字符串
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    NSLog(@"%@",dateString);
+    
 }
 
 #pragma mark - UITableViewDataSource
