@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Common.h"
+#import "AFNetworking.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -53,7 +54,20 @@
     [dateFormatter setDateFormat:@"YYYY-MM-dd"];
     //将当前时间按照格式转化为字符串
     NSString *dateString = [dateFormatter stringFromDate:currentDate];
-    NSLog(@"%@",dateString);
+//    NSLog(@"%@",dateString);
+    //拼接URL字符串后部分
+    NSString *suffixString = [@"ten" stringByAppendingPathComponent:dateString];
+    //拼接完整的URL
+    NSString *URLString = [BaseURL stringByAppendingPathComponent:suffixString];
+//    NSLog(@"%@",URLString);
+    
+    //使用AFNetWorking进行网络数据请求
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"!!!!!!%@",error);
+    }];
     
 }
 
