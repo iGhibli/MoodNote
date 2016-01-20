@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TopView">
+            <rect key="frame" x="0.0" y="0.0" width="359" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsW-0g-R9e">
+                    <rect key="frame" x="46" y="0.0" width="88" height="88"/>
+                    <animations/>
+                    <state key="normal" image="btn_main_normal"/>
+                    <state key="highlighted" image="btn_main_highlight"/>
+                    <connections>
+                        <action selector="mainAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="FHD-4x-fPO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgV-Gy-76B">
+                    <rect key="frame" x="136" y="0.0" width="88" height="88"/>
+                    <animations/>
+                    <state key="normal" image="btn_fav_normal"/>
+                    <state key="highlighted" image="btn_fav_highlight"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE1-Kq-8iw">
+                    <rect key="frame" x="225" y="0.0" width="88" height="88"/>
+                    <animations/>
+                    <state key="normal" image="btn_setting_normal"/>
+                    <state key="highlighted" image="btn_setting_highlight"/>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="HgV-Gy-76B" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="IEk-7C-gUI"/>
+                <constraint firstItem="HgV-Gy-76B" firstAttribute="width" secondItem="SsW-0g-R9e" secondAttribute="width" id="K2c-Av-L9g"/>
+                <constraint firstItem="qE1-Kq-8iw" firstAttribute="width" secondItem="SsW-0g-R9e" secondAttribute="width" id="Kxk-hp-uqY"/>
+                <constraint firstItem="SsW-0g-R9e" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="height" id="TP5-Kk-QPZ"/>
+                <constraint firstItem="HgV-Gy-76B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Uh2-mR-jKt"/>
+                <constraint firstItem="HgV-Gy-76B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VbJ-Mh-jSg"/>
+                <constraint firstItem="SsW-0g-R9e" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="Zhv-ZK-MxL"/>
+                <constraint firstItem="qE1-Kq-8iw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="bIL-2f-dOH"/>
+                <constraint firstItem="SsW-0g-R9e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="biy-Ip-QHx"/>
+                <constraint firstItem="qE1-Kq-8iw" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="kSD-8c-cDK"/>
+                <constraint firstItem="qE1-Kq-8iw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="npm-nc-i1g"/>
+                <constraint firstItem="SsW-0g-R9e" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.5" id="v8h-aq-XAw"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="459.5" y="308"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_fav_highlight" width="30" height="30"/>
+        <image name="btn_fav_normal" width="30" height="30"/>
+        <image name="btn_main_highlight" width="30" height="30"/>
+        <image name="btn_main_normal" width="30" height="30"/>
+        <image name="btn_setting_highlight" width="30" height="30"/>
+        <image name="btn_setting_normal" width="30" height="30"/>
+    </resources>
+</document>

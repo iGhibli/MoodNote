@@ -12,11 +12,14 @@
 #import "ContentCell.h"
 #import "ContentModel.h"
 #import "FXBlurView.h"
+#import "BottomView.h"
+#import "TopView.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *ContentArray;
 @property (weak, nonatomic) IBOutlet FXBlurView *blurView;
+
 @end
 
 @implementation ViewController
@@ -39,7 +42,7 @@ static NSString *identifier = @"ContentCellID";
         _tableView.center = CGPointMake(kScreenW / 2, kScreenH / 2);
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.pagingEnabled = YES;
-        _tableView.backgroundColor = [UIColor redColor];
+//        _tableView.backgroundColor = [UIColor redColor];
         [_tableView registerNib:[UINib nibWithNibName:@"ContentCell" bundle:nil] forCellReuseIdentifier:identifier];
     }
     return _tableView;
@@ -137,25 +140,55 @@ static NSString *identifier = @"ContentCellID";
 
 - (void)swipeDownAction
 {
-    NSLog(@"DOWN");
+//    NSLog(@"DOWN");
 
 #pragma mark - 蒙版效果
+    for (UIView *subView in self.blurView.subviews) {
+        if ([subView isKindOfClass:[BottomView class]]) {
+            [subView removeFromSuperview];
+        }
+    }
+    TopView *tView = [TopView topView];
+    tView.frame = CGRectMake(0, 0 - (kScreenH / 6), kScreenW, kScreenH / 6);
+    tView.alpha = 0.5;
+    [self.blurView addSubview:tView];
     [self.view bringSubviewToFront:self.blurView];
-    self.blurView.blurRadius = 10;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.blurView.blurRadius = 15;
+        tView.frame = CGRectMake(0, 0, kScreenW, kScreenH / 6);
+    
+    }];
     
 }
 
 - (void)swipeUpAction
 {
-    NSLog(@"UP");
+//    NSLog(@"UP");
+    for (UIView *subView in self.blurView.subviews) {
+        if ([subView isKindOfClass:[TopView class]]) {
+            [subView removeFromSuperview];
+        }
+    }
+    BottomView *bView = [BottomView bottomView];
+    bView.frame = CGRectMake(0, kScreenH, kScreenW, kScreenH / 5);
+    bView.alpha = 0.5;
+    [self.blurView addSubview:bView];
     [self.view bringSubviewToFront:self.blurView];
-    self.blurView.blurRadius = 20;
     
+    [UIView animateWithDuration:0.5 animations:^{
+        self.blurView.blurRadius = 15;
+        
+        bView.frame = CGRectMake(0, kScreenH / 6 * 5, kScreenW, kScreenH / 6);
+        
+    }];
 }
 
 - (void)hiddenBlurView
 {
-    [self.view sendSubviewToBack:self.blurView];
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.view sendSubviewToBack:self.blurView];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

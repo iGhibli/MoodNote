@@ -1,16 +1,21 @@
 //
-//  ContentCellView.m
+//  TopView.m
 //  MoodNote
 //
 //  Created by qingyun on 16/1/20.
 //  Copyright © 2016年 qingyun. All rights reserved.
 //
 
-#import "ContentCellView.h"
+#import "TopView.h"
 
-@implementation ContentCellView
+@implementation TopView
 
-
++ (instancetype)topView {
+    NSArray *views = [[NSBundle mainBundle]loadNibNamed:@"TopView" owner:nil options:nil];
+    return views[0];
+}
+- (IBAction)mainAction:(UIButton *)sender {
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

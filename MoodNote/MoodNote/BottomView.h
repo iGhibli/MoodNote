@@ -1,5 +1,5 @@
 //
-//  ContentCellView.h
+//  BottomView.h
 //  MoodNote
 //
 //  Created by qingyun on 16/1/20.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContentCellView : UIView
+@interface BottomView : UIView
 
++ (instancetype)bottomView;
 @end
