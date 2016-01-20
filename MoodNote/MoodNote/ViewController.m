@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Common.h"
 #import "AFNetworking.h"
+#import "ContentCell.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -16,6 +17,7 @@
 @end
 
 @implementation ViewController
+static NSString *identifier = @"ContentCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,11 +25,7 @@
     [self CreateAndSetUpSubViews];
 }
 
-- (void)CreateAndSetUpSubViews
-{
-    [self.view addSubview:self.tableView];
-}
-
+#pragma mark - Getter & Setter
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenH, ScreenW) style:UITableViewStylePlain];
@@ -38,11 +36,24 @@
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.pagingEnabled = YES;
         _tableView.backgroundColor = [UIColor redColor];
+        [_tableView registerNib:[UINib nibWithNibName:@"ContentCell" bundle:nil] forCellReuseIdentifier:identifier];
     }
     return _tableView;
 }
 
+- (NSMutableArray *)ContentArray {
+    if (_ContentArray == nil) {
+        _ContentArray = [NSMutableArray array];
+    }
+    return _ContentArray;
+}
+
 #pragma mark - CustomMethod
+
+- (void)CreateAndSetUpSubViews
+{
+    [self.view addSubview:self.tableView];
+}
 
 - (void)loadDatas
 {
@@ -65,6 +76,10 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@",responseObject);
+        NSArray *tempArray = responseObject[@"content"];
+        
+        self.ContentArray = [NSMutableArray arrayWithArray:tempArray];
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"!!!!!!%@",error);
     }];
@@ -75,7 +90,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return self.ContentArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,12 +101,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellID"];
-    }
+    ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+//    if (cell == nil) {
+//        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//    }
     cell.transform = CGAffineTransformMakeRotation(M_PI_2);
-    cell.textLabel.text = @"TEST";
+//    cell.textLabel.numberOfLines = 0;
+//    cell.textLabel.text = self.ContentArray[indexPath.row][@"title"];
+    
     return cell;
 }
 

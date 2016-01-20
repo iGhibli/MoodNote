@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EBE1C4F399E00372CFF /* ContentModel.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
 		CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */; };
 		CCEEE9E71C4E3392005C9C93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E61C4E3392005C9C93 /* ViewController.m */; };
@@ -23,9 +24,13 @@
 		CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA101C4E685E005C9C93 /* AFURLRequestSerialization.m */; };
 		CCEEEA1C1C4E685E005C9C93 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA121C4E685E005C9C93 /* AFURLResponseSerialization.m */; };
 		CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA141C4E685E005C9C93 /* AFURLSessionManager.m */; };
+		CCEEEA211C4E741D005C9C93 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */; };
+		CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEEEA201C4E741D005C9C93 /* ContentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC8C5EBD1C4F399E00372CFF /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
+		CC8C5EBE1C4F399E00372CFF /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		CCEEE9DC1C4E3392005C9C93 /* MoodNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEEE9E01C4E3392005C9C93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCEEE9E21C4E3392005C9C93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,6 +62,9 @@
 		CCEEEA121C4E685E005C9C93 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		CCEEEA131C4E685E005C9C93 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		CCEEEA141C4E685E005C9C93 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		CCEEEA1E1C4E741D005C9C93 /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
+		CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
+		CCEEEA201C4E741D005C9C93 /* ContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				CCEEE9E81C4E3392005C9C93 /* Main.storyboard */,
+				CCEEEA1E1C4E741D005C9C93 /* ContentCell.h */,
+				CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */,
+				CCEEEA201C4E741D005C9C93 /* ContentCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -132,6 +143,8 @@
 		CCEEE9F81C4E33EA005C9C93 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CC8C5EBD1C4F399E00372CFF /* ContentModel.h */,
+				CC8C5EBE1C4F399E00372CFF /* ContentModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -245,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */,
+				CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
 				CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
@@ -258,10 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCEEEA211C4E741D005C9C93 /* ContentCell.m in Sources */,
 				CCEEEA151C4E685E005C9C93 /* AFHTTPRequestOperation.m in Sources */,
 				CCEEE9E71C4E3392005C9C93 /* ViewController.m in Sources */,
 				CCEEEA161C4E685E005C9C93 /* AFHTTPRequestOperationManager.m in Sources */,
 				CCEEEA181C4E685E005C9C93 /* AFNetworkReachabilityManager.m in Sources */,
+				CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */,
 				CCEEEA1C1C4E685E005C9C93 /* AFURLResponseSerialization.m in Sources */,
 				CCEEEA1A1C4E685E005C9C93 /* AFURLConnectionOperation.m in Sources */,
 				CCEEEA191C4E685E005C9C93 /* AFSecurityPolicy.m in Sources */,
@@ -416,6 +432,7 @@
 				CCEEE9F51C4E3392005C9C93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
