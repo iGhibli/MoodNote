@@ -144,7 +144,7 @@ static NSString *identifier = @"ContentCellID";
 
 #pragma mark - 蒙版效果
     for (UIView *subView in self.blurView.subviews) {
-        if ([subView isKindOfClass:[BottomView class]]) {
+        if ([subView isKindOfClass:[TopView class]] || [subView isKindOfClass:[BottomView class]]) {
             [subView removeFromSuperview];
         }
     }
@@ -166,7 +166,7 @@ static NSString *identifier = @"ContentCellID";
 {
 //    NSLog(@"UP");
     for (UIView *subView in self.blurView.subviews) {
-        if ([subView isKindOfClass:[TopView class]]) {
+        if ([subView isKindOfClass:[TopView class]] || [subView isKindOfClass:[BottomView class]]) {
             [subView removeFromSuperview];
         }
     }

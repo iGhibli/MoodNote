@@ -7,6 +7,7 @@
 //
 
 #import "TopView.h"
+#import "SettingVC.h"
 
 @implementation TopView
 
@@ -15,6 +16,12 @@
     return views[0];
 }
 - (IBAction)mainAction:(UIButton *)sender {
+}
+- (IBAction)likeAction:(UIButton *)sender {
+}
+- (IBAction)setAction:(UIButton *)sender {
+    SettingVC *VC = [[SettingVC alloc]init];
+    
 }
 
 /*

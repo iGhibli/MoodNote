@@ -22,17 +22,23 @@
                         <action selector="mainAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="FHD-4x-fPO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgV-Gy-76B">
-                    <rect key="frame" x="136" y="0.0" width="88" height="88"/>
-                    <animations/>
-                    <state key="normal" image="btn_fav_normal"/>
-                    <state key="highlighted" image="btn_fav_highlight"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE1-Kq-8iw">
                     <rect key="frame" x="225" y="0.0" width="88" height="88"/>
                     <animations/>
                     <state key="normal" image="btn_setting_normal"/>
                     <state key="highlighted" image="btn_setting_highlight"/>
+                    <connections>
+                        <action selector="setAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Hd3-zr-sas"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgV-Gy-76B">
+                    <rect key="frame" x="136" y="0.0" width="88" height="88"/>
+                    <animations/>
+                    <state key="normal" image="btn_fav_normal"/>
+                    <state key="highlighted" image="btn_fav_highlight"/>
+                    <connections>
+                        <action selector="likeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Onk-sL-B6c"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

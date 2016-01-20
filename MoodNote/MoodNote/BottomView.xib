@@ -13,12 +13,12 @@
             <rect key="frame" x="0.0" y="0.0" width="427" height="137"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9u-ef-7fc">
-                    <rect key="frame" x="152" y="0.0" width="137" height="137"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-nI-fjc">
+                    <rect key="frame" x="42" y="0.0" width="137" height="137"/>
                     <animations/>
-                    <state key="normal" image="ic_share"/>
+                    <state key="normal" image="ic_copy"/>
                     <connections>
-                        <action selector="shareAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="CYK-oQ-nhz"/>
+                        <action selector="copyAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="aaR-jD-CdQ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-VN-5Zo">
@@ -29,12 +29,12 @@
                         <action selector="likeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="TVx-Pl-Lcb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-nI-fjc">
-                    <rect key="frame" x="42" y="0.0" width="137" height="137"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9u-ef-7fc">
+                    <rect key="frame" x="152" y="0.0" width="137" height="137"/>
                     <animations/>
-                    <state key="normal" image="ic_copy"/>
+                    <state key="normal" image="ic_share"/>
                     <connections>
-                        <action selector="copyAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="aaR-jD-CdQ"/>
+                        <action selector="shareAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="CYK-oQ-nhz"/>
                     </connections>
                 </button>
             </subviews>
