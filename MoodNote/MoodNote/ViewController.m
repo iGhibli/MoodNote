@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "AFNetworking.h"
 #import "ContentCell.h"
+#import "ContentModel.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -77,8 +78,11 @@ static NSString *identifier = @"ContentCellID";
     [manager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@",responseObject);
         NSArray *tempArray = responseObject[@"content"];
+        for (NSDictionary *dict in tempArray) {
+            ContentModel *model = [[ContentModel alloc]initContentModelWithDictionary:dict];;
+            [self.ContentArray addObject:model];
+        }
         
-        self.ContentArray = [NSMutableArray arrayWithArray:tempArray];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"!!!!!!%@",error);
@@ -102,13 +106,11 @@ static NSString *identifier = @"ContentCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-//    if (cell == nil) {
-//        cell = [[ContentCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-//    }
+
     cell.transform = CGAffineTransformMakeRotation(M_PI_2);
 //    cell.textLabel.numberOfLines = 0;
 //    cell.textLabel.text = self.ContentArray[indexPath.row][@"title"];
-    
+    [cell bandingContentCellWithModel:self.ContentArray[indexPath.row]];
     return cell;
 }
 

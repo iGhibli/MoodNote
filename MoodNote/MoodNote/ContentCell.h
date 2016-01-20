@@ -12,4 +12,6 @@
 
 @property(nonatomic, strong)ContentModel *model;
 
+- (void)bandingContentCellWithModel:(ContentModel *)model;
+
 @end

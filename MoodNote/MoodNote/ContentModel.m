@@ -10,15 +10,13 @@
 
 @implementation ContentModel
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict {
+- (instancetype)initContentModelWithDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
-        [self setValuesForKeysWithDictionary:dict];
+        self.title = dict[@"title"];
+        self.pic_url = dict[@"pic"];
     }
     return self;
 }
 
-+ (instancetype)ContentModelWithDictionary:(NSDictionary *)dict {
-    return [[self alloc]initWithDictionary:dict];
-}
 
 @end

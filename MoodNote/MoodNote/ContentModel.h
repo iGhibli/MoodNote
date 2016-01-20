@@ -11,9 +11,8 @@
 @interface ContentModel : NSObject
 
 @property(nonatomic, strong) NSString *title;
-@property(nonatomic, strong) NSString *pic;
+@property(nonatomic, strong) NSString *pic_url;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict;
-+ (instancetype)ContentModelWithDictionary:(NSDictionary *)dict;
+- (instancetype)initContentModelWithDictionary:(NSDictionary *)dict;
 
 @end
