@@ -10,11 +10,11 @@
 #define Common_h
 
 /*  Size  */
-#define ScreenW [UIScreen mainScreen].bounds.size.width
-#define ScreenH [UIScreen mainScreen].bounds.size.height
+#define kScreenW [UIScreen mainScreen].bounds.size.width
+#define kScreenH [UIScreen mainScreen].bounds.size.height
 
 /*  URL  */
-#define ImageBaseURL    @"http://common.nineton.cn/CommonProject/uploadfiles/sentences_images"
-#define BaseURL         @"http://common.nineton.cn/CommonProject/sign/api/v1/sentence"
+#define kImageBaseURL    @"http://common.nineton.cn/CommonProject/uploadfiles/sentences_images"
+#define kBaseURL         @"http://common.nineton.cn/CommonProject/sign/api/v1/sentence"
 
 #endif /* Common_h */

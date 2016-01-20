@@ -14,6 +14,8 @@
     if (self = [super init]) {
         self.title = dict[@"title"];
         self.pic_url = dict[@"pic"];
+        self.picHeight = dict[@"picHeight"];
+        self.picWidth = dict[@"picWidth"];
     }
     return self;
 }

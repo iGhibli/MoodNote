@@ -14,32 +14,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="362" height="430"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfi-lH-caP">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfi-lH-caP" customClass="ContentCellView">
                         <rect key="frame" x="0.0" y="0.0" width="362" height="430"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgb-1S-o8o">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgb-1S-o8o">
                                 <rect key="frame" x="10" y="399" width="342" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="xiangkuang.png" translatesAutoresizingMaskIntoConstraints="NO" id="sKb-xV-uu8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xiangkuang.png" translatesAutoresizingMaskIntoConstraints="NO" id="sKb-xV-uu8">
                                 <rect key="frame" x="10" y="8" width="342" height="379"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="rgb-1S-o8o" secondAttribute="bottom" constant="10" id="1Im-uO-aWP"/>
-                            <constraint firstAttribute="trailing" secondItem="sKb-xV-uu8" secondAttribute="trailing" constant="10" id="7y2-6R-hSf"/>
-                            <constraint firstItem="rgb-1S-o8o" firstAttribute="leading" secondItem="Pfi-lH-caP" secondAttribute="leading" constant="10" id="8VX-Zq-fmg"/>
-                            <constraint firstItem="sKb-xV-uu8" firstAttribute="top" secondItem="Pfi-lH-caP" secondAttribute="top" constant="20" id="CC5-jG-aTS"/>
-                            <constraint firstItem="sKb-xV-uu8" firstAttribute="leading" secondItem="Pfi-lH-caP" secondAttribute="leading" constant="10" id="U3Z-6v-hnv"/>
-                            <constraint firstItem="rgb-1S-o8o" firstAttribute="top" secondItem="sKb-xV-uu8" secondAttribute="bottom" constant="10" id="UdI-fx-Xw0"/>
-                            <constraint firstItem="rgb-1S-o8o" firstAttribute="top" secondItem="sKb-xV-uu8" secondAttribute="bottom" constant="10" id="eoF-ii-af4"/>
-                            <constraint firstAttribute="trailing" secondItem="rgb-1S-o8o" secondAttribute="trailing" constant="10" id="v4H-Bh-edu"/>
-                        </constraints>
                     </view>
                 </subviews>
                 <animations/>

@@ -11,10 +11,12 @@
 #import "AFNetworking.h"
 #import "ContentCell.h"
 #import "ContentModel.h"
+#import "FXBlurView.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *ContentArray;
+@property (weak, nonatomic) IBOutlet FXBlurView *blurView;
 @end
 
 @implementation ViewController
@@ -22,6 +24,7 @@ static NSString *identifier = @"ContentCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addSwipeGesture];
     [self loadDatas];
     [self CreateAndSetUpSubViews];
 }
@@ -29,11 +32,11 @@ static NSString *identifier = @"ContentCellID";
 #pragma mark - Getter & Setter
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenH, ScreenW) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenH, kScreenW) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.transform = CGAffineTransformMakeRotation(-M_PI_2);
-        _tableView.center = CGPointMake(ScreenW / 2, ScreenH / 2);
+        _tableView.center = CGPointMake(kScreenW / 2, kScreenH / 2);
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.pagingEnabled = YES;
         _tableView.backgroundColor = [UIColor redColor];
@@ -54,12 +57,15 @@ static NSString *identifier = @"ContentCellID";
 - (void)CreateAndSetUpSubViews
 {
     [self.view addSubview:self.tableView];
+    UITapGestureRecognizer *click = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hiddenBlurView)];
+    [self.blurView addGestureRecognizer:click];
 }
 
 - (void)loadDatas
 {
-    //获取当前时间，日期
+    //获取时间，日期
     NSDate *currentDate = [NSDate date];
+    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24 * 60 * 60)];
     //初始化一个时间格式化工具
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     //设置时间格式
@@ -70,7 +76,7 @@ static NSString *identifier = @"ContentCellID";
     //拼接URL字符串后部分
     NSString *suffixString = [@"ten" stringByAppendingPathComponent:dateString];
     //拼接完整的URL
-    NSString *URLString = [BaseURL stringByAppendingPathComponent:suffixString];
+    NSString *URLString = [kBaseURL stringByAppendingPathComponent:suffixString];
 //    NSLog(@"%@",URLString);
     
     //使用AFNetWorking进行网络数据请求
@@ -99,7 +105,7 @@ static NSString *identifier = @"ContentCellID";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return ScreenW;
+    return kScreenW;
 }
 
 
@@ -112,6 +118,44 @@ static NSString *identifier = @"ContentCellID";
 //    cell.textLabel.text = self.ContentArray[indexPath.row][@"title"];
     [cell bandingContentCellWithModel:self.ContentArray[indexPath.row]];
     return cell;
+}
+
+#pragma mark - 手势
+- (void)addSwipeGesture
+{
+    //添加下滑手势
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeDownAction)];
+    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeDown];
+    
+    //添加上滑手势
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeUpAction)];
+    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:swipeUp];
+    
+}
+
+- (void)swipeDownAction
+{
+    NSLog(@"DOWN");
+
+#pragma mark - 蒙版效果
+    [self.view bringSubviewToFront:self.blurView];
+    self.blurView.blurRadius = 10;
+    
+}
+
+- (void)swipeUpAction
+{
+    NSLog(@"UP");
+    [self.view bringSubviewToFront:self.blurView];
+    self.blurView.blurRadius = 20;
+    
+}
+
+- (void)hiddenBlurView
+{
+    [self.view sendSubviewToBack:self.blurView];
 }
 
 - (void)didReceiveMemoryWarning {

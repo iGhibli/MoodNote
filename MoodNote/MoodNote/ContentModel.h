@@ -12,6 +12,8 @@
 
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSString *pic_url;
+@property (nonatomic, strong) NSString *picHeight;
+@property (nonatomic, strong) NSString *picWidth;
 
 - (instancetype)initContentModelWithDictionary:(NSDictionary *)dict;
 

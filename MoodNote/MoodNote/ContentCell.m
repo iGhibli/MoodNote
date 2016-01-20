@@ -9,6 +9,7 @@
 #import "ContentCell.h"
 #import "ContentModel.h"
 #import "UIImageView+WebCache.h"
+#import "NSString+Size.h"
 #import "Common.h"
 
 @interface ContentCell ()
@@ -23,8 +24,38 @@
     _model = model;
     _title.text = model.title;
     //使用SDWebImage加载网络图片数据
-    NSString *imageURLStr = [ImageBaseURL stringByAppendingPathComponent:model.pic_url];
+    NSString *imageURLStr = [kImageBaseURL stringByAppendingPathComponent:model.pic_url];
     [self.pic sd_setImageWithURL:[NSURL URLWithString:imageURLStr]];
+    
+    //重新布局
+    [self layoutCellContentWithModel:model];
+}
+
+- (void)layoutCellContentWithModel:(ContentModel *)model
+{
+    //图片的实际尺寸
+    CGFloat realW = [model.picWidth floatValue];
+    CGFloat realH = [model.picHeight floatValue];
+    
+    //图片显示的尺寸
+    CGFloat displayW = kScreenW - 10 - 10;
+    CGFloat displayH = realH * (kScreenW - 10 - 10) / realW;
+    
+    //文字显示的尺寸
+    CGSize titleSize = [model.title sizeWithFont:[UIFont systemFontOfSize:17] AndWidth:kScreenW - 20];
+    
+    //图片和文字及间隔的总尺寸
+    CGFloat totalH = displayH + 10 + titleSize.height;
+    
+    //控件布局
+    if (totalH >= kScreenH) {
+#warning Not Finish!
+        self.pic.frame = CGRectMake(10, (kScreenH - totalH) / 2, displayW, displayH);
+        self.title.frame = CGRectMake(10, self.pic.frame.origin.y + displayH + 10, titleSize.width, titleSize.height);
+    }else {
+        self.pic.frame = CGRectMake(10, (kScreenH - totalH) / 2, displayW, displayH);
+        self.title.frame = CGRectMake(10, self.pic.frame.origin.y + displayH + 10, titleSize.width, titleSize.height);
+    }
 }
 
 - (void)awakeFromNib {
