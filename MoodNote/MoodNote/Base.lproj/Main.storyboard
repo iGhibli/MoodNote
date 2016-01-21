@@ -52,8 +52,29 @@
                     <view key="view" contentMode="scaleToFill" id="CV1-k3-Y3V">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3hA-ap-mD5">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-uL-PV9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3hA-ap-mD5" firstAttribute="leading" secondItem="CV1-k3-Y3V" secondAttribute="leading" id="97x-bG-A6B"/>
+                            <constraint firstItem="1eg-uL-PV9" firstAttribute="leading" secondItem="CV1-k3-Y3V" secondAttribute="leading" id="DO4-Fk-da2"/>
+                            <constraint firstItem="GTJ-Fs-b7U" firstAttribute="top" secondItem="3hA-ap-mD5" secondAttribute="bottom" id="IUU-nC-jAz"/>
+                            <constraint firstAttribute="trailing" secondItem="1eg-uL-PV9" secondAttribute="trailing" id="Oh4-W3-cDk"/>
+                            <constraint firstItem="3hA-ap-mD5" firstAttribute="top" secondItem="uga-fv-RGl" secondAttribute="bottom" constant="40" id="dHJ-GU-CaY"/>
+                            <constraint firstAttribute="trailing" secondItem="3hA-ap-mD5" secondAttribute="trailing" id="fDY-CW-OwE"/>
+                            <constraint firstItem="1eg-uL-PV9" firstAttribute="top" secondItem="CV1-k3-Y3V" secondAttribute="top" id="nlF-NQ-R1s"/>
+                            <constraint firstItem="3hA-ap-mD5" firstAttribute="top" secondItem="1eg-uL-PV9" secondAttribute="bottom" id="zUi-gF-YN9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXf-Z3-Sdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -80,6 +101,9 @@
                                     <constraint firstAttribute="height" constant="100" id="xFD-G4-LwS"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="set-good"/>
+                                <connections>
+                                    <action selector="goodAction:" destination="5JU-Kn-Hkt" eventType="touchUpInside" id="GqM-9t-rz5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUF-8F-wTW">
                                 <rect key="frame" x="250" y="400" width="100" height="100"/>
@@ -89,6 +113,9 @@
                                     <constraint firstAttribute="width" constant="100" id="qDB-Yl-vQk"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="set-about"/>
+                                <connections>
+                                    <action selector="aboutAction:" destination="5JU-Kn-Hkt" eventType="touchUpInside" id="84a-RG-PNF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1S-9i-Vup">
                                 <rect key="frame" x="250" y="100" width="100" height="100"/>
@@ -98,6 +125,9 @@
                                     <constraint firstAttribute="height" constant="100" id="tbz-dF-sjY"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="set-clear"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="5JU-Kn-Hkt" eventType="touchUpInside" id="7qX-u2-Kxc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
