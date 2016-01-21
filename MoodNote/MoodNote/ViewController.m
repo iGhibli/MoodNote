@@ -12,13 +12,14 @@
 #import "ContentCell.h"
 #import "ContentModel.h"
 #import "FXBlurView.h"
-#import "BottomView.h"
+#import "ShareVC.h"
+
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *ContentArray;
-@property (weak, nonatomic) IBOutlet FXBlurView *blurView;
-
+@property (nonatomic, strong) FXBlurView *blurView;
+@property (nonatomic, strong) ContentModel *currentModel;
 @end
 
 @implementation ViewController
@@ -47,6 +48,54 @@ static NSString *identifier = @"ContentCellID";
     return _tableView;
 }
 
+- (FXBlurView *)blurView {
+    if (_blurView == nil) {
+        
+        _blurView = [[FXBlurView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        [self.view addSubview:_blurView];
+        UITapGestureRecognizer *click = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hiddenBlurView)];
+        [_blurView addGestureRecognizer:click];
+        
+        UIView *bottomView = [[UIView alloc]init];
+        bottomView.frame = CGRectMake(0, kScreenH * 5 / 6, kScreenW, kScreenH / 6);
+        bottomView.backgroundColor = [UIColor grayColor];
+        bottomView.alpha = 0.5;
+        [_blurView addSubview:bottomView];
+        
+        //创建HomeButton
+        UIButton *copyBtn = [[UIButton alloc]init];
+        copyBtn.center = CGPointMake(kScreenW / 4, kScreenH / 6 / 2);
+        copyBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        [copyBtn setImage:[UIImage imageNamed:@"btn-copyfile"] forState:UIControlStateNormal];
+        [copyBtn setImage:[UIImage imageNamed:@"btn-copyfile-2"] forState:UIControlStateHighlighted];
+        [copyBtn addTarget:self action:@selector(bottomViewButtonActionWithTag:) forControlEvents:UIControlEventTouchUpInside];
+        copyBtn.tag = 20;
+        [bottomView addSubview:copyBtn];
+        
+        //创建HomeButton
+        UIButton *likeBtn = [[UIButton alloc]init];
+        likeBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH / 6 / 2);
+        likeBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        [likeBtn setImage:[UIImage imageNamed:@"btn-like-1"] forState:UIControlStateNormal];
+        [likeBtn setImage:[UIImage imageNamed:@"btn-like-2"] forState:UIControlStateHighlighted];
+        [likeBtn addTarget:self action:@selector(bottomViewButtonActionWithTag:) forControlEvents:UIControlEventTouchUpInside];
+        likeBtn.tag = 22;
+        [bottomView addSubview:likeBtn];
+        
+        //创建FavoriteButton
+        UIButton *shareBtn = [[UIButton alloc]init];
+        shareBtn.center = CGPointMake(kScreenW / 2, kScreenH / 6 / 2);
+        shareBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        [shareBtn setImage:[UIImage imageNamed:@"btn-link"] forState:UIControlStateNormal];
+        [shareBtn setImage:[UIImage imageNamed:@"btn-link-2"] forState:UIControlStateHighlighted];
+        [shareBtn addTarget:self action:@selector(bottomViewButtonActionWithTag:) forControlEvents:UIControlEventTouchUpInside];
+        shareBtn.tag = 21;
+        [bottomView addSubview:shareBtn];
+        
+    }
+    return _blurView;
+}
+
 - (NSMutableArray *)ContentArray {
     if (_ContentArray == nil) {
         _ContentArray = [NSMutableArray array];
@@ -59,8 +108,7 @@ static NSString *identifier = @"ContentCellID";
 - (void)CreateAndSetUpSubViews
 {
     [self.view addSubview:self.tableView];
-    UITapGestureRecognizer *click = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hiddenBlurView)];
-    [self.blurView addGestureRecognizer:click];
+    
 }
 
 - (void)loadDatas
@@ -121,6 +169,18 @@ static NSString *identifier = @"ContentCellID";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    NSLog(@"%@",self.ContentArray[indexPath.row]);
+    
+    [self.view bringSubviewToFront:self.blurView];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.blurView.blurRadius = 15;
+    }];
+    self.currentModel = self.ContentArray[indexPath.row];
+}
+
 #pragma mark - 手势
 - (void)addSwipeGesture
 {
@@ -128,37 +188,67 @@ static NSString *identifier = @"ContentCellID";
     UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:[UIApplication sharedApplication].delegate action:@selector(swipeDownAction)];
     swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
     [self.view addGestureRecognizer:swipeDown];
+}
+
+#pragma mark - Action
+
+- (void)bottomViewButtonActionWithTag:(UIButton *)sender
+{
+    switch (sender.tag) {
+        case 20:
+            [self copyAction];
+            break;
+        case 21:
+            [self shareAction];
+            break;
+        case 22:
+            [self likeAction];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)copyAction
+{
+    //获取剪切板
+    UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
+    //将内容赋值给剪切板
+    pasteBoard.string = self.currentModel.title;
+    UILabel *popLabel = [[UILabel alloc]init];
+    popLabel.textAlignment = NSTextAlignmentCenter;
+    popLabel.text = @"已复制美句到剪切板";
+    popLabel.layer.cornerRadius = 10;
+    popLabel.clipsToBounds = YES;
+    popLabel.backgroundColor = [UIColor orangeColor];
+    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 30);
+    [self.view addSubview:popLabel];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
+}
+
+- (void)shareAction
+{
     
-    //添加上滑手势
-    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeUpAction)];
-    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-    [self.view addGestureRecognizer:swipeUp];
+    ShareVC *VC = [ShareVC new];
+    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
+    //模态出的试图控制器透明需要设置此项
+    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self presentViewController:VC1 animated:YES completion:nil];
     
 }
 
-#pragma mark - 蒙版效果
-- (void)swipeUpAction
+- (void)likeAction
 {
-    NSLog(@"UP");
-#if 1
-    for (UIView *subView in self.blurView.subviews) {
-        if ([subView isKindOfClass:[BottomView class]]) {
-            [subView removeFromSuperview];
-        }
-    }
-    BottomView *bView = [BottomView bottomView];
-    bView.frame = CGRectMake(0, kScreenH, kScreenW, kScreenH / 5);
-    bView.alpha = 0.5;
-    [self.blurView addSubview:bView];
-    [self.view bringSubviewToFront:self.blurView];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        self.blurView.blurRadius = 15;
-        
-        bView.frame = CGRectMake(0, kScreenH / 6 * 5, kScreenW, kScreenH / 6);
-        
-    }];
-#endif
+    UILabel *popLabel = [[UILabel alloc]init];
+    popLabel.textAlignment = NSTextAlignmentCenter;
+    popLabel.text = @"收藏成功";
+    popLabel.layer.cornerRadius = 10;
+    popLabel.clipsToBounds = YES;
+    popLabel.backgroundColor = [UIColor orangeColor];
+    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 30);
+    [self.view addSubview:popLabel];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
 }
 
 - (void)hiddenBlurView
@@ -166,11 +256,6 @@ static NSString *identifier = @"ContentCellID";
     [UIView animateWithDuration:0.5 animations:^{
         [self.view sendSubviewToBack:self.blurView];
     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

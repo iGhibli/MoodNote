@@ -17,25 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtI-vG-Txd" customClass="FXBlurView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="RtI-vG-Txd" secondAttribute="trailing" id="78e-dX-gNS"/>
-                            <constraint firstItem="RtI-vG-Txd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8Gn-6T-Lm0"/>
-                            <constraint firstItem="RtI-vG-Txd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z1F-Zc-Wuu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RtI-vG-Txd" secondAttribute="bottom" id="quC-Ec-Ukv"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="blurView" destination="RtI-vG-Txd" id="ZZG-yG-pkY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,6 +64,120 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXf-Z3-Sdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="637" y="429"/>
+        </scene>
+        <!--ShareVC-->
+        <scene sceneID="ewL-2b-a9J">
+            <objects>
+                <viewController storyboardIdentifier="ShareVCID" id="IWP-M6-czX" customClass="ShareVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NsX-V4-XTi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oc7-qK-KQz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qqq-0O-vM1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiangkuang.png" translatesAutoresizingMaskIntoConstraints="NO" id="93v-ot-Eza">
+                                <rect key="frame" x="150" y="60" width="300" height="300"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iw6-Q4-Jd3">
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnj-d1-gdH">
+                                        <rect key="frame" x="27" y="8" width="152" height="62"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="P71-VY-EZx"/>
+                                            <constraint firstAttribute="height" constant="40" id="eCE-3j-gG7"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="UMS_wechat_icon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeI-Us-MDD">
+                                        <rect key="frame" x="27" y="105" width="152" height="57"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Cn4-ci-bcv"/>
+                                            <constraint firstAttribute="width" constant="40" id="d7v-pH-uV7"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="UMS_qq_icon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cu-NZ-cAA">
+                                        <rect key="frame" x="231" y="105" width="104" height="70"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1oO-Fm-d4I"/>
+                                            <constraint firstAttribute="width" constant="40" id="HnA-6S-1dt"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="UMS_qzone_icon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPo-T3-xfV">
+                                        <rect key="frame" x="401" y="105" width="143" height="66"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="YKA-rz-JHT"/>
+                                            <constraint firstAttribute="width" constant="40" id="umZ-8U-Jv6"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="UMS_cut_icon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u51-vI-Yuq">
+                                        <rect key="frame" x="410" y="8" width="125" height="62"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ajd-yU-Kfi"/>
+                                            <constraint firstAttribute="width" constant="40" id="cr1-OV-LRJ"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="UMS_sina_icon"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-tY-Tsn">
+                                        <rect key="frame" x="231" y="8" width="108" height="62"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="ofh-tc-iid"/>
+                                            <constraint firstAttribute="height" constant="40" id="vGK-ZC-kWC"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="UMS_wechat_timeline_icon"/>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0Cu-NZ-cAA" firstAttribute="centerX" secondItem="iw6-Q4-Jd3" secondAttribute="centerX" id="4Jp-b3-yQ2"/>
+                                    <constraint firstItem="0Cu-NZ-cAA" firstAttribute="centerY" secondItem="NeI-Us-MDD" secondAttribute="centerY" id="6HS-MY-YbX"/>
+                                    <constraint firstItem="u51-vI-Yuq" firstAttribute="centerX" secondItem="iw6-Q4-Jd3" secondAttribute="centerX" multiplier="1.5" id="6zn-cf-dSl"/>
+                                    <constraint firstItem="u51-vI-Yuq" firstAttribute="centerY" secondItem="fnj-d1-gdH" secondAttribute="centerY" id="CpQ-gf-X1O"/>
+                                    <constraint firstItem="NeI-Us-MDD" firstAttribute="centerY" secondItem="iw6-Q4-Jd3" secondAttribute="centerY" id="Dhq-dJ-MC6"/>
+                                    <constraint firstItem="tPo-T3-xfV" firstAttribute="centerY" secondItem="NeI-Us-MDD" secondAttribute="centerY" id="R79-SS-54F"/>
+                                    <constraint firstItem="xKq-tY-Tsn" firstAttribute="centerX" secondItem="iw6-Q4-Jd3" secondAttribute="centerX" id="avi-cH-AMg"/>
+                                    <constraint firstItem="fnj-d1-gdH" firstAttribute="centerX" secondItem="iw6-Q4-Jd3" secondAttribute="centerX" multiplier="0.5" id="cWj-z7-YAg"/>
+                                    <constraint firstItem="tPo-T3-xfV" firstAttribute="centerX" secondItem="u51-vI-Yuq" secondAttribute="centerX" id="lwc-Kp-cJY"/>
+                                    <constraint firstItem="NeI-Us-MDD" firstAttribute="centerX" secondItem="fnj-d1-gdH" secondAttribute="centerX" id="m8x-Lz-Hsz"/>
+                                    <constraint firstItem="fnj-d1-gdH" firstAttribute="centerY" secondItem="iw6-Q4-Jd3" secondAttribute="centerY" multiplier="0.3" id="wNo-r6-A3J"/>
+                                    <constraint firstItem="xKq-tY-Tsn" firstAttribute="centerY" secondItem="fnj-d1-gdH" secondAttribute="centerY" id="z9f-0D-ouj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iw6-Q4-Jd3" firstAttribute="top" secondItem="93v-ot-Eza" secondAttribute="bottom" constant="40" id="49p-DR-Djj"/>
+                            <constraint firstAttribute="trailing" secondItem="iw6-Q4-Jd3" secondAttribute="trailing" id="Kf3-e8-WHD"/>
+                            <constraint firstItem="93v-ot-Eza" firstAttribute="height" secondItem="qqq-0O-vM1" secondAttribute="height" multiplier="0.5" id="Rl7-Up-9o4"/>
+                            <constraint firstItem="93v-ot-Eza" firstAttribute="top" secondItem="NsX-V4-XTi" secondAttribute="bottom" constant="40" id="UXJ-Gt-nkn"/>
+                            <constraint firstItem="Oc7-qK-KQz" firstAttribute="top" secondItem="iw6-Q4-Jd3" secondAttribute="bottom" id="gRm-LX-VM0"/>
+                            <constraint firstItem="93v-ot-Eza" firstAttribute="centerX" secondItem="qqq-0O-vM1" secondAttribute="centerX" id="hEW-bp-4fs"/>
+                            <constraint firstItem="iw6-Q4-Jd3" firstAttribute="leading" secondItem="qqq-0O-vM1" secondAttribute="leading" id="qti-02-QgU"/>
+                            <constraint firstItem="93v-ot-Eza" firstAttribute="width" secondItem="qqq-0O-vM1" secondAttribute="width" multiplier="0.5" id="ssW-Id-miu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ShareImage" destination="93v-ot-Eza" id="9Aq-bB-Xa9"/>
+                        <outlet property="iconsView" destination="iw6-Q4-Jd3" id="E7B-m7-qeD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKA-wQ-Wdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="1088"/>
         </scene>
         <!--SettingVC-->
         <scene sceneID="eIu-yw-keC">
@@ -148,8 +246,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UMS_cut_icon" width="39" height="39"/>
+        <image name="UMS_qq_icon" width="39" height="39"/>
+        <image name="UMS_qzone_icon" width="39" height="39"/>
+        <image name="UMS_sina_icon" width="39" height="39"/>
+        <image name="UMS_wechat_icon" width="39" height="39"/>
+        <image name="UMS_wechat_timeline_icon" width="39" height="39"/>
         <image name="set-about" width="128" height="128"/>
         <image name="set-clear" width="128" height="128"/>
         <image name="set-good" width="128" height="128"/>
+        <image name="xiangkuang.png" width="664" height="479"/>
     </resources>
 </document>

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "BottomView.h"
 #import "Common.h"
 #import "FXBlurView.h"
 
@@ -66,7 +65,7 @@
 
 - (void)swipeDownAction
 {
-    NSLog(@"APP");
+//    NSLog(@"APP");
     
     [self.window bringSubviewToFront:self.blurView];
     [UIView animateWithDuration:0.5 animations:^{
@@ -75,7 +74,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"AAAA");
+//    NSLog(@"AAAA");
     [self.window sendSubviewToBack:_blurView];
 }
 
