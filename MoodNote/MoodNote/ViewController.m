@@ -13,7 +13,6 @@
 #import "ContentModel.h"
 #import "FXBlurView.h"
 #import "BottomView.h"
-#import "TopView.h"
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -85,7 +84,7 @@ static NSString *identifier = @"ContentCellID";
     //使用AFNetWorking进行网络数据请求
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSArray *tempArray = responseObject[@"content"];
         for (NSDictionary *dict in tempArray) {
             ContentModel *model = [[ContentModel alloc]initContentModelWithDictionary:dict];;
@@ -117,8 +116,7 @@ static NSString *identifier = @"ContentCellID";
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
 
     cell.transform = CGAffineTransformMakeRotation(M_PI_2);
-//    cell.textLabel.numberOfLines = 0;
-//    cell.textLabel.text = self.ContentArray[indexPath.row][@"title"];
+
     [cell bandingContentCellWithModel:self.ContentArray[indexPath.row]];
     return cell;
 }
@@ -127,7 +125,7 @@ static NSString *identifier = @"ContentCellID";
 - (void)addSwipeGesture
 {
     //添加下滑手势
-    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeDownAction)];
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:[UIApplication sharedApplication].delegate action:@selector(swipeDownAction)];
     swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
     [self.view addGestureRecognizer:swipeDown];
     
@@ -142,31 +140,29 @@ static NSString *identifier = @"ContentCellID";
 {
 //    NSLog(@"DOWN");
 
-#pragma mark - 蒙版效果
+
     for (UIView *subView in self.blurView.subviews) {
-        if ([subView isKindOfClass:[TopView class]] || [subView isKindOfClass:[BottomView class]]) {
+        if ([subView isKindOfClass:[BottomView class]]) {
             [subView removeFromSuperview];
         }
     }
-    TopView *tView = [TopView topView];
-    tView.frame = CGRectMake(0, 0 - (kScreenH / 6), kScreenW, kScreenH / 6);
-    tView.alpha = 0.5;
-    [self.blurView addSubview:tView];
+
     [self.view bringSubviewToFront:self.blurView];
     
     [UIView animateWithDuration:0.5 animations:^{
         self.blurView.blurRadius = 15;
-        tView.frame = CGRectMake(0, 0, kScreenW, kScreenH / 6);
     
     }];
     
 }
 
+#pragma mark - 蒙版效果
 - (void)swipeUpAction
 {
-//    NSLog(@"UP");
+    NSLog(@"UP");
+#if 1
     for (UIView *subView in self.blurView.subviews) {
-        if ([subView isKindOfClass:[TopView class]] || [subView isKindOfClass:[BottomView class]]) {
+        if ([subView isKindOfClass:[BottomView class]]) {
             [subView removeFromSuperview];
         }
     }
@@ -182,6 +178,7 @@ static NSString *identifier = @"ContentCellID";
         bView.frame = CGRectMake(0, kScreenH / 6 * 5, kScreenW, kScreenH / 6);
         
     }];
+#endif
 }
 
 - (void)hiddenBlurView

@@ -28,9 +28,8 @@
 		CC92CB1B1C4FA51200FDE995 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB1A1C4FA51200FDE995 /* FXBlurView.m */; };
 		CC92CB231C4FB74600FDE995 /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB221C4FB74600FDE995 /* BottomView.m */; };
 		CC92CB251C4FB75B00FDE995 /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC92CB241C4FB75B00FDE995 /* BottomView.xib */; };
-		CC92CB281C4FBF5B00FDE995 /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB271C4FBF5B00FDE995 /* TopView.m */; };
-		CC92CB2A1C4FBF6B00FDE995 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC92CB291C4FBF6B00FDE995 /* TopView.xib */; };
 		CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */; };
+		CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222EE1C50AF25006B2444 /* FavoriteVC.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
 		CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */; };
 		CCEEE9E71C4E3392005C9C93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E61C4E3392005C9C93 /* ViewController.m */; };
@@ -95,11 +94,10 @@
 		CC92CB211C4FB74600FDE995 /* BottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomView.h; sourceTree = "<group>"; };
 		CC92CB221C4FB74600FDE995 /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
 		CC92CB241C4FB75B00FDE995 /* BottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
-		CC92CB261C4FBF5B00FDE995 /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
-		CC92CB271C4FBF5B00FDE995 /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
-		CC92CB291C4FBF6B00FDE995 /* TopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
 		CC92CB2B1C4FC54C00FDE995 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		CCE222ED1C50AF25006B2444 /* FavoriteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteVC.h; sourceTree = "<group>"; };
+		CCE222EE1C50AF25006B2444 /* FavoriteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
 		CCEEE9DC1C4E3392005C9C93 /* MoodNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEEE9E01C4E3392005C9C93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCEEE9E21C4E3392005C9C93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -247,6 +245,8 @@
 				CCEEE9E61C4E3392005C9C93 /* ViewController.m */,
 				CC92CB2B1C4FC54C00FDE995 /* SettingVC.h */,
 				CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */,
+				CCE222ED1C50AF25006B2444 /* FavoriteVC.h */,
+				CCE222EE1C50AF25006B2444 /* FavoriteVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -261,9 +261,6 @@
 				CC92CB211C4FB74600FDE995 /* BottomView.h */,
 				CC92CB221C4FB74600FDE995 /* BottomView.m */,
 				CC92CB241C4FB75B00FDE995 /* BottomView.xib */,
-				CC92CB261C4FBF5B00FDE995 /* TopView.h */,
-				CC92CB271C4FBF5B00FDE995 /* TopView.m */,
-				CC92CB291C4FBF6B00FDE995 /* TopView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC92CB2A1C4FBF6B00FDE995 /* TopView.xib in Resources */,
 				CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */,
 				CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
@@ -433,12 +429,12 @@
 				CC8C5EE41C4F60DF00372CFF /* SDImageCache.m in Sources */,
 				CC8C5EE51C4F60DF00372CFF /* SDWebImageCompat.m in Sources */,
 				CC8C5EF11C4F60DF00372CFF /* UIView+WebCacheOperation.m in Sources */,
+				CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */,
 				CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */,
 				CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */,
 				CC8C5EE81C4F60DF00372CFF /* SDWebImageDownloaderOperation.m in Sources */,
 				CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */,
 				CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */,
-				CC92CB281C4FBF5B00FDE995 /* TopView.m in Sources */,
 				CC8C5EF01C4F60DF00372CFF /* UIImageView+WebCache.m in Sources */,
 				CC8C5EEF1C4F60DF00372CFF /* UIImageView+HighlightedWebCache.m in Sources */,
 				CCEEE9E11C4E3392005C9C93 /* main.m in Sources */,

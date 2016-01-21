@@ -16,7 +16,8 @@
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-nI-fjc">
                     <rect key="frame" x="42" y="0.0" width="137" height="137"/>
                     <animations/>
-                    <state key="normal" image="ic_copy"/>
+                    <state key="normal" image="btn-copyfile"/>
+                    <state key="highlighted" image="btn-copyfile-2"/>
                     <connections>
                         <action selector="copyAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="aaR-jD-CdQ"/>
                     </connections>
@@ -24,7 +25,9 @@
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcS-VN-5Zo">
                     <rect key="frame" x="262" y="0.0" width="137" height="137"/>
                     <animations/>
-                    <state key="normal" image="ic_like"/>
+                    <state key="normal" image="btn-like-1"/>
+                    <state key="selected" image="btn-like-3"/>
+                    <state key="highlighted" image="btn-like-2"/>
                     <connections>
                         <action selector="likeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="TVx-Pl-Lcb"/>
                     </connections>
@@ -32,7 +35,8 @@
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9u-ef-7fc">
                     <rect key="frame" x="152" y="0.0" width="137" height="137"/>
                     <animations/>
-                    <state key="normal" image="ic_share"/>
+                    <state key="normal" image="btn-link"/>
+                    <state key="highlighted" image="btn-link-2"/>
                     <connections>
                         <action selector="shareAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="CYK-oQ-nhz"/>
                     </connections>
@@ -63,8 +67,12 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_copy" width="15" height="15"/>
-        <image name="ic_like" width="15" height="15"/>
-        <image name="ic_share" width="15" height="15"/>
+        <image name="btn-copyfile" width="32" height="32"/>
+        <image name="btn-copyfile-2" width="32" height="32"/>
+        <image name="btn-like-1" width="32" height="32"/>
+        <image name="btn-like-2" width="32" height="32"/>
+        <image name="btn-like-3" width="32" height="32"/>
+        <image name="btn-link" width="32" height="32"/>
+        <image name="btn-link-2" width="32" height="32"/>
     </resources>
 </document>

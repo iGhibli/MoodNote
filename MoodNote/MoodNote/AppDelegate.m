@@ -7,12 +7,102 @@
 //
 
 #import "AppDelegate.h"
+#import "BottomView.h"
+#import "Common.h"
+#import "FXBlurView.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) FXBlurView *blurView;
 @end
 
 @implementation AppDelegate
+
+- (FXBlurView *)blurView {
+    if (_blurView == nil) {
+        
+        _blurView = [[FXBlurView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        [self.window addSubview:_blurView];
+//        TopView *tView = [TopView topView];
+        
+        UIView *topView = [[UIView alloc]init];
+        topView.frame = CGRectMake(0, 0, kScreenW, kScreenH / 6);
+        topView.backgroundColor = [UIColor grayColor];
+        topView.alpha = 0.5;
+        [_blurView addSubview:topView];
+        
+        //创建HomeButton
+        UIButton *homeBtn = [[UIButton alloc]init];
+        homeBtn.center = CGPointMake(kScreenW / 4, kScreenH / 6 / 2);
+        homeBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        [homeBtn setImage:[UIImage imageNamed:@"btn_main_normal"] forState:UIControlStateNormal];
+        [homeBtn setImage:[UIImage imageNamed:@"btn_main_highlight"] forState:UIControlStateHighlighted];
+        [homeBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
+        homeBtn.tag = 10;
+        [topView addSubview:homeBtn];
+        
+        //创建HomeButton
+        UIButton *settingBtn = [[UIButton alloc]init];
+        settingBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH / 6 / 2);
+        settingBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        [settingBtn setImage:[UIImage imageNamed:@"btn_setting_normal"] forState:UIControlStateNormal];
+        [settingBtn setImage:[UIImage imageNamed:@"btn_setting_highlight"] forState:UIControlStateHighlighted];
+        [settingBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
+        settingBtn.tag = 12;
+        [topView addSubview:settingBtn];
+        
+        //创建FavoriteButton
+        UIButton *favoriteBtn = [[UIButton alloc]init];
+        favoriteBtn.center = CGPointMake(kScreenW / 2, kScreenH / 6 / 2);
+        favoriteBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        [favoriteBtn setImage:[UIImage imageNamed:@"btn_fav_normal"] forState:UIControlStateNormal];
+        [favoriteBtn setImage:[UIImage imageNamed:@"btn_fav_highlight"] forState:UIControlStateHighlighted];
+        [favoriteBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
+        favoriteBtn.tag = 11;
+        [topView addSubview:favoriteBtn];
+        
+    }
+    return _blurView;
+}
+
+- (void)swipeDownAction
+{
+    NSLog(@"APP");
+    
+    [self.window bringSubviewToFront:self.blurView];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.blurView.blurRadius = 15;
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"AAAA");
+    [self.window sendSubviewToBack:_blurView];
+}
+
+#pragma mark - VC切换
+- (void)switchoverVCWithButton:(UIButton *)sender
+{
+    switch (sender.tag) {
+        case 10:
+            [self switchoverVCWithIdentifier:@"HomeVCID"];
+            break;
+        case 11:
+            [self switchoverVCWithIdentifier:@"FavoriteVCID"];
+            break;
+        case 12:
+            [self switchoverVCWithIdentifier:@"SettingVCID"];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)switchoverVCWithIdentifier:(NSString *)VCID
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:VCID];
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

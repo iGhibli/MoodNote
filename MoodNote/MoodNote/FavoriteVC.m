@@ -1,18 +1,18 @@
 //
-//  SettingVC.m
+//  FavoriteVC.m
 //  MoodNote
 //
-//  Created by qingyun on 16/1/20.
+//  Created by qingyun on 16/1/21.
 //  Copyright © 2016年 qingyun. All rights reserved.
 //
 
-#import "SettingVC.h"
+#import "FavoriteVC.h"
 
-@interface SettingVC ()
+@interface FavoriteVC ()
 
 @end
 
-@implementation SettingVC
+@implementation FavoriteVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
