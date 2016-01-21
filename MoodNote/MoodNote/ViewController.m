@@ -136,26 +136,6 @@ static NSString *identifier = @"ContentCellID";
     
 }
 
-- (void)swipeDownAction
-{
-//    NSLog(@"DOWN");
-
-
-    for (UIView *subView in self.blurView.subviews) {
-        if ([subView isKindOfClass:[BottomView class]]) {
-            [subView removeFromSuperview];
-        }
-    }
-
-    [self.view bringSubviewToFront:self.blurView];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        self.blurView.blurRadius = 15;
-    
-    }];
-    
-}
-
 #pragma mark - 蒙版效果
 - (void)swipeUpAction
 {

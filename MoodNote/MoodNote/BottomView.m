@@ -20,11 +20,15 @@
 }
 
 - (IBAction)copyAction:(UIButton *)sender {
+    
 }
+
 - (IBAction)shareAction:(UIButton *)sender {
+
 }
+
 - (IBAction)likeAction:(UIButton *)sender {
-    _likeBtn.selected = YES;
+    _likeBtn.selected = _likeBtn.selected ? NO : YES;
 }
 
 /*
