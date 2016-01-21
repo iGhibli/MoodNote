@@ -49,6 +49,7 @@
 		CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA141C4E685E005C9C93 /* AFURLSessionManager.m */; };
 		CCEEEA211C4E741D005C9C93 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */; };
 		CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEEEA201C4E741D005C9C93 /* ContentCell.xib */; };
+		CCF5BF7C1C506D1900565F2F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		CCEEEA1E1C4E741D005C9C93 /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
 		CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 		CCEEEA201C4E741D005C9C93 /* ContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
+		CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */,
 				CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */,
 				CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */,
 				CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */,
@@ -390,6 +393,7 @@
 				CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */,
 				CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
+				CCF5BF7C1C506D1900565F2F /* Default-568h@2x.png in Resources */,
 				CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
 				CC92CB251C4FB75B00FDE995 /* BottomView.xib in Resources */,
@@ -480,7 +484,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dorayo student (93QF9C8P8D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -502,6 +507,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -523,7 +529,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dorayo student (93QF9C8P8D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -538,6 +545,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -547,10 +555,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
 				INFOPLIST_FILE = MoodNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyun.MoodNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
 			};
 			name = Debug;
 		};
@@ -558,10 +569,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
 				INFOPLIST_FILE = MoodNote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyun.MoodNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
 			};
 			name = Release;
 		};

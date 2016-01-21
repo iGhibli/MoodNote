@@ -8,6 +8,10 @@
 
 #import "BottomView.h"
 
+@interface BottomView  ()
+@property (weak, nonatomic) IBOutlet UIButton *likeBtn;
+
+@end
 @implementation BottomView
 
 + (instancetype)bottomView {
@@ -20,6 +24,7 @@
 - (IBAction)shareAction:(UIButton *)sender {
 }
 - (IBAction)likeAction:(UIButton *)sender {
+    _likeBtn.selected = YES;
 }
 
 /*

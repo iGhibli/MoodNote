@@ -21,7 +21,7 @@
 }
 - (IBAction)setAction:(UIButton *)sender {
     SettingVC *VC = [[SettingVC alloc]init];
-    
+    NSLog(@"SETVC");
 }
 
 /*
