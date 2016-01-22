@@ -181,7 +181,11 @@ static NSString *identifier = @"ContentCellID";
     //4.取出图片，
     UIImage *currentImage=UIGraphicsGetImageFromCurrentImageContext();
     NSData *imageData=UIImagePNGRepresentation(currentImage);
-    [imageData writeToFile:@"/Users/qingyun/Desktop/Screen.png" atomically:YES];
+    
+    NSString *tempPath = NSTemporaryDirectory();
+    NSString *imageDataPath = [tempPath stringByAppendingPathComponent:@"CurrentScreenData"];
+//    NSLog(@"%@",imageDataPath);
+    [imageData writeToFile:imageDataPath atomically:YES];
     //.关闭图形上下文
     UIGraphicsEndImageContext();
     return indexPath;
@@ -236,11 +240,12 @@ static NSString *identifier = @"ContentCellID";
     pasteBoard.string = self.currentModel.title;
     UILabel *popLabel = [[UILabel alloc]init];
     popLabel.textAlignment = NSTextAlignmentCenter;
+    popLabel.font = [UIFont systemFontOfSize:12];
     popLabel.text = @"已复制美句到剪切板";
     popLabel.layer.cornerRadius = 10;
     popLabel.clipsToBounds = YES;
     popLabel.backgroundColor = [UIColor orangeColor];
-    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 30);
+    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 20);
     [self.view addSubview:popLabel];
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
 }
@@ -260,11 +265,12 @@ static NSString *identifier = @"ContentCellID";
 {
     UILabel *popLabel = [[UILabel alloc]init];
     popLabel.textAlignment = NSTextAlignmentCenter;
+    popLabel.font = [UIFont systemFontOfSize:12];
     popLabel.text = @"收藏成功";
     popLabel.layer.cornerRadius = 10;
     popLabel.clipsToBounds = YES;
     popLabel.backgroundColor = [UIColor orangeColor];
-    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 30);
+    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 20);
     [self.view addSubview:popLabel];
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
 }

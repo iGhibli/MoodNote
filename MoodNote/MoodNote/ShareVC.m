@@ -56,6 +56,14 @@
         btn.tag = 50 + i;
         [shareView addSubview:btn];
     }
+    UIImageView *shareImage = [[UIImageView alloc]init];
+    shareImage.bounds = CGRectMake(0, 0, kScreenW / 2, kScreenH / 2);
+    shareImage.center = CGPointMake(kScreenW / 2, (kScreenH - (kScreenW / 3 - 40) * 2) / 2);
+    //获取Tempora目录下存储的截屏文件路径
+    NSString *tempPath = NSTemporaryDirectory();
+    NSString *imageDataPath = [tempPath stringByAppendingPathComponent:@"CurrentScreenData"];
+    shareImage.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imageDataPath]];
+    [self.view addSubview:shareImage];
     
 }
 
@@ -78,7 +86,7 @@
             [self shareAction];
             break;
         case 55:
-            [self shareAction];
+            [self CutShareAction];
             break;
         
             
@@ -89,24 +97,49 @@
 
 - (void)shareAction
 {
-    NSLog(@"Share");
-    //1.开启图片上下文
-    UIGraphicsBeginImageContextWithOptions(self.view.frame.size, NO, 1);
-    
-    //2.获取当前上下文
-    CGContextRef ctx=UIGraphicsGetCurrentContext();
-    
-    //3.绘制
-    [self.view.layer renderInContext:ctx];
-    
-    //4.取出图片，
-    UIImage *currentImage=UIGraphicsGetImageFromCurrentImageContext();
-    NSData *imageData=UIImagePNGRepresentation(currentImage);
-    [imageData writeToFile:@"/Users/qingyun/Desktop/Screen.png" atomically:YES];
-    
-    //.关闭图形上下文
-    UIGraphicsEndImageContext();
 
+
+}
+
+- (void)CutShareAction
+{
+    //获取Tempora目录下存储的截屏文件路径
+    NSString *tempPath = NSTemporaryDirectory();
+    NSString *imageDataPath = [tempPath stringByAppendingPathComponent:@"CurrentScreenData"];
+    //将截屏文件保存到本地相册，完成后执行是否保存成功判断方法
+    UIImageWriteToSavedPhotosAlbum([UIImage imageWithData:[NSData dataWithContentsOfFile:imageDataPath]], self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+}
+
+//    实现imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:方法
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (!error) {
+        //保存到相册成功
+        UILabel *popLabel = [[UILabel alloc]init];
+        popLabel.textAlignment = NSTextAlignmentCenter;
+        popLabel.font = [UIFont systemFontOfSize:12];
+        popLabel.text = @"保存到相册成功";
+        popLabel.layer.cornerRadius = 10;
+        popLabel.clipsToBounds = YES;
+        popLabel.backgroundColor = [UIColor orangeColor];
+        popLabel.frame = CGRectMake(75, kScreenH - ((kScreenW / 3 - 40) * 2 + 40), kScreenW - 150, 20);
+        [self.view addSubview:popLabel];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
+    }else {
+        //保存到相册失败
+        UILabel *popLabel = [[UILabel alloc]init];
+        popLabel.textAlignment = NSTextAlignmentCenter;
+        popLabel.font = [UIFont systemFontOfSize:12];
+        popLabel.text = @"保存到相册失败";
+        popLabel.layer.cornerRadius = 10;
+        popLabel.clipsToBounds = YES;
+        popLabel.backgroundColor = [UIColor orangeColor];
+        popLabel.frame = CGRectMake(75, kScreenH - ((kScreenW / 3 - 40) * 2 + 40), kScreenW - 150, 20);
+        [self.view addSubview:popLabel];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
+        //输出失败Error信息
+        NSLog(@"message is %@",[error description]);
+    }
 }
 
 - (void)hidden
