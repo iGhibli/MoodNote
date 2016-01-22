@@ -169,6 +169,24 @@ static NSString *identifier = @"ContentCellID";
     return cell;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+#pragma mark - 截屏
+    //1.开启图片上下文
+    UIGraphicsBeginImageContextWithOptions(self.view.frame.size, NO, 1);
+    //2.获取当前上下文
+    CGContextRef ctx=UIGraphicsGetCurrentContext();
+    //3.绘制
+    [self.view.layer renderInContext:ctx];
+    //4.取出图片，
+    UIImage *currentImage=UIGraphicsGetImageFromCurrentImageContext();
+    NSData *imageData=UIImagePNGRepresentation(currentImage);
+    [imageData writeToFile:@"/Users/qingyun/Desktop/Screen.png" atomically:YES];
+    //.关闭图形上下文
+    UIGraphicsEndImageContext();
+    return indexPath;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    NSLog(@"%@",self.ContentArray[indexPath.row]);
@@ -231,10 +249,10 @@ static NSString *identifier = @"ContentCellID";
 {
     
     ShareVC *VC = [ShareVC new];
-    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
+//    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
     //模态出的试图控制器透明需要设置此项
-    self.modalPresentationStyle = UIModalPresentationCurrentContext;
-    [self presentViewController:VC1 animated:YES completion:nil];
+//    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self presentViewController:VC animated:YES completion:nil];
     
 }
 
