@@ -21,10 +21,12 @@
 @property (nonatomic, strong) NSMutableArray *ContentArray;
 @property (nonatomic, strong) FXBlurView *blurView;
 @property (nonatomic, strong) ContentModel *currentModel;
+@property (nonatomic, strong) NSArray *favoriteModels;
 @end
 
 @implementation ViewController
 static NSString *identifier = @"ContentCellID";
+static BOOL flag = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,6 +63,7 @@ static NSString *identifier = @"ContentCellID";
         bottomView.frame = CGRectMake(0, kScreenH * 5 / 6, kScreenW, kScreenH / 6);
         bottomView.backgroundColor = [UIColor grayColor];
         bottomView.alpha = 0.5;
+        bottomView.tag = 23;
         [_blurView addSubview:bottomView];
         
         //创建HomeButton
@@ -79,6 +82,7 @@ static NSString *identifier = @"ContentCellID";
         likeBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
         [likeBtn setImage:[UIImage imageNamed:@"btn-like-1"] forState:UIControlStateNormal];
         [likeBtn setImage:[UIImage imageNamed:@"btn-like-2"] forState:UIControlStateHighlighted];
+        [likeBtn setImage:[UIImage imageNamed:@"btn-like-3"] forState:UIControlStateSelected];
         [likeBtn addTarget:self action:@selector(bottomViewButtonActionWithTag:) forControlEvents:UIControlEventTouchUpInside];
         likeBtn.tag = 22;
         [bottomView addSubview:likeBtn];
@@ -102,6 +106,13 @@ static NSString *identifier = @"ContentCellID";
         _ContentArray = [NSMutableArray array];
     }
     return _ContentArray;
+}
+
+- (NSArray *)favoriteModels {
+    if (_favoriteModels == nil) {
+        _favoriteModels = [NSArray array];
+    }
+    return _favoriteModels;
 }
 
 #pragma mark - CustomMethod
@@ -194,14 +205,35 @@ static NSString *identifier = @"ContentCellID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"%@",self.ContentArray[indexPath.row]);
+    self.currentModel = self.ContentArray[indexPath.row];
+//    NSLog(@"%@",self.currentModel);
+    self.favoriteModels = [DBEngine getFavoritesFromLocal];
+    UIButton *likebtn;
+    UIView *view = self.blurView.subviews.firstObject;
+    for (UIButton *btn in view.subviews) {
+        if (btn.tag == 22) {
+            likebtn = btn;
+        }
+    }
     
+    for (ContentModel *model in self.favoriteModels) {
+        if ([model.ID intValue] == [self.currentModel.ID intValue] ) {
+            likebtn.selected = YES;
+            [self.view bringSubviewToFront:self.blurView];
+            
+            [UIView animateWithDuration:0.5 animations:^{
+                self.blurView.blurRadius = 15;
+            }];
+            return;
+        }
+    }
+    likebtn.selected = NO;
     [self.view bringSubviewToFront:self.blurView];
     
     [UIView animateWithDuration:0.5 animations:^{
         self.blurView.blurRadius = 15;
     }];
-    self.currentModel = self.ContentArray[indexPath.row];
+    
 }
 
 #pragma mark - 手势
@@ -264,6 +296,7 @@ static NSString *identifier = @"ContentCellID";
 
 - (void)likeActionWithButton:(UIButton *)btn
 {
+    btn.selected = btn.selected ? NO : YES;
     UILabel *popLabel = [[UILabel alloc]init];
     popLabel.textAlignment = NSTextAlignmentCenter;
     popLabel.font = [UIFont systemFontOfSize:12];

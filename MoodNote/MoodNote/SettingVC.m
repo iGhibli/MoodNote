@@ -110,7 +110,13 @@
 }
 
 - (IBAction)goodAction:(UIButton *)sender {
-    
+    //跳转到AppStore当前应用界面
+    //当前应用的AppID
+    int myAppID = 452186370;
+    NSString *str = [NSString stringWithFormat:
+                     @"itms-apps://itunes.apple.com/cn/app/bai-du-tu-zhuan-ye-tu-zhi/id%d?mt=8",
+                     myAppID ];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 - (IBAction)aboutAction:(UIButton *)sender {
