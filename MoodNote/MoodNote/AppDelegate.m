@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Common.h"
 #import "FXBlurView.h"
+#import "UMSocial.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) FXBlurView *blurView;
@@ -105,6 +106,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [UMSocialData setAppKey:@"56a3781a67e58e9bf7002cac"];
+    
     // Override point for customization after application launch.
     return YES;
 }

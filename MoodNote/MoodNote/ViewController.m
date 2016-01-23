@@ -14,6 +14,7 @@
 #import "FXBlurView.h"
 #import "ShareVC.h"
 #import "DBEngine.h"
+#import "UMSocial.h"
 
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -287,11 +288,22 @@ static BOOL flag = NO;
 - (void)shareAction
 {
     
-    ShareVC *VC = [ShareVC new];
-//    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
-    //模态出的试图控制器透明需要设置此项
-//    self.modalPresentationStyle = UIModalPresentationCurrentContext;
-    [self presentViewController:VC animated:YES completion:nil];
+//    ShareVC *VC = [ShareVC new];
+////    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
+//    //模态出的试图控制器透明需要设置此项
+////    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    [self presentViewController:VC animated:YES completion:nil];
+#pragma mark - UM分享
+    //获取Tempora目录下存储的截屏文件路径
+    NSString *tempPath = NSTemporaryDirectory();
+    NSString *imageDataPath = [tempPath stringByAppendingPathComponent:@"CurrentScreenData"];
+    UIImage *shareImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:imageDataPath]];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"56a3781a67e58e9bf7002cac"
+                                      shareText:self.currentModel.title
+                                     shareImage:shareImage
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToQQ,UMShareToEmail,UMShareToQzone,UMShareToSms,nil]
+                                       delegate:nil];
     
 }
 
