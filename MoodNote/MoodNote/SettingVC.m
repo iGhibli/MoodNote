@@ -36,6 +36,7 @@
         author.font = [UIFont systemFontOfSize:22];
         author.textAlignment = NSTextAlignmentCenter;
         [_aboutView addSubview:author];
+        
         UILabel *email = [[UILabel alloc]initWithFrame:CGRectMake(10, kScreenH / 2, kScreenW - 20, 30)];
         email.text = @"Email: iGhibli@163.com";
         email.textAlignment = NSTextAlignmentCenter;

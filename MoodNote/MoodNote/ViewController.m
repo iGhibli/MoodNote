@@ -184,8 +184,9 @@ static BOOL flag = NO;
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 #pragma mark - 截屏
+    
     //1.开启图片上下文
-    UIGraphicsBeginImageContextWithOptions(self.view.frame.size, NO, 1);
+    UIGraphicsBeginImageContextWithOptions(self.view.frame.size, YES, 0.0);
     //2.获取当前上下文
     CGContextRef ctx=UIGraphicsGetCurrentContext();
     //3.绘制

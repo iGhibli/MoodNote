@@ -87,16 +87,19 @@
 - (IBAction)shareAction:(UIButton *)sender {
     //获取btnView
     UIView *btnView = [sender superview];
-    //获取当前Button所在cell的信息
-    FavoriteCell *currentCell = (FavoriteCell *)[[btnView superview] superview];
+    //获取tempView
+    UIView *tempView = [btnView superview];
+    //获取当前Button所在cell的contentView信息
+    UIView *currentContentView = [tempView superview];
     
 #pragma mark - 截屏
+    CGSize imageSize = CGSizeMake(currentContentView.frame.size.width, currentContentView.frame.size.height - 40);
     //1.开启图片上下文
-    UIGraphicsBeginImageContextWithOptions(currentCell.contentView.frame.size, NO, 1);
+    UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0.0);
     //2.获取当前上下文
     CGContextRef ctx=UIGraphicsGetCurrentContext();
     //3.绘制
-    [currentCell.contentView.layer renderInContext:ctx];
+    [currentContentView.layer renderInContext:ctx];
     //4.取出图片，
     UIImage *currentImage=UIGraphicsGetImageFromCurrentImageContext();
     NSData *imageData=UIImagePNGRepresentation(currentImage);
@@ -136,8 +139,10 @@
 {
     //获取btnView
     UIView *btnView = [sender superview];
+    //获取tempView
+    UIView *tempView = [btnView superview];
     //获取当前Button所在cell的信息
-    FavoriteCell *currentCell = (FavoriteCell *)[[btnView superview] superview];
+    FavoriteCell *currentCell = (FavoriteCell *)[[tempView superview] superview];
     //获取当前的IndexPath
     NSIndexPath *currentIndexPath = [self.tableView indexPathForCell:currentCell];
     //    NSLog(@"IndexPath-----%@",currentIndexPath);
