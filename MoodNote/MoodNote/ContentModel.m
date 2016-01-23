@@ -12,6 +12,7 @@
 
 - (instancetype)initContentModelWithDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
+        self.ID = dict[@"id"];
         self.title = dict[@"title"];
         self.pic_url = dict[@"pic"];
         self.picHeight = dict[@"picHeight"];

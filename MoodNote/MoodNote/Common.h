@@ -17,4 +17,14 @@
 #define kImageBaseURL    @"http://common.nineton.cn/CommonProject/uploadfiles/sentences_images"
 #define kBaseURL         @"http://common.nineton.cn/CommonProject/sign/api/v1/sentence"
 
+/*  FileName  */
+#define kSQLiteName     @"Favorites.db"
+#define kTableName      @"Favorites"
+
+/*  ReName  */
+#define kTitle          @"title"
+#define kPicURL         @"picUrl"
+#define kPicHeight      @"picHeight"
+#define kPicWidth       @"picWidth"
+
 #endif /* Common_h */

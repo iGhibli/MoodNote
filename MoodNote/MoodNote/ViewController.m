@@ -13,6 +13,7 @@
 #import "ContentModel.h"
 #import "FXBlurView.h"
 #import "ShareVC.h"
+#import "DBEngine.h"
 
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -162,7 +163,7 @@ static NSString *identifier = @"ContentCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.transform = CGAffineTransformMakeRotation(M_PI_2);
 
     [cell bandingContentCellWithModel:self.ContentArray[indexPath.row]];
@@ -224,7 +225,7 @@ static NSString *identifier = @"ContentCellID";
             [self shareAction];
             break;
         case 22:
-            [self likeAction];
+            [self likeActionWithButton:sender];
             break;
             
         default:
@@ -261,7 +262,7 @@ static NSString *identifier = @"ContentCellID";
     
 }
 
-- (void)likeAction
+- (void)likeActionWithButton:(UIButton *)btn
 {
     UILabel *popLabel = [[UILabel alloc]init];
     popLabel.textAlignment = NSTextAlignmentCenter;
@@ -272,7 +273,10 @@ static NSString *identifier = @"ContentCellID";
     popLabel.backgroundColor = [UIColor orangeColor];
     popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 20);
     [self.view addSubview:popLabel];
+    btn.selected = YES;
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
+    
+    [DBEngine saveToLocalWithModel:self.currentModel];
 }
 
 - (void)hiddenBlurView

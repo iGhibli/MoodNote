@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2212581C51F0CB00BC2219 /* DBEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212571C51F0CB00BC2219 /* DBEngine.m */; };
+		CC2212651C51FE8700BC2219 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125B1C51FE8700BC2219 /* FMDatabase.m */; };
+		CC2212661C51FE8700BC2219 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125D1C51FE8700BC2219 /* FMDatabaseAdditions.m */; };
+		CC2212671C51FE8700BC2219 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125F1C51FE8700BC2219 /* FMDatabasePool.m */; };
+		CC2212681C51FE8700BC2219 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212611C51FE8700BC2219 /* FMDatabaseQueue.m */; };
+		CC2212691C51FE8700BC2219 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212641C51FE8700BC2219 /* FMResultSet.m */; };
+		CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212871C5246AC00BC2219 /* FavoriteCell.m */; };
+		CC22128A1C52540600BC2219 /* Favorites.db in Resources */ = {isa = PBXBuildFile; fileRef = CC2212891C52540600BC2219 /* Favorites.db */; };
 		CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EBE1C4F399E00372CFF /* ContentModel.m */; };
 		CC8C5EE21C4F60DF00372CFF /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC21C4F60DF00372CFF /* MKAnnotationView+WebCache.m */; };
 		CC8C5EE31C4F60DF00372CFF /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC41C4F60DF00372CFF /* NSData+ImageContentType.m */; };
@@ -27,6 +35,7 @@
 		CC92CAEC1C4F6F5500FDE995 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CAEB1C4F6F5500FDE995 /* NSString+Size.m */; };
 		CC92CB1B1C4FA51200FDE995 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB1A1C4FA51200FDE995 /* FXBlurView.m */; };
 		CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */; };
+		CCC0A1F61C53198C00D29C22 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */; };
 		CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222EE1C50AF25006B2444 /* FavoriteVC.m */; };
 		CCE222F71C510380006B2444 /* ShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222F61C510380006B2444 /* ShareVC.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
@@ -51,6 +60,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC2212561C51F0CB00BC2219 /* DBEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEngine.h; sourceTree = "<group>"; };
+		CC2212571C51F0CB00BC2219 /* DBEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEngine.m; sourceTree = "<group>"; };
+		CC22125A1C51FE8700BC2219 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		CC22125B1C51FE8700BC2219 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		CC22125C1C51FE8700BC2219 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		CC22125D1C51FE8700BC2219 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		CC22125E1C51FE8700BC2219 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		CC22125F1C51FE8700BC2219 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		CC2212601C51FE8700BC2219 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		CC2212611C51FE8700BC2219 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CC2212621C51FE8700BC2219 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		CC2212631C51FE8700BC2219 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		CC2212641C51FE8700BC2219 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		CC2212861C5246AC00BC2219 /* FavoriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCell.h; sourceTree = "<group>"; };
+		CC2212871C5246AC00BC2219 /* FavoriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCell.m; sourceTree = "<group>"; };
+		CC2212891C52540600BC2219 /* Favorites.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Favorites.db; sourceTree = "<group>"; };
 		CC8C5EBD1C4F399E00372CFF /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
 		CC8C5EBE1C4F399E00372CFF /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		CC8C5EC11C4F60DF00372CFF /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -92,6 +117,8 @@
 		CC92CB1A1C4FA51200FDE995 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		CC92CB2B1C4FC54C00FDE995 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		CCC0A1F11C5316F600D29C22 /* libtclsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtclsqlite3.dylib; path = /System/Library/Tcl/sqlite3/libtclsqlite3.dylib; sourceTree = "<absolute>"; };
+		CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		CCE222ED1C50AF25006B2444 /* FavoriteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteVC.h; sourceTree = "<group>"; };
 		CCE222EE1C50AF25006B2444 /* FavoriteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
 		CCE222F51C510380006B2444 /* ShareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareVC.h; sourceTree = "<group>"; };
@@ -138,12 +165,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCC0A1F61C53198C00D29C22 /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC2212591C51FE8700BC2219 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				CC22125A1C51FE8700BC2219 /* FMDatabase.h */,
+				CC22125B1C51FE8700BC2219 /* FMDatabase.m */,
+				CC22125C1C51FE8700BC2219 /* FMDatabaseAdditions.h */,
+				CC22125D1C51FE8700BC2219 /* FMDatabaseAdditions.m */,
+				CC22125E1C51FE8700BC2219 /* FMDatabasePool.h */,
+				CC22125F1C51FE8700BC2219 /* FMDatabasePool.m */,
+				CC2212601C51FE8700BC2219 /* FMDatabaseQueue.h */,
+				CC2212611C51FE8700BC2219 /* FMDatabaseQueue.m */,
+				CC2212621C51FE8700BC2219 /* FMDB.h */,
+				CC2212631C51FE8700BC2219 /* FMResultSet.h */,
+				CC2212641C51FE8700BC2219 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		CC8C5EC01C4F60DF00372CFF /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +272,8 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */,
+				CCC0A1F11C5316F600D29C22 /* libtclsqlite3.dylib */,
 				CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */,
 				CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */,
 				CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */,
@@ -258,6 +306,8 @@
 				CCEEEA1E1C4E741D005C9C93 /* ContentCell.h */,
 				CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */,
 				CCEEEA201C4E741D005C9C93 /* ContentCell.xib */,
+				CC2212861C5246AC00BC2219 /* FavoriteCell.h */,
+				CC2212871C5246AC00BC2219 /* FavoriteCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -274,6 +324,9 @@
 		CCEEE9F91C4E343D005C9C93 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CC2212891C52540600BC2219 /* Favorites.db */,
+				CC2212561C51F0CB00BC2219 /* DBEngine.h */,
+				CC2212571C51F0CB00BC2219 /* DBEngine.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -293,6 +346,7 @@
 		CCEEEA001C4E6830005C9C93 /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				CC2212591C51FE8700BC2219 /* fmdb */,
 				CC92CB181C4FA51200FDE995 /* FXBlurView */,
 				CC8C5EC01C4F60DF00372CFF /* SDWebImage */,
 				CCEEEA011C4E685E005C9C93 /* AFNetworking */,
@@ -357,6 +411,7 @@
 				TargetAttributes = {
 					CCEEE9DB1C4E3392005C9C93 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 3MNL697K64;
 					};
 				};
 			};
@@ -386,6 +441,7 @@
 				CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */,
 				CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
+				CC22128A1C52540600BC2219 /* Favorites.db in Resources */,
 				CCF5BF7C1C506D1900565F2F /* Default-568h@2x.png in Resources */,
 				CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
@@ -408,11 +464,14 @@
 				CCEEE9E71C4E3392005C9C93 /* ViewController.m in Sources */,
 				CCEEEA161C4E685E005C9C93 /* AFHTTPRequestOperationManager.m in Sources */,
 				CC8C5EE71C4F60DF00372CFF /* SDWebImageDownloader.m in Sources */,
+				CC2212581C51F0CB00BC2219 /* DBEngine.m in Sources */,
 				CCEEEA181C4E685E005C9C93 /* AFNetworkReachabilityManager.m in Sources */,
 				CC92CAEC1C4F6F5500FDE995 /* NSString+Size.m in Sources */,
 				CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */,
 				CCEEEA1C1C4E685E005C9C93 /* AFURLResponseSerialization.m in Sources */,
 				CCEEEA1A1C4E685E005C9C93 /* AFURLConnectionOperation.m in Sources */,
+				CC2212661C51FE8700BC2219 /* FMDatabaseAdditions.m in Sources */,
+				CC2212651C51FE8700BC2219 /* FMDatabase.m in Sources */,
 				CC8C5EE21C4F60DF00372CFF /* MKAnnotationView+WebCache.m in Sources */,
 				CCEEEA191C4E685E005C9C93 /* AFSecurityPolicy.m in Sources */,
 				CC8C5EE31C4F60DF00372CFF /* NSData+ImageContentType.m in Sources */,
@@ -421,9 +480,11 @@
 				CCEEEA171C4E685E005C9C93 /* AFHTTPSessionManager.m in Sources */,
 				CC8C5EEA1C4F60DF00372CFF /* SDWebImagePrefetcher.m in Sources */,
 				CC8C5EE61C4F60DF00372CFF /* SDWebImageDecoder.m in Sources */,
+				CC2212681C51FE8700BC2219 /* FMDatabaseQueue.m in Sources */,
 				CC8C5EE41C4F60DF00372CFF /* SDImageCache.m in Sources */,
 				CCE222F71C510380006B2444 /* ShareVC.m in Sources */,
 				CC8C5EE51C4F60DF00372CFF /* SDWebImageCompat.m in Sources */,
+				CC2212671C51FE8700BC2219 /* FMDatabasePool.m in Sources */,
 				CC8C5EF11C4F60DF00372CFF /* UIView+WebCacheOperation.m in Sources */,
 				CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */,
 				CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */,
@@ -431,7 +492,9 @@
 				CC8C5EE81C4F60DF00372CFF /* SDWebImageDownloaderOperation.m in Sources */,
 				CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */,
 				CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */,
+				CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */,
 				CC8C5EF01C4F60DF00372CFF /* UIImageView+WebCache.m in Sources */,
+				CC2212691C51FE8700BC2219 /* FMResultSet.m in Sources */,
 				CC8C5EEF1C4F60DF00372CFF /* UIImageView+HighlightedWebCache.m in Sources */,
 				CCEEE9E11C4E3392005C9C93 /* main.m in Sources */,
 			);
@@ -496,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
@@ -535,7 +598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
 				SDKROOT = iphoneos;
@@ -547,13 +610,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MoodNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/Tcl/sqlite3",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyun.MoodNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -561,13 +629,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MoodNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/Tcl/sqlite3",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyun.MoodNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

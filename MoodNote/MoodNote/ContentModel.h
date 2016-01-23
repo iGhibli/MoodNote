@@ -10,6 +10,7 @@
 
 @interface ContentModel : NSObject
 
+@property (nonatomic, assign) NSString *ID;
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSString *pic_url;
 @property (nonatomic, strong) NSString *picHeight;
