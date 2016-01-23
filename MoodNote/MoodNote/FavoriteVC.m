@@ -11,6 +11,7 @@
 #import "DBEngine.h"
 #import "FavoriteCell.h"
 #import "Common.h"
+#import "ShareVC.h"
 
 @interface FavoriteVC ()<UITableViewDataSource ,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *favorites;
@@ -65,16 +66,8 @@
 }
 
 - (IBAction)copyAction:(UIButton *)sender {
-    //获取btnView
-    UIView *btnView = [sender superview];
-    //获取当前Button所在cell的信息
-    FavoriteCell *currentCell = (FavoriteCell *)[[btnView superview] superview];
-    //获取当前的IndexPath
-    NSIndexPath *currentIndexPath = [self.tableView indexPathForCell:currentCell];
-    NSLog(@"IndexPath-----%@",currentIndexPath);
-    //得到当前Model
-    ContentModel *currentModel = self.favorites[currentIndexPath.row];
-    
+    //获取当前Model
+    ContentModel *currentModel = [self getCurrentModelWithButton:sender];
     //获取剪切板
     UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
     //将内容赋值给剪切板
@@ -92,9 +85,65 @@
 }
 
 - (IBAction)shareAction:(UIButton *)sender {
+    //获取btnView
+    UIView *btnView = [sender superview];
+    //获取当前Button所在cell的信息
+    FavoriteCell *currentCell = (FavoriteCell *)[[btnView superview] superview];
     
+#pragma mark - 截屏
+    //1.开启图片上下文
+    UIGraphicsBeginImageContextWithOptions(currentCell.contentView.frame.size, NO, 1);
+    //2.获取当前上下文
+    CGContextRef ctx=UIGraphicsGetCurrentContext();
+    //3.绘制
+    [currentCell.contentView.layer renderInContext:ctx];
+    //4.取出图片，
+    UIImage *currentImage=UIGraphicsGetImageFromCurrentImageContext();
+    NSData *imageData=UIImagePNGRepresentation(currentImage);
+    
+    NSString *tempPath = NSTemporaryDirectory();
+    NSString *imageDataPath = [tempPath stringByAppendingPathComponent:@"CurrentScreenData"];
+    //    NSLog(@"%@",imageDataPath);
+    [imageData writeToFile:imageDataPath atomically:YES];
+    //.关闭图形上下文
+    UIGraphicsEndImageContext();
+    
+    ShareVC *VC = [ShareVC new];
+    //    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
+    //模态出的试图控制器透明需要设置此项
+    //    self.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [self presentViewController:VC animated:YES completion:nil];
 }
 - (IBAction)likeAction:(UIButton *)sender {
-    
+    //获取当前Model
+    ContentModel *currentModel = [self getCurrentModelWithButton:sender];
+    //删除数据库内容
+    [DBEngine deleteDataWithID:currentModel.ID];
+    self.favorites = [DBEngine getFavoritesFromLocal];
+    //更新UI
+//    [sender setImage:[UIImage imageNamed:@"litle-like-1"] forState:UIControlStateNormal];
+    [self.tableView reloadData];
 }
+
+/**
+ *  通过当前Button获取当前Button所在Cell的Model
+ *
+ *  @param sender 当前Button
+ *
+ *  @return 当前Cell的Model
+ */
+- (ContentModel *)getCurrentModelWithButton:(UIButton *)sender
+{
+    //获取btnView
+    UIView *btnView = [sender superview];
+    //获取当前Button所在cell的信息
+    FavoriteCell *currentCell = (FavoriteCell *)[[btnView superview] superview];
+    //获取当前的IndexPath
+    NSIndexPath *currentIndexPath = [self.tableView indexPathForCell:currentCell];
+    //    NSLog(@"IndexPath-----%@",currentIndexPath);
+    //得到当前Model
+    ContentModel *currentModel = self.favorites[currentIndexPath.row];
+    return currentModel;
+}
+
 @end

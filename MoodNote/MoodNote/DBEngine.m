@@ -84,5 +84,20 @@
     return models;
 }
 
++ (void)deleteDataWithID:(NSString *)ID
+{
+    //删除操作，首先创建db，写sql语句，执行操作
+    //使用队列时不需要自己创建db,队列会创建
+    FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:[DBEngine getSQLiteFilePath]];
+    [queue inDatabase:^(FMDatabase *db) {
+        
+        //创建SQL语句
+        NSString *SQLString = [NSString stringWithFormat:@"delete from Favorites where id = %d;",[ID intValue]];
+        
+        BOOL result = [db executeUpdate:SQLString];
+        NSLog(@"%d>>>>%@",result, SQLString);
+     
+    }];
+}
 
 @end

@@ -15,4 +15,6 @@
 
 + (NSArray *)getFavoritesFromLocal;
 
++ (void)deleteDataWithID:(NSString *)ID;
+
 @end

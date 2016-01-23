@@ -87,7 +87,7 @@
                                                                 <constraint firstAttribute="height" constant="20" id="Grl-0I-6y6"/>
                                                                 <constraint firstAttribute="width" constant="20" id="dFd-bM-ZaE"/>
                                                             </constraints>
-                                                            <state key="normal" backgroundImage="litle-like-1"/>
+                                                            <state key="normal" backgroundImage="litle-like-3"/>
                                                             <state key="selected" backgroundImage="litle-like-3"/>
                                                             <state key="highlighted" backgroundImage="litle-like-2"/>
                                                             <connections>
@@ -254,7 +254,6 @@
     <resources>
         <image name="litle-copy-1" width="15" height="15"/>
         <image name="litle-copy-2" width="15" height="15"/>
-        <image name="litle-like-1" width="15" height="15"/>
         <image name="litle-like-2" width="15" height="15"/>
         <image name="litle-like-3" width="15" height="15"/>
         <image name="litle-link-1" width="15" height="15"/>
