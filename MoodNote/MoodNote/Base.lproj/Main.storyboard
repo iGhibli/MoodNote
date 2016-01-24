@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-uL-PV9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopIMG" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-uL-PV9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                 <animations/>
                             </imageView>
@@ -179,24 +179,119 @@
             </objects>
             <point key="canvasLocation" x="637" y="429"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ewL-2b-a9J">
+        <!--GuideVC-->
+        <scene sceneID="YOx-WI-BaB">
             <objects>
-                <viewController id="IWP-M6-czX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuideVCID" id="3Ec-Xd-8BS" customClass="GuideVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NsX-V4-XTi"/>
-                        <viewControllerLayoutGuide type="bottom" id="Oc7-qK-KQz"/>
+                        <viewControllerLayoutGuide type="top" id="6Ym-oJ-AlH"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZXN-jm-rkk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qqq-0O-vM1">
+                    <view key="view" contentMode="scaleToFill" id="0Mo-9F-Oxl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hne-tt-JWy">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fov-pA-qI4">
+                                        <rect key="frame" x="0.0" y="0.0" width="1800" height="580"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_1" translatesAutoresizingMaskIntoConstraints="NO" id="8Jr-Bz-udt">
+                                                <rect key="frame" x="18" y="220" width="163" height="240"/>
+                                                <animations/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_2" translatesAutoresizingMaskIntoConstraints="NO" id="ABW-un-QeH">
+                                                <rect key="frame" x="189" y="220" width="98" height="240"/>
+                                                <animations/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-UV-WFd">
+                                                <rect key="frame" x="428" y="220" width="172" height="240"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_4" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-QX-NUF">
+                                                        <rect key="frame" x="-34" y="56" width="240" height="128"/>
+                                                        <animations/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epH-PH-5PH">
+                                                        <rect key="frame" x="63" y="105" width="46" height="30"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="AKe-si-9HP"/>
+                                                            <constraint firstAttribute="width" constant="100" id="VOr-DT-QMe"/>
+                                                        </constraints>
+                                                        <state key="normal" title="立即使用">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="guideEndAction:" destination="3Ec-Xd-8BS" eventType="touchUpInside" id="Kb6-P9-Pqg"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="epH-PH-5PH" firstAttribute="centerY" secondItem="lyO-UV-WFd" secondAttribute="centerY" multiplier="1.5" id="1bj-kK-hJd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5BJ-QX-NUF" secondAttribute="trailing" id="AWh-96-3sw"/>
+                                                    <constraint firstItem="epH-PH-5PH" firstAttribute="centerX" secondItem="lyO-UV-WFd" secondAttribute="centerX" id="Kug-uy-GgC"/>
+                                                    <constraint firstItem="5BJ-QX-NUF" firstAttribute="leading" secondItem="lyO-UV-WFd" secondAttribute="leading" id="NOf-6j-J28"/>
+                                                    <constraint firstItem="5BJ-QX-NUF" firstAttribute="top" secondItem="lyO-UV-WFd" secondAttribute="top" id="lSg-3O-oER"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5BJ-QX-NUF" secondAttribute="bottom" id="xoV-8g-o6B"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_3" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-ud-Sj1">
+                                                <rect key="frame" x="295" y="220" width="125" height="240"/>
+                                                <animations/>
+                                            </imageView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="w0v-ud-Sj1" firstAttribute="width" secondItem="Fov-pA-qI4" secondAttribute="width" multiplier="0.25" id="5eO-0b-v9y"/>
+                                            <constraint firstItem="ABW-un-QeH" firstAttribute="height" secondItem="Fov-pA-qI4" secondAttribute="height" id="8vh-2l-qMJ"/>
+                                            <constraint firstItem="w0v-ud-Sj1" firstAttribute="height" secondItem="Fov-pA-qI4" secondAttribute="height" id="9Qz-R5-bdb"/>
+                                            <constraint firstItem="8Jr-Bz-udt" firstAttribute="height" secondItem="Fov-pA-qI4" secondAttribute="height" id="ArM-1Y-if5"/>
+                                            <constraint firstItem="w0v-ud-Sj1" firstAttribute="top" secondItem="Fov-pA-qI4" secondAttribute="top" id="Cw7-Ls-iOE"/>
+                                            <constraint firstItem="ABW-un-QeH" firstAttribute="top" secondItem="Fov-pA-qI4" secondAttribute="top" id="E1o-kp-RpB"/>
+                                            <constraint firstItem="8Jr-Bz-udt" firstAttribute="width" secondItem="Fov-pA-qI4" secondAttribute="width" multiplier="0.25" id="Fbc-Er-Li8"/>
+                                            <constraint firstItem="8Jr-Bz-udt" firstAttribute="top" secondItem="Fov-pA-qI4" secondAttribute="top" id="OgI-Rc-yH9"/>
+                                            <constraint firstItem="lyO-UV-WFd" firstAttribute="width" secondItem="Fov-pA-qI4" secondAttribute="width" multiplier="0.25" id="QcQ-qe-UpC"/>
+                                            <constraint firstItem="lyO-UV-WFd" firstAttribute="centerX" secondItem="Fov-pA-qI4" secondAttribute="centerX" multiplier="1.75" id="Uod-Wh-8u8"/>
+                                            <constraint firstItem="w0v-ud-Sj1" firstAttribute="centerX" secondItem="Fov-pA-qI4" secondAttribute="centerX" multiplier="1.25" id="XqC-qq-6fM"/>
+                                            <constraint firstItem="8Jr-Bz-udt" firstAttribute="centerX" secondItem="Fov-pA-qI4" secondAttribute="centerX" multiplier="0.25" id="ZDM-kg-icv"/>
+                                            <constraint firstItem="lyO-UV-WFd" firstAttribute="top" secondItem="Fov-pA-qI4" secondAttribute="top" id="cVY-qZ-CZT"/>
+                                            <constraint firstItem="lyO-UV-WFd" firstAttribute="height" secondItem="Fov-pA-qI4" secondAttribute="height" id="peD-ro-cEx"/>
+                                            <constraint firstItem="ABW-un-QeH" firstAttribute="centerX" secondItem="Fov-pA-qI4" secondAttribute="centerX" multiplier="0.75" id="upM-qe-o2a"/>
+                                            <constraint firstItem="ABW-un-QeH" firstAttribute="width" secondItem="Fov-pA-qI4" secondAttribute="width" multiplier="0.25" id="yPR-mV-DHG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="Fov-pA-qI4" firstAttribute="leading" secondItem="hne-tt-JWy" secondAttribute="leading" id="797-Ww-pQZ"/>
+                                    <constraint firstItem="Fov-pA-qI4" firstAttribute="top" secondItem="hne-tt-JWy" secondAttribute="top" id="Big-Nm-jsb"/>
+                                    <constraint firstItem="Fov-pA-qI4" firstAttribute="width" secondItem="hne-tt-JWy" secondAttribute="width" multiplier="4" id="Z3Z-5U-GBO"/>
+                                    <constraint firstItem="Fov-pA-qI4" firstAttribute="height" secondItem="hne-tt-JWy" secondAttribute="height" id="xZF-BF-D8N"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hne-tt-JWy" firstAttribute="top" secondItem="0Mo-9F-Oxl" secondAttribute="top" id="8V4-QB-xbT"/>
+                            <constraint firstAttribute="trailing" secondItem="hne-tt-JWy" secondAttribute="trailing" id="Oqy-Ja-TO5"/>
+                            <constraint firstItem="hne-tt-JWy" firstAttribute="leading" secondItem="0Mo-9F-Oxl" secondAttribute="leading" id="hMx-QK-t53"/>
+                            <constraint firstAttribute="bottom" secondItem="hne-tt-JWy" secondAttribute="bottom" id="pHz-0y-ud5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guiEndBtn" destination="epH-PH-5PH" id="LAh-E7-OSk"/>
+                        <outlet property="guideView" destination="hne-tt-JWy" id="3pT-a5-I1r"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uKA-wQ-Wdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OEs-zc-6ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="1088"/>
+            <point key="canvasLocation" x="637" y="1073"/>
         </scene>
         <!--SettingVC-->
         <scene sceneID="eIu-yw-keC">
@@ -265,6 +360,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TopIMG" width="781" height="83"/>
+        <image name="guide_1" width="1244" height="2208"/>
+        <image name="guide_2" width="1242" height="2209"/>
+        <image name="guide_3" width="1242" height="2208"/>
+        <image name="guide_4" width="1242" height="2208"/>
         <image name="litle-copy-1" width="15" height="15"/>
         <image name="litle-copy-2" width="15" height="15"/>
         <image name="litle-like-2" width="15" height="15"/>

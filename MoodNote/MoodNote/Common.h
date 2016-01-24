@@ -27,4 +27,7 @@
 #define kPicHeight      @"picHeight"
 #define kPicWidth       @"picWidth"
 
+/* Others */
+#define kAppVersion     @"kAppversion"
+
 #endif /* Common_h */

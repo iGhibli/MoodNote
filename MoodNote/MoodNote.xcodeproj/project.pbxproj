@@ -15,6 +15,8 @@
 		CC2212691C51FE8700BC2219 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212641C51FE8700BC2219 /* FMResultSet.m */; };
 		CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212871C5246AC00BC2219 /* FavoriteCell.m */; };
 		CC22128A1C52540600BC2219 /* Favorites.db in Resources */ = {isa = PBXBuildFile; fileRef = CC2212891C52540600BC2219 /* Favorites.db */; };
+		CC2726DA1C54F4E8003D0B3D /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2726D91C54F4E8003D0B3D /* GuideVC.m */; };
+		CC2726DC1C55123F003D0B3D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC2726DB1C55123F003D0B3D /* Default-568h@2x.png */; };
 		CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EBE1C4F399E00372CFF /* ContentModel.m */; };
 		CC8C5EE21C4F60DF00372CFF /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC21C4F60DF00372CFF /* MKAnnotationView+WebCache.m */; };
 		CC8C5EE31C4F60DF00372CFF /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC41C4F60DF00372CFF /* NSData+ImageContentType.m */; };
@@ -66,7 +68,6 @@
 		CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA141C4E685E005C9C93 /* AFURLSessionManager.m */; };
 		CCEEEA211C4E741D005C9C93 /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */; };
 		CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCEEEA201C4E741D005C9C93 /* ContentCell.xib */; };
-		CCF5BF7C1C506D1900565F2F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,9 @@
 		CC2212861C5246AC00BC2219 /* FavoriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCell.h; sourceTree = "<group>"; };
 		CC2212871C5246AC00BC2219 /* FavoriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCell.m; sourceTree = "<group>"; };
 		CC2212891C52540600BC2219 /* Favorites.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Favorites.db; sourceTree = "<group>"; };
+		CC2726D81C54F4E8003D0B3D /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
+		CC2726D91C54F4E8003D0B3D /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
+		CC2726DB1C55123F003D0B3D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CC8C5EBD1C4F399E00372CFF /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
 		CC8C5EBE1C4F399E00372CFF /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		CC8C5EC11C4F60DF00372CFF /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -187,7 +191,6 @@
 		CCEEEA1E1C4E741D005C9C93 /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
 		CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 		CCEEEA201C4E741D005C9C93 /* ContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
-		CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,8 +351,8 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC2726DB1C55123F003D0B3D /* Default-568h@2x.png */,
 				CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */,
-				CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */,
 				CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */,
 				CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */,
 				CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */,
@@ -368,6 +371,8 @@
 				CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */,
 				CCE222ED1C50AF25006B2444 /* FavoriteVC.h */,
 				CCE222EE1C50AF25006B2444 /* FavoriteVC.m */,
+				CC2726D81C54F4E8003D0B3D /* GuideVC.h */,
+				CC2726D91C54F4E8003D0B3D /* GuideVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -521,7 +526,7 @@
 				CCC0A2551C53B01900D29C22 /* UMShareEditViewControlleriPad.xib in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
 				CC22128A1C52540600BC2219 /* Favorites.db in Resources */,
-				CCF5BF7C1C506D1900565F2F /* Default-568h@2x.png in Resources */,
+				CC2726DC1C55123F003D0B3D /* Default-568h@2x.png in Resources */,
 				CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */,
 				CCC0A2541C53B01900D29C22 /* UMShareEditViewController.xib in Resources */,
 				CCC0A2571C53B01900D29C22 /* UMSnsAccountViewController.xib in Resources */,
@@ -541,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC8C5EED1C4F60DF00372CFF /* UIImage+MultiFormat.m in Sources */,
+				CC2726DA1C54F4E8003D0B3D /* GuideVC.m in Sources */,
 				CC8C5EEE1C4F60DF00372CFF /* UIImage+WebP.m in Sources */,
 				CCEEEA211C4E741D005C9C93 /* ContentCell.m in Sources */,
 				CC8C5EE91C4F60DF00372CFF /* SDWebImageManager.m in Sources */,

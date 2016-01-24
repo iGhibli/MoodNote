@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "FXBlurView.h"
 #import "UMSocial.h"
+#import "GuideVC.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) FXBlurView *blurView;
@@ -108,9 +109,44 @@
     
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:@"56a3781a67e58e9bf7002cac"];
-    
-    // Override point for customization after application launch.
+//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+////    self.window.rootViewController = [self determineIsFirst];
+//    [self.window makeKeyAndVisible];
+//    // Override point for customization after application launch.
     return YES;
+}
+
+- (UIViewController *)determineIsFirst {
+    /**
+     * 判断当前版本号，确定是否显示新手引导页
+     */
+    //取出当前版本
+    NSString *currentVersion = [[NSBundle mainBundle]objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    //取出本地存储版本
+    NSString *localVersion = [[NSUserDefaults standardUserDefaults]objectForKey:kAppVersion];
+    //判断两个版本是否相同，确定是否显示引导页
+    if ([currentVersion isEqualToString:localVersion]) {
+        return [self instantiateVCWithIdentifier:@"HomeVCID"];
+    }else {
+        return [self instantiateVCWithIdentifier:@"GuideVCID"];
+    }
+}
+
+- (UIViewController *)instantiateVCWithIdentifier:(NSString *)VCID
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:VCID];
+}
+
+- (void)guideEnd
+{
+    self.window.rootViewController = [self instantiateVCWithIdentifier:@"HomeVCID"];
+    //引导结束，更新本地保存的版本
+    NSString *currentVersion = [[NSBundle mainBundle]objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    //设置本地保存路径
+    [[NSUserDefaults standardUserDefaults]setObject:currentVersion forKey:kAppVersion];
+    //更新到物理文件中
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
