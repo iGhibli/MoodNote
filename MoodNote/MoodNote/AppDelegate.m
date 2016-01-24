@@ -104,9 +104,9 @@
     self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:VCID];
 }
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //设置友盟社会化组件appkey
     [UMSocialData setAppKey:@"56a3781a67e58e9bf7002cac"];
     
     // Override point for customization after application launch.

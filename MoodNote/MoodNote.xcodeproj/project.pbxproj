@@ -48,7 +48,6 @@
 		CCC0A2581C53B01900D29C22 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCC0A24C1C53B01900D29C22 /* UMSShareListController.xib */; };
 		CCC0A2591C53B01900D29C22 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CCC0A24D1C53B01900D29C22 /* UMSocialSDKResourcesNew.bundle */; };
 		CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222EE1C50AF25006B2444 /* FavoriteVC.m */; };
-		CCE222F71C510380006B2444 /* ShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222F61C510380006B2444 /* ShareVC.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
 		CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */; };
 		CCEEE9E71C4E3392005C9C93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E61C4E3392005C9C93 /* ViewController.m */; };
@@ -128,7 +127,6 @@
 		CC92CB1A1C4FA51200FDE995 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		CC92CB2B1C4FC54C00FDE995 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
-		CCC0A1F11C5316F600D29C22 /* libtclsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtclsqlite3.dylib; path = /System/Library/Tcl/sqlite3/libtclsqlite3.dylib; sourceTree = "<absolute>"; };
 		CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		CCC0A2361C53B01900D29C22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		CCC0A2381C53B01900D29C22 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
@@ -155,8 +153,6 @@
 		CCC0A24E1C53B01900D29C22 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
 		CCE222ED1C50AF25006B2444 /* FavoriteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteVC.h; sourceTree = "<group>"; };
 		CCE222EE1C50AF25006B2444 /* FavoriteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
-		CCE222F51C510380006B2444 /* ShareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareVC.h; sourceTree = "<group>"; };
-		CCE222F61C510380006B2444 /* ShareVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareVC.m; sourceTree = "<group>"; };
 		CCEEE9DC1C4E3392005C9C93 /* MoodNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEEE9E01C4E3392005C9C93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCEEE9E21C4E3392005C9C93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -353,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */,
-				CCC0A1F11C5316F600D29C22 /* libtclsqlite3.dylib */,
 				CCF5BF7B1C506D1900565F2F /* Default-568h@2x.png */,
 				CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */,
 				CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */,
@@ -373,8 +368,6 @@
 				CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */,
 				CCE222ED1C50AF25006B2444 /* FavoriteVC.h */,
 				CCE222EE1C50AF25006B2444 /* FavoriteVC.m */,
-				CCE222F51C510380006B2444 /* ShareVC.h */,
-				CCE222F61C510380006B2444 /* ShareVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -574,7 +567,6 @@
 				CC8C5EE61C4F60DF00372CFF /* SDWebImageDecoder.m in Sources */,
 				CC2212681C51FE8700BC2219 /* FMDatabaseQueue.m in Sources */,
 				CC8C5EE41C4F60DF00372CFF /* SDImageCache.m in Sources */,
-				CCE222F71C510380006B2444 /* ShareVC.m in Sources */,
 				CC8C5EE51C4F60DF00372CFF /* SDWebImageCompat.m in Sources */,
 				CC2212671C51FE8700BC2219 /* FMDatabasePool.m in Sources */,
 				CC8C5EF11C4F60DF00372CFF /* UIView+WebCacheOperation.m in Sources */,
@@ -716,6 +708,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+				);
 				INFOPLIST_FILE = MoodNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -723,6 +719,13 @@
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/Tcl/sqlite3",
 					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_4.4",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/Sina",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/MoodNote/Sina",
+					"$(PROJECT_DIR)/MoodNote/SinaSSO",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyun.MoodNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -737,6 +740,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+				);
 				INFOPLIST_FILE = MoodNote/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -744,6 +751,13 @@
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/Tcl/sqlite3",
 					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_4.4",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/Sina",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk",
+					"$(PROJECT_DIR)/MoodNote/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/MoodNote/Sina",
+					"$(PROJECT_DIR)/MoodNote/SinaSSO",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyun.MoodNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";

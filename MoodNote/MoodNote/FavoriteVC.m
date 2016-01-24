@@ -11,7 +11,7 @@
 #import "DBEngine.h"
 #import "FavoriteCell.h"
 #import "Common.h"
-#import "ShareVC.h"
+#import "UMSocial.h"
 
 @interface FavoriteVC ()<UITableViewDataSource ,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *favorites;
@@ -110,12 +110,15 @@
     [imageData writeToFile:imageDataPath atomically:YES];
     //.关闭图形上下文
     UIGraphicsEndImageContext();
-    
-    ShareVC *VC = [ShareVC new];
-    //    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
-    //模态出的试图控制器透明需要设置此项
-    //    self.modalPresentationStyle = UIModalPresentationCurrentContext;
-    [self presentViewController:VC animated:YES completion:nil];
+
+#pragma mark - UM分享
+    UIImage *shareImage = [UIImage imageWithData:imageData];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"56a3781a67e58e9bf7002cac"
+                                      shareText:[[self getCurrentModelWithButton:sender].title stringByAppendingString:@"      --来自Encounter遇见，心中的小美好。"]
+                                     shareImage:shareImage
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToEmail,UMShareToSms,nil]
+                                       delegate:nil];
 }
 - (IBAction)likeAction:(UIButton *)sender {
     //获取当前Model

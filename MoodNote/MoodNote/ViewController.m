@@ -12,7 +12,6 @@
 #import "ContentCell.h"
 #import "ContentModel.h"
 #import "FXBlurView.h"
-#import "ShareVC.h"
 #import "DBEngine.h"
 #import "UMSocial.h"
 
@@ -27,7 +26,6 @@
 
 @implementation ViewController
 static NSString *identifier = @"ContentCellID";
-static BOOL flag = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -287,12 +285,6 @@ static BOOL flag = NO;
 
 - (void)shareAction
 {
-    
-//    ShareVC *VC = [ShareVC new];
-////    ShareVC *VC1 = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareVCID"];
-//    //模态出的试图控制器透明需要设置此项
-////    self.modalPresentationStyle = UIModalPresentationCurrentContext;
-//    [self presentViewController:VC animated:YES completion:nil];
 #pragma mark - UM分享
     //获取Tempora目录下存储的截屏文件路径
     NSString *tempPath = NSTemporaryDirectory();
@@ -300,11 +292,10 @@ static BOOL flag = NO;
     UIImage *shareImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:imageDataPath]];
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"56a3781a67e58e9bf7002cac"
-                                      shareText:self.currentModel.title
+                                      shareText:[self.currentModel.title stringByAppendingString:@"      --来自Encounter遇见，心中的小美好。"]
                                      shareImage:shareImage
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToQQ,UMShareToEmail,UMShareToQzone,UMShareToSms,nil]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToEmail,UMShareToSms,nil]
                                        delegate:nil];
-    
 }
 
 - (void)likeActionWithButton:(UIButton *)btn
