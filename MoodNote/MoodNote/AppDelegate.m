@@ -109,10 +109,10 @@
     
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:@"56a3781a67e58e9bf7002cac"];
-//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-////    self.window.rootViewController = [self determineIsFirst];
-//    [self.window makeKeyAndVisible];
-//    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [self determineIsFirst];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
