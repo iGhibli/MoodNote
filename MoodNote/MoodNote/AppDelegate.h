@@ -14,5 +14,7 @@
 
 - (void)guideEnd;
 
+- (void)setRootVC;
+
 @end
 

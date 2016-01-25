@@ -9,6 +9,8 @@
 #import "SettingVC.h"
 #import "Common.h"
 #import "SDImageCache.h"
+#import "SettingButton.h"
+#import "AppDelegate.h"
 
 @interface SettingVC ()
 @property (nonatomic, strong) UIView *aboutView;
@@ -21,6 +23,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addSwipeGesture];
+    [self setupSubviews];
+}
+
+- (void)addSwipeGesture
+{
+    //添加下滑手势
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:[UIApplication sharedApplication].delegate action:@selector(swipeDownAction)];
+    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeDown];
+}
+
+- (void)setupSubviews
+{
+    SettingButton *clearBtn = [[SettingButton alloc]init];
+    clearBtn.center = CGPointMake(kScreenW / 4, kScreenH / 4);
+    clearBtn.bounds = CGRectMake(0, 0, 100, 100);
+    [clearBtn setImage:[UIImage imageNamed:@"set-clear"] forState:UIControlStateNormal];
+    [clearBtn setTitle:@"清理缓存" forState:UIControlStateNormal];
+    [clearBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [clearBtn addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:clearBtn];
+    
+    SettingButton *guideBtn = [[SettingButton alloc]init];
+    guideBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH / 4);
+    guideBtn.bounds = CGRectMake(0, 0, 100, 100);
+    [guideBtn setImage:[UIImage imageNamed:@"set-guide"] forState:UIControlStateNormal];
+    [guideBtn setTitle:@"使用引导" forState:UIControlStateNormal];
+    [guideBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [guideBtn addTarget:self action:@selector(guideAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:guideBtn];
+    
+    SettingButton *goodBtn = [[SettingButton alloc]init];
+    goodBtn.center = CGPointMake(kScreenW / 4, kScreenH * 3 / 4);
+    goodBtn.bounds = CGRectMake(0, 0, 100, 100);
+    [goodBtn setImage:[UIImage imageNamed:@"set-good"] forState:UIControlStateNormal];
+    [goodBtn setTitle:@"鼓励支持" forState:UIControlStateNormal];
+    [goodBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [goodBtn addTarget:self action:@selector(goodAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:goodBtn];
+    
+    SettingButton *aboutBtn = [[SettingButton alloc]init];
+    aboutBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH * 3 / 4);
+    aboutBtn.bounds = CGRectMake(0, 0, 100, 100);
+    [aboutBtn setImage:[UIImage imageNamed:@"set-about"] forState:UIControlStateNormal];
+    [aboutBtn setTitle:@"关于应用" forState:UIControlStateNormal];
+    [aboutBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [aboutBtn addTarget:self action:@selector(aboutAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:aboutBtn];
 }
 
 #pragma mark - Getter & Setter
@@ -95,22 +145,18 @@
     return _clearView;
 }
 
-- (void)addSwipeGesture
-{
-    //添加下滑手势
-    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:[UIApplication sharedApplication].delegate action:@selector(swipeDownAction)];
-    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:swipeDown];
-}
-
 #pragma mark - ButtonAction
-- (IBAction)clearAction:(UIButton *)sender {
+- (void)clearAction {
     NSString *memoryString = [NSString stringWithFormat:@"当前缓存:  %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
     _memoryLabel.text = memoryString;
     [self.view addSubview:self.clearView];
 }
+- (void)guideAction {
+    AppDelegate * app = [UIApplication sharedApplication].delegate;
+    [app setRootVC];
+}
 
-- (IBAction)goodAction:(UIButton *)sender {
+- (void)goodAction {
     //跳转到AppStore当前应用界面
     //当前应用的AppID
     int myAppID = 452186370;
@@ -120,7 +166,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
-- (IBAction)aboutAction:(UIButton *)sender {
+- (void)aboutAction {
     [self.view addSubview:self.aboutView];
 }
 
