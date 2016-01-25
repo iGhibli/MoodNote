@@ -19,6 +19,7 @@
 		CC7DDB6B1C55BF4000DF3583 /* SettingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */; };
 		CC7DDB9F1C5618EC00DF3583 /* commom.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDB9E1C5618EC00DF3583 /* commom.png */; };
 		CC7DDBA11C5619C700DF3583 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */; };
+		CC7DDBA31C561B8A00DF3583 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7DDBA21C561B8A00DF3583 /* MessageUI.framework */; };
 		CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EBE1C4F399E00372CFF /* ContentModel.m */; };
 		CC8C5EE21C4F60DF00372CFF /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC21C4F60DF00372CFF /* MKAnnotationView+WebCache.m */; };
 		CC8C5EE31C4F60DF00372CFF /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC41C4F60DF00372CFF /* NSData+ImageContentType.m */; };
@@ -94,6 +95,7 @@
 		CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingButton.m; sourceTree = "<group>"; };
 		CC7DDB9E1C5618EC00DF3583 /* commom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commom.png; sourceTree = "<group>"; };
 		CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CC7DDBA21C561B8A00DF3583 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CC8C5EBD1C4F399E00372CFF /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
 		CC8C5EBE1C4F399E00372CFF /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		CC8C5EC11C4F60DF00372CFF /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7DDBA31C561B8A00DF3583 /* MessageUI.framework in Frameworks */,
 				CCC0A2501C53B01900D29C22 /* libUMSocial_Sdk_4.4.a in Frameworks */,
 				CCC0A1F61C53198C00D29C22 /* libsqlite3.0.tbd in Frameworks */,
 			);
@@ -324,6 +327,7 @@
 		CCEEE9D31C4E3392005C9C93 = {
 			isa = PBXGroup;
 			children = (
+				CC7DDBA21C561B8A00DF3583 /* MessageUI.framework */,
 				CCEEE9DE1C4E3392005C9C93 /* MoodNote */,
 				CCEEE9DD1C4E3392005C9C93 /* Products */,
 			);

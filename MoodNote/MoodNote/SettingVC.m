@@ -91,10 +91,19 @@
         author.textAlignment = NSTextAlignmentCenter;
         [_aboutView addSubview:author];
         
+#if 1
+        UIButton *emailBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, kScreenH / 2, kScreenW - 20, 30)];
+        [emailBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [emailBtn setTitle:@"Email: iGhibli@163.com" forState:UIControlStateNormal];
+        [emailBtn addTarget:self action:@selector(sendEmailToMe) forControlEvents:UIControlEventTouchUpInside];
+        [_aboutView addSubview:emailBtn];
+#else
         UILabel *email = [[UILabel alloc]initWithFrame:CGRectMake(10, kScreenH / 2, kScreenW - 20, 30)];
         email.text = @"Email: iGhibli@163.com";
         email.textAlignment = NSTextAlignmentCenter;
         [_aboutView addSubview:email];
+#endif
+        
         UILabel *version = [[UILabel alloc]initWithFrame:CGRectMake(10, kScreenH / 2 + 35, kScreenW - 20, 30)];
         version.text = @"Version: 1.0";
         version.font = [UIFont systemFontOfSize:16];
@@ -185,6 +194,26 @@
     //清除缓存
     [[SDImageCache sharedImageCache] clearDisk];
     [self hiddenView];
+}
+
+- (void)sendEmailToMe
+{
+    NSMutableString *mailUrl = [[NSMutableString alloc]init];
+    //添加收件人
+    NSArray *toRecipients = [NSArray arrayWithObject: @"iGhibli@163.com"];
+    [mailUrl appendFormat:@"mailto:%@", [toRecipients componentsJoinedByString:@","]];
+    //添加抄送
+    NSArray *ccRecipients = [NSArray arrayWithObjects:@"iGhibli@163.com", nil];
+    [mailUrl appendFormat:@"?cc=%@", [ccRecipients componentsJoinedByString:@","]];
+    //添加密送
+    NSArray *bccRecipients = [NSArray arrayWithObjects:@"iGhibli@163.com", nil];
+    [mailUrl appendFormat:@"&bcc=%@", [bccRecipients componentsJoinedByString:@","]];
+    //添加主题
+    [mailUrl appendString:@"&subject=Encounter遇见，心中的小美好。"];
+    //添加邮件内容
+    [mailUrl appendString:@"&body=<b>eyu,遇见就是缘分！</b> 您有什么建议或疑惑，请在这里写下并发送给我，我将随时为您解答！"];
+    NSString* email = [mailUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:email]];
 }
 
 @end
