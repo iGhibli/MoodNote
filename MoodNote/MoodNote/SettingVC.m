@@ -86,7 +86,7 @@
 //        [self.view addSubview:_aboutView];
         
         UILabel *author = [[UILabel alloc]initWithFrame:CGRectMake(10, kScreenH / 2 - 35, kScreenW - 20, 30)];
-        author.text = @"Author: ZhouShuaijie";
+        author.text = @"Author: iGhibli";
         author.font = [UIFont systemFontOfSize:22];
         author.textAlignment = NSTextAlignmentCenter;
         [_aboutView addSubview:author];

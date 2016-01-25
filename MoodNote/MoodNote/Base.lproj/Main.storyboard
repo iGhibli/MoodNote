@@ -67,8 +67,8 @@
                                                                     <rect key="frame" x="47" y="35" width="46" height="30"/>
                                                                     <animations/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="t6w-Mm-9Q0"/>
-                                                                        <constraint firstAttribute="width" constant="20" id="uXS-iq-7dL"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="t6w-Mm-9Q0"/>
+                                                                        <constraint firstAttribute="width" constant="40" id="uXS-iq-7dL"/>
                                                                     </constraints>
                                                                     <state key="normal" backgroundImage="litle-copy-1"/>
                                                                     <state key="highlighted" backgroundImage="litle-copy-2"/>
@@ -80,8 +80,8 @@
                                                                     <rect key="frame" x="434" y="35" width="46" height="30"/>
                                                                     <animations/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="Grl-0I-6y6"/>
-                                                                        <constraint firstAttribute="width" constant="20" id="dFd-bM-ZaE"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="Grl-0I-6y6"/>
+                                                                        <constraint firstAttribute="width" constant="40" id="dFd-bM-ZaE"/>
                                                                     </constraints>
                                                                     <state key="normal" backgroundImage="litle-like-3"/>
                                                                     <state key="selected" backgroundImage="litle-like-3"/>
@@ -94,8 +94,8 @@
                                                                     <rect key="frame" x="244" y="35" width="46" height="30"/>
                                                                     <animations/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="QLS-Ff-HE0"/>
-                                                                        <constraint firstAttribute="width" constant="20" id="Qrm-37-S7q"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="QLS-Ff-HE0"/>
+                                                                        <constraint firstAttribute="width" constant="40" id="Qrm-37-S7q"/>
                                                                     </constraints>
                                                                     <state key="normal" backgroundImage="litle-link-1"/>
                                                                     <state key="highlighted" backgroundImage="litle-link-2"/>
@@ -107,7 +107,7 @@
                                                             <animations/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="9ew-ey-RQE"/>
+                                                                <constraint firstAttribute="height" constant="50" id="9ew-ey-RQE"/>
                                                                 <constraint firstItem="j9e-jf-oeK" firstAttribute="centerX" secondItem="dcf-oF-l6v" secondAttribute="centerX" multiplier="0.5" id="Sop-8k-p53"/>
                                                                 <constraint firstItem="XZz-4R-LjG" firstAttribute="centerY" secondItem="dcf-oF-l6v" secondAttribute="centerY" id="fAg-9Y-pWK"/>
                                                                 <constraint firstItem="8Zt-oH-yPs" firstAttribute="centerX" secondItem="dcf-oF-l6v" secondAttribute="centerX" multiplier="1.5" id="mqf-lg-lxm"/>
@@ -128,12 +128,12 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="0I0-Tc-GTf" firstAttribute="leading" secondItem="WWm-U8-vAo" secondAttribute="leading" constant="10" id="0cA-tf-SdI"/>
-                                                        <constraint firstItem="0I0-Tc-GTf" firstAttribute="top" secondItem="PJZ-gw-0Su" secondAttribute="bottom" constant="30" id="8fh-uo-GQT"/>
+                                                        <constraint firstItem="0I0-Tc-GTf" firstAttribute="top" secondItem="PJZ-gw-0Su" secondAttribute="bottom" constant="20" id="8fh-uo-GQT"/>
                                                         <constraint firstAttribute="trailing" secondItem="0I0-Tc-GTf" secondAttribute="trailing" constant="10" id="9a5-bC-Yuw"/>
                                                         <constraint firstAttribute="trailing" secondItem="PJZ-gw-0Su" secondAttribute="trailing" constant="10" id="Ph4-1Y-Exj"/>
                                                         <constraint firstItem="PJZ-gw-0Su" firstAttribute="leading" secondItem="WWm-U8-vAo" secondAttribute="leading" constant="10" id="RP8-50-eNu"/>
                                                         <constraint firstAttribute="bottom" secondItem="dcf-oF-l6v" secondAttribute="bottom" id="cNu-Dw-co5"/>
-                                                        <constraint firstItem="dcf-oF-l6v" firstAttribute="top" secondItem="0I0-Tc-GTf" secondAttribute="bottom" constant="20" id="dlJ-uB-wwO"/>
+                                                        <constraint firstItem="dcf-oF-l6v" firstAttribute="top" secondItem="0I0-Tc-GTf" secondAttribute="bottom" constant="10" id="dlJ-uB-wwO"/>
                                                         <constraint firstItem="dcf-oF-l6v" firstAttribute="leading" secondItem="WWm-U8-vAo" secondAttribute="leading" id="gB1-g0-Nkb"/>
                                                         <constraint firstAttribute="trailing" secondItem="dcf-oF-l6v" secondAttribute="trailing" id="pio-UQ-RBr"/>
                                                         <constraint firstItem="PJZ-gw-0Su" firstAttribute="top" secondItem="WWm-U8-vAo" secondAttribute="top" constant="10" id="yea-Pf-6PY"/>
@@ -335,11 +335,11 @@
         <image name="guide_2" width="1242" height="2209"/>
         <image name="guide_3" width="1242" height="2208"/>
         <image name="guide_4" width="1242" height="2208"/>
-        <image name="litle-copy-1" width="15" height="15"/>
-        <image name="litle-copy-2" width="15" height="15"/>
-        <image name="litle-like-2" width="15" height="15"/>
-        <image name="litle-like-3" width="15" height="15"/>
-        <image name="litle-link-1" width="15" height="15"/>
-        <image name="litle-link-2" width="15" height="15"/>
+        <image name="litle-copy-1" width="30" height="30"/>
+        <image name="litle-copy-2" width="30" height="30"/>
+        <image name="litle-like-2" width="30" height="30"/>
+        <image name="litle-like-3" width="30" height="30"/>
+        <image name="litle-link-1" width="30" height="30"/>
+        <image name="litle-link-2" width="30" height="30"/>
     </resources>
 </document>

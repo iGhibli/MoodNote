@@ -15,7 +15,6 @@
 #import "DBEngine.h"
 #import "UMSocial.h"
 
-
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *ContentArray;
@@ -127,7 +126,7 @@ static NSString *identifier = @"ContentCellID";
 {
     //获取时间，日期
     NSDate *currentDate = [NSDate date];
-    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24 * 60 * 60)];
+//    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(24 * 60 * 60)];
     //初始化一个时间格式化工具
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     //设置时间格式
@@ -136,7 +135,8 @@ static NSString *identifier = @"ContentCellID";
     NSString *dateString = [dateFormatter stringFromDate:currentDate];
 //    NSLog(@"%@",dateString);
     //拼接URL字符串后部分
-    NSString *suffixString = [@"ten" stringByAppendingPathComponent:dateString];
+    NSString *suffixString = [@"ten" stringByAppendingPathComponent:@"2016-01-14"];   //测试总高度大于屏幕高度使用
+//    NSString *suffixString = [@"ten" stringByAppendingPathComponent:dateString];
     //拼接完整的URL
     NSString *URLString = [kBaseURL stringByAppendingPathComponent:suffixString];
 //    NSLog(@"%@",URLString);
@@ -170,14 +170,14 @@ static NSString *identifier = @"ContentCellID";
     return kScreenW;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+   [cell bandingContentCellWithModel:self.ContentArray[indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.transform = CGAffineTransformMakeRotation(M_PI_2);
 
-    [cell bandingContentCellWithModel:self.ContentArray[indexPath.row]];
+    
     return cell;
 }
 

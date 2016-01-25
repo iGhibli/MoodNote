@@ -51,9 +51,12 @@
     
     //控件布局
     if (totalH >= kScreenH) {
-#warning Not Finish!
-        self.pic.frame = CGRectMake(10, (kScreenH - totalH) / 2, displayW, displayH);
-        self.title.frame = CGRectMake(10, self.pic.frame.origin.y + displayH + 10, titleSize.width, titleSize.height);
+        CGFloat scale = (kScreenH - titleSize.height - 10 - 10 - 10) / displayH;
+        CGFloat picW = displayW * scale;
+        CGFloat picH = displayH * scale;
+
+        self.pic.frame = CGRectMake((kScreenW - picW) / 2, 10, picW, picH);
+        self.title.frame = CGRectMake(10, self.pic.frame.origin.y + picH + 10, titleSize.width, titleSize.height);
     }else {
         self.pic.frame = CGRectMake(10, (kScreenH - totalH) / 2, displayW, displayH);
         self.title.frame = CGRectMake(10, self.pic.frame.origin.y + displayH + 10, titleSize.width, titleSize.height);

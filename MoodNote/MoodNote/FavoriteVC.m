@@ -94,7 +94,7 @@
     UIView *currentContentView = [tempView superview];
     
 #pragma mark - 截屏
-    CGSize imageSize = CGSizeMake(currentContentView.frame.size.width, currentContentView.frame.size.height - 40);
+    CGSize imageSize = CGSizeMake(currentContentView.frame.size.width, currentContentView.frame.size.height - 50);
     //1.开启图片上下文
     UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0.0);
     //2.获取当前上下文
