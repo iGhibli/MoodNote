@@ -40,6 +40,7 @@
     clearBtn.center = CGPointMake(kScreenW / 4, kScreenH / 4);
     clearBtn.bounds = CGRectMake(0, 0, 100, 100);
     [clearBtn setImage:[UIImage imageNamed:@"set-clear"] forState:UIControlStateNormal];
+    clearBtn.titleLabel.font = [UIFont systemFontOfSize:10];
     [clearBtn setTitle:@"清理缓存" forState:UIControlStateNormal];
     [clearBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [clearBtn addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
@@ -49,6 +50,7 @@
     guideBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH / 4);
     guideBtn.bounds = CGRectMake(0, 0, 100, 100);
     [guideBtn setImage:[UIImage imageNamed:@"set-guide"] forState:UIControlStateNormal];
+    guideBtn.titleLabel.font = [UIFont systemFontOfSize:10];
     [guideBtn setTitle:@"使用引导" forState:UIControlStateNormal];
     [guideBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [guideBtn addTarget:self action:@selector(guideAction) forControlEvents:UIControlEventTouchUpInside];
@@ -58,6 +60,7 @@
     goodBtn.center = CGPointMake(kScreenW / 4, kScreenH * 3 / 4);
     goodBtn.bounds = CGRectMake(0, 0, 100, 100);
     [goodBtn setImage:[UIImage imageNamed:@"set-good"] forState:UIControlStateNormal];
+    goodBtn.titleLabel.font = [UIFont systemFontOfSize:10];
     [goodBtn setTitle:@"鼓励支持" forState:UIControlStateNormal];
     [goodBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [goodBtn addTarget:self action:@selector(goodAction) forControlEvents:UIControlEventTouchUpInside];
@@ -67,6 +70,7 @@
     aboutBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH * 3 / 4);
     aboutBtn.bounds = CGRectMake(0, 0, 100, 100);
     [aboutBtn setImage:[UIImage imageNamed:@"set-about"] forState:UIControlStateNormal];
+    aboutBtn.titleLabel.font = [UIFont systemFontOfSize:10];
     [aboutBtn setTitle:@"关于应用" forState:UIControlStateNormal];
     [aboutBtn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [aboutBtn addTarget:self action:@selector(aboutAction) forControlEvents:UIControlEventTouchUpInside];
@@ -159,10 +163,10 @@
 - (void)goodAction {
     //跳转到AppStore当前应用界面
     //当前应用的AppID
-    int myAppID = 452186370;
+    int myAPPID = 1077987843;
     NSString *str = [NSString stringWithFormat:
-                     @"itms-apps://itunes.apple.com/cn/app/bai-du-tu-zhuan-ye-tu-zhi/id%d?mt=8",
-                     myAppID ];
+                     @"itms-apps://itunes.apple.com/cn/app/encounter/id%d?mt=8",
+                     myAPPID ];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 

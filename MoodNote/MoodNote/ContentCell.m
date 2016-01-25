@@ -21,14 +21,16 @@
 
 - (void)bandingContentCellWithModel:(ContentModel *)model
 {
+    //重新布局
+    [self layoutCellContentWithModel:model];
     _model = model;
     _title.text = model.title;
+
     //使用SDWebImage加载网络图片数据
     NSString *imageURLStr = [kImageBaseURL stringByAppendingPathComponent:model.pic_url];
     [self.pic sd_setImageWithURL:[NSURL URLWithString:imageURLStr]];
     
-    //重新布局
-    [self layoutCellContentWithModel:model];
+    
 }
 
 - (void)layoutCellContentWithModel:(ContentModel *)model

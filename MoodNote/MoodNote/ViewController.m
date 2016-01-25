@@ -173,7 +173,7 @@ static NSString *identifier = @"ContentCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.transform = CGAffineTransformMakeRotation(M_PI_2);
 

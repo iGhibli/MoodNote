@@ -16,8 +16,9 @@
 		CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212871C5246AC00BC2219 /* FavoriteCell.m */; };
 		CC22128A1C52540600BC2219 /* Favorites.db in Resources */ = {isa = PBXBuildFile; fileRef = CC2212891C52540600BC2219 /* Favorites.db */; };
 		CC2726DA1C54F4E8003D0B3D /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2726D91C54F4E8003D0B3D /* GuideVC.m */; };
-		CC2726DC1C55123F003D0B3D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC2726DB1C55123F003D0B3D /* Default-568h@2x.png */; };
 		CC7DDB6B1C55BF4000DF3583 /* SettingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */; };
+		CC7DDB9F1C5618EC00DF3583 /* commom.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDB9E1C5618EC00DF3583 /* commom.png */; };
+		CC7DDBA11C5619C700DF3583 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */; };
 		CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EBE1C4F399E00372CFF /* ContentModel.m */; };
 		CC8C5EE21C4F60DF00372CFF /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC21C4F60DF00372CFF /* MKAnnotationView+WebCache.m */; };
 		CC8C5EE31C4F60DF00372CFF /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EC41C4F60DF00372CFF /* NSData+ImageContentType.m */; };
@@ -57,7 +58,6 @@
 		CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9E81C4E3392005C9C93 /* Main.storyboard */; };
 		CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */; };
 		CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */; };
-		CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */; };
 		CCEEEA151C4E685E005C9C93 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA031C4E685E005C9C93 /* AFHTTPRequestOperation.m */; };
 		CCEEEA161C4E685E005C9C93 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA051C4E685E005C9C93 /* AFHTTPRequestOperationManager.m */; };
 		CCEEEA171C4E685E005C9C93 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEEA071C4E685E005C9C93 /* AFHTTPSessionManager.m */; };
@@ -90,9 +90,10 @@
 		CC2212891C52540600BC2219 /* Favorites.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Favorites.db; sourceTree = "<group>"; };
 		CC2726D81C54F4E8003D0B3D /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		CC2726D91C54F4E8003D0B3D /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
-		CC2726DB1C55123F003D0B3D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CC7DDB691C55BF4000DF3583 /* SettingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingButton.h; sourceTree = "<group>"; };
 		CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingButton.m; sourceTree = "<group>"; };
+		CC7DDB9E1C5618EC00DF3583 /* commom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commom.png; sourceTree = "<group>"; };
+		CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CC8C5EBD1C4F399E00372CFF /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
 		CC8C5EBE1C4F399E00372CFF /* ContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentModel.m; sourceTree = "<group>"; };
 		CC8C5EC11C4F60DF00372CFF /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -170,7 +171,6 @@
 		CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEEE9EE1C4E3392005C9C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCEEE9F01C4E3392005C9C93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiangkuang.png; sourceTree = "<group>"; };
 		CCEEE9FF1C4E4D39005C9C93 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		CCEEEA021C4E685E005C9C93 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		CCEEEA031C4E685E005C9C93 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -354,9 +354,9 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CC2726DB1C55123F003D0B3D /* Default-568h@2x.png */,
+				CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */,
+				CC7DDB9E1C5618EC00DF3583 /* commom.png */,
 				CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */,
-				CCEEE9FD1C4E3EA5005C9C93 /* xiangkuang.png */,
 				CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */,
 				CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */,
 				CCEEE9F01C4E3392005C9C93 /* Info.plist */,
@@ -528,11 +528,11 @@
 				CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */,
 				CCC0A2581C53B01900D29C22 /* UMSShareListController.xib in Resources */,
 				CCC0A24F1C53B01900D29C22 /* UMSocialLocalizable.strings in Resources */,
+				CC7DDB9F1C5618EC00DF3583 /* commom.png in Resources */,
 				CCC0A2551C53B01900D29C22 /* UMShareEditViewControlleriPad.xib in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
+				CC7DDBA11C5619C700DF3583 /* Default-568h@2x.png in Resources */,
 				CC22128A1C52540600BC2219 /* Favorites.db in Resources */,
-				CC2726DC1C55123F003D0B3D /* Default-568h@2x.png in Resources */,
-				CCEEE9FE1C4E3EA5005C9C93 /* xiangkuang.png in Resources */,
 				CCC0A2541C53B01900D29C22 /* UMShareEditViewController.xib in Resources */,
 				CCC0A2571C53B01900D29C22 /* UMSnsAccountViewController.xib in Resources */,
 				CCC0A2521C53B01900D29C22 /* UMSCommentInputController.xib in Resources */,

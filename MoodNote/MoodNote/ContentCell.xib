@@ -24,7 +24,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xiangkuang.png" translatesAutoresizingMaskIntoConstraints="NO" id="sKb-xV-uu8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKb-xV-uu8">
                                 <rect key="frame" x="10" y="8" width="342" height="379"/>
                                 <animations/>
                             </imageView>
@@ -48,7 +48,4 @@
             <point key="canvasLocation" x="359" y="412.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="xiangkuang.png" width="664" height="479"/>
-    </resources>
 </document>

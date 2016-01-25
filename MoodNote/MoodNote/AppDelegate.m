@@ -35,17 +35,23 @@
         UIButton *homeBtn = [[UIButton alloc]init];
         homeBtn.center = CGPointMake(kScreenW / 4, kScreenH / 6 / 2);
         homeBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
-        [homeBtn setImage:[UIImage imageNamed:@"btn_main_normal"] forState:UIControlStateNormal];
+        UIImage *homeImage = [UIImage imageNamed:@"btn_main_normal"];
+        homeImage = [homeImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [homeBtn setImage:homeImage forState:UIControlStateNormal];
+        homeBtn.tintColor = [UIColor whiteColor];
         [homeBtn setImage:[UIImage imageNamed:@"btn_main_highlight"] forState:UIControlStateHighlighted];
         [homeBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
         homeBtn.tag = 10;
         [topView addSubview:homeBtn];
         
-        //创建HomeButton
+        //创建SettingButton
         UIButton *settingBtn = [[UIButton alloc]init];
         settingBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH / 6 / 2);
         settingBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
-        [settingBtn setImage:[UIImage imageNamed:@"btn_setting_normal"] forState:UIControlStateNormal];
+        settingBtn.tintColor = [UIColor whiteColor];
+        UIImage *settingImage = [UIImage imageNamed:@"btn_setting_normal"];
+        settingImage = [settingImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [settingBtn setImage:settingImage forState:UIControlStateNormal];
         [settingBtn setImage:[UIImage imageNamed:@"btn_setting_highlight"] forState:UIControlStateHighlighted];
         [settingBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
         settingBtn.tag = 12;
@@ -55,7 +61,10 @@
         UIButton *favoriteBtn = [[UIButton alloc]init];
         favoriteBtn.center = CGPointMake(kScreenW / 2, kScreenH / 6 / 2);
         favoriteBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
-        [favoriteBtn setImage:[UIImage imageNamed:@"btn_fav_normal"] forState:UIControlStateNormal];
+        favoriteBtn.tintColor = [UIColor whiteColor];
+        UIImage *favoriteImage = [UIImage imageNamed:@"btn_fav_normal"];
+        favoriteImage = [favoriteImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [favoriteBtn setImage:favoriteImage forState:UIControlStateNormal];
         [favoriteBtn setImage:[UIImage imageNamed:@"btn_fav_highlight"] forState:UIControlStateHighlighted];
         [favoriteBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
         favoriteBtn.tag = 11;
