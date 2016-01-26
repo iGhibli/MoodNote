@@ -135,8 +135,8 @@ static NSString *identifier = @"ContentCellID";
     NSString *dateString = [dateFormatter stringFromDate:currentDate];
 //    NSLog(@"%@",dateString);
     //拼接URL字符串后部分
-    NSString *suffixString = [@"ten" stringByAppendingPathComponent:@"2016-01-14"];   //测试总高度大于屏幕高度使用
-//    NSString *suffixString = [@"ten" stringByAppendingPathComponent:dateString];
+//    NSString *suffixString = [@"ten" stringByAppendingPathComponent:@"2016-01-14"];   //测试总高度大于屏幕高度使用
+    NSString *suffixString = [@"ten" stringByAppendingPathComponent:dateString];
     //拼接完整的URL
     NSString *URLString = [kBaseURL stringByAppendingPathComponent:suffixString];
 //    NSLog(@"%@",URLString);

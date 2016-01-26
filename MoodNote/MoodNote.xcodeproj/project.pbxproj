@@ -495,7 +495,7 @@
 				TargetAttributes = {
 					CCEEE9DB1C4E3392005C9C93 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 3MNL697K64;
+						DevelopmentTeam = LSRRXAH5MP;
 					};
 				};
 			};
@@ -644,8 +644,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dorayo student (93QF9C8P8D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
@@ -668,7 +668,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
+				PROVISIONING_PROFILE = "76ee27d4-3818-460f-9cc6-c59918108343";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -690,8 +690,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: dorayo student (93QF9C8P8D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dorayo student (93QF9C8P8D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -707,7 +707,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "86754809-db58-4b7a-81a8-30c2e5b08852";
+				PROVISIONING_PROFILE = "76ee27d4-3818-460f-9cc6-c59918108343";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -739,7 +739,7 @@
 					"$(PROJECT_DIR)/MoodNote/Sina",
 					"$(PROJECT_DIR)/MoodNote/SinaSSO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qy15096.Encounter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qy15094.Encounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -771,7 +771,7 @@
 					"$(PROJECT_DIR)/MoodNote/Sina",
 					"$(PROJECT_DIR)/MoodNote/SinaSSO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qy15096.Encounter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qy15094.Encounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
