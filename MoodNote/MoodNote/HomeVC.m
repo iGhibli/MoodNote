@@ -105,7 +105,7 @@
         bottomView.tag = 23;
         [_blurView addSubview:bottomView];
         
-        //创建HomeButton
+        //创建copyButton
         UIButton *copyBtn = [[UIButton alloc]init];
         copyBtn.center = CGPointMake(kScreenW / 4, kScreenH / 6 / 2);
         copyBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
@@ -115,7 +115,7 @@
         copyBtn.tag = 20;
         [bottomView addSubview:copyBtn];
         
-        //创建HomeButton
+        //创建likeButton
         UIButton *likeBtn = [[UIButton alloc]init];
         likeBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH / 6 / 2);
         likeBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
@@ -126,7 +126,7 @@
         likeBtn.tag = 22;
         [bottomView addSubview:likeBtn];
         
-        //创建FavoriteButton
+        //创建shareButton
         UIButton *shareBtn = [[UIButton alloc]init];
         shareBtn.center = CGPointMake(kScreenW / 2, kScreenH / 6 / 2);
         shareBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);

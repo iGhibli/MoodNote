@@ -28,7 +28,7 @@
         UIView *topView = [[UIView alloc]init];
         topView.frame = CGRectMake(0, 0, kScreenW, kScreenH / 6);
         topView.backgroundColor = [UIColor grayColor];
-        topView.alpha = 0.5;
+//        topView.alpha = 1.0;
         [_blurView addSubview:topView];
         
         //创建HomeButton
@@ -119,8 +119,8 @@
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:@"56a3781a67e58e9bf7002cac"];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.rootViewController = [self determineIsFirst];
-    self.window.rootViewController = [self instantiateVCWithIdentifier:@"HomeVCID"];
+
+    self.window.rootViewController = [self determineIsFirst];
 
     [self.window makeKeyAndVisible];
 

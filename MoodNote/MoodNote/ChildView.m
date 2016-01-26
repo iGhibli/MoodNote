@@ -53,7 +53,7 @@
     
     //使用SDWebImage加载网络图片数据
     NSString *imageURLStr = [kImageBaseURL stringByAppendingPathComponent:model.pic_url];
-    [picView sd_setImageWithURL:[NSURL URLWithString:imageURLStr] placeholderImage:[UIImage imageNamed:@"set-about"]];
+    [picView sd_setImageWithURL:[NSURL URLWithString:imageURLStr]];
     titleLabel.text = model.title;
     [self addSubview:picView];
     [self addSubview:titleLabel];

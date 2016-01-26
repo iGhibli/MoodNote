@@ -172,7 +172,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="eau-Au-FKs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround6P.png" translatesAutoresizingMaskIntoConstraints="NO" id="eau-Au-FKs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
@@ -362,8 +362,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackGround6P.png" width="1242" height="2208"/>
         <image name="TopIMG" width="781" height="83"/>
-        <image name="bg.png" width="2587" height="4599"/>
         <image name="guide_1" width="1244" height="2208"/>
         <image name="guide_2" width="1242" height="2209"/>
         <image name="guide_3" width="1242" height="2208"/>

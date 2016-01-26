@@ -10,7 +10,7 @@
 		CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0737FB1C57714E00012DAD /* JT3DScrollView.m */; };
 		CC0737FF1C57731B00012DAD /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0737FE1C57731B00012DAD /* HomeVC.m */; };
 		CC0738021C57798500012DAD /* ChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0738011C57798500012DAD /* ChildView.m */; };
-		CC0738081C57923F00012DAD /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0738071C57923F00012DAD /* bg.png */; };
+		CC0738101C57A75500012DAD /* BackGround6P.png in Resources */ = {isa = PBXBuildFile; fileRef = CC07380F1C57A75500012DAD /* BackGround6P.png */; };
 		CC2212581C51F0CB00BC2219 /* DBEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212571C51F0CB00BC2219 /* DBEngine.m */; };
 		CC2212651C51FE8700BC2219 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125B1C51FE8700BC2219 /* FMDatabase.m */; };
 		CC2212661C51FE8700BC2219 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125D1C51FE8700BC2219 /* FMDatabaseAdditions.m */; };
@@ -81,7 +81,7 @@
 		CC0737FE1C57731B00012DAD /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
 		CC0738001C57798500012DAD /* ChildView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildView.h; sourceTree = "<group>"; };
 		CC0738011C57798500012DAD /* ChildView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildView.m; sourceTree = "<group>"; };
-		CC0738071C57923F00012DAD /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		CC07380F1C57A75500012DAD /* BackGround6P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackGround6P.png; sourceTree = "<group>"; };
 		CC2212561C51F0CB00BC2219 /* DBEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEngine.h; sourceTree = "<group>"; };
 		CC2212571C51F0CB00BC2219 /* DBEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEngine.m; sourceTree = "<group>"; };
 		CC22125A1C51FE8700BC2219 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CC0738071C57923F00012DAD /* bg.png */,
+				CC07380F1C57A75500012DAD /* BackGround6P.png */,
 				CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */,
 				CC7DDB9E1C5618EC00DF3583 /* commom.png */,
 				CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */,
@@ -547,12 +547,12 @@
 			files = (
 				CCC0A2511C53B01900D29C22 /* UMSCommentDetailController.xib in Resources */,
 				CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */,
-				CC0738081C57923F00012DAD /* bg.png in Resources */,
 				CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */,
 				CCC0A2581C53B01900D29C22 /* UMSShareListController.xib in Resources */,
 				CCC0A24F1C53B01900D29C22 /* UMSocialLocalizable.strings in Resources */,
 				CC7DDB9F1C5618EC00DF3583 /* commom.png in Resources */,
 				CCC0A2551C53B01900D29C22 /* UMShareEditViewControlleriPad.xib in Resources */,
+				CC0738101C57A75500012DAD /* BackGround6P.png in Resources */,
 				CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */,
 				CC7DDBA11C5619C700DF3583 /* Default-568h@2x.png in Resources */,
 				CC22128A1C52540600BC2219 /* Favorites.db in Resources */,
