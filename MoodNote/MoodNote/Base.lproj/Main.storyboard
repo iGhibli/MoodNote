@@ -6,25 +6,6 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="quf-PR-q2j">
-            <objects>
-                <viewController storyboardIdentifier="HomeVCID" id="Ivr-Aw-4bd" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="r5x-dg-LLu"/>
-                        <viewControllerLayoutGuide type="bottom" id="tiE-oc-Ajh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZEb-r2-bto">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="37d-mk-5w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="19" y="429"/>
-        </scene>
         <!--FavoriteVC-->
         <scene sceneID="Qex-eS-YPa">
             <objects>
@@ -179,6 +160,57 @@
             </objects>
             <point key="canvasLocation" x="637" y="429"/>
         </scene>
+        <!--HomeVC-->
+        <scene sceneID="YOa-jT-Hgy">
+            <objects>
+                <viewController storyboardIdentifier="HomeVCID" id="InA-KH-Uj2" customClass="HomeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cID-sM-7e9"/>
+                        <viewControllerLayoutGuide type="bottom" id="vEa-nR-F0w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sG5-wp-QIo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="eau-Au-FKs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DU-H0-q1f" customClass="JT3DScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hMj-9C-RLP" appends="YES" id="LKh-F3-NO5"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2DU-H0-q1f" secondAttribute="trailing" id="Nqa-g8-bMm"/>
+                            <constraint firstItem="eau-Au-FKs" firstAttribute="top" secondItem="sG5-wp-QIo" secondAttribute="top" id="Rdp-c3-zDf"/>
+                            <constraint firstAttribute="trailing" secondItem="eau-Au-FKs" secondAttribute="trailing" id="V0H-gw-O5q"/>
+                            <constraint firstItem="eau-Au-FKs" firstAttribute="leading" secondItem="sG5-wp-QIo" secondAttribute="leading" id="YRQ-kC-NMT"/>
+                            <constraint firstAttribute="bottom" secondItem="2DU-H0-q1f" secondAttribute="bottom" id="iHu-OF-Tpy"/>
+                            <constraint firstAttribute="bottom" secondItem="eau-Au-FKs" secondAttribute="bottom" id="jY9-2e-DKq"/>
+                            <constraint firstItem="2DU-H0-q1f" firstAttribute="leading" secondItem="sG5-wp-QIo" secondAttribute="leading" id="msw-GL-bVp"/>
+                            <constraint firstItem="2DU-H0-q1f" firstAttribute="top" secondItem="sG5-wp-QIo" secondAttribute="top" id="uyX-60-N6j"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="2DU-H0-q1f" id="1mF-JT-LtD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efe-dg-0ky" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hMj-9C-RLP">
+                    <connections>
+                        <action selector="clickAction:" destination="InA-KH-Uj2" id="Bo8-Fl-55c"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="19" y="429"/>
+        </scene>
         <!--GuideVC-->
         <scene sceneID="YOx-WI-BaB">
             <objects>
@@ -331,6 +363,7 @@
     </scenes>
     <resources>
         <image name="TopIMG" width="781" height="83"/>
+        <image name="bg.png" width="2587" height="4599"/>
         <image name="guide_1" width="1244" height="2208"/>
         <image name="guide_2" width="1242" height="2209"/>
         <image name="guide_3" width="1242" height="2208"/>

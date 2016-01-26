@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0737FB1C57714E00012DAD /* JT3DScrollView.m */; };
+		CC0737FF1C57731B00012DAD /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0737FE1C57731B00012DAD /* HomeVC.m */; };
+		CC0738021C57798500012DAD /* ChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0738011C57798500012DAD /* ChildView.m */; };
+		CC0738081C57923F00012DAD /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CC0738071C57923F00012DAD /* bg.png */; };
 		CC2212581C51F0CB00BC2219 /* DBEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212571C51F0CB00BC2219 /* DBEngine.m */; };
 		CC2212651C51FE8700BC2219 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125B1C51FE8700BC2219 /* FMDatabase.m */; };
 		CC2212661C51FE8700BC2219 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125D1C51FE8700BC2219 /* FMDatabaseAdditions.m */; };
@@ -54,7 +58,6 @@
 		CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222EE1C50AF25006B2444 /* FavoriteVC.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
 		CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */; };
-		CCEEE9E71C4E3392005C9C93 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E61C4E3392005C9C93 /* ViewController.m */; };
 		CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9E81C4E3392005C9C93 /* Main.storyboard */; };
 		CCEEE9EC1C4E3392005C9C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */; };
 		CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9ED1C4E3392005C9C93 /* LaunchScreen.storyboard */; };
@@ -72,6 +75,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0737FA1C57714E00012DAD /* JT3DScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JT3DScrollView.h; sourceTree = "<group>"; };
+		CC0737FB1C57714E00012DAD /* JT3DScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JT3DScrollView.m; sourceTree = "<group>"; };
+		CC0737FD1C57731B00012DAD /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		CC0737FE1C57731B00012DAD /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		CC0738001C57798500012DAD /* ChildView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildView.h; sourceTree = "<group>"; };
+		CC0738011C57798500012DAD /* ChildView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildView.m; sourceTree = "<group>"; };
+		CC0738071C57923F00012DAD /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		CC2212561C51F0CB00BC2219 /* DBEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEngine.h; sourceTree = "<group>"; };
 		CC2212571C51F0CB00BC2219 /* DBEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEngine.m; sourceTree = "<group>"; };
 		CC22125A1C51FE8700BC2219 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -165,8 +175,6 @@
 		CCEEE9E01C4E3392005C9C93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCEEE9E21C4E3392005C9C93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CCEEE9E51C4E3392005C9C93 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CCEEE9E61C4E3392005C9C93 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CCEEE9E91C4E3392005C9C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCEEE9EE1C4E3392005C9C93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -209,6 +217,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC0737F91C57714E00012DAD /* JT3DScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				CC0737FA1C57714E00012DAD /* JT3DScrollView.h */,
+				CC0737FB1C57714E00012DAD /* JT3DScrollView.m */,
+			);
+			name = JT3DScrollView;
+			path = AFNetworking/JT3DScrollView;
+			sourceTree = "<group>";
+		};
 		CC2212591C51FE8700BC2219 /* fmdb */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +372,7 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC0738071C57923F00012DAD /* bg.png */,
 				CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */,
 				CC7DDB9E1C5618EC00DF3583 /* commom.png */,
 				CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */,
@@ -368,8 +387,8 @@
 		CCEEE9F61C4E33D7005C9C93 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCEEE9E51C4E3392005C9C93 /* ViewController.h */,
-				CCEEE9E61C4E3392005C9C93 /* ViewController.m */,
+				CC0737FD1C57731B00012DAD /* HomeVC.h */,
+				CC0737FE1C57731B00012DAD /* HomeVC.m */,
 				CC92CB2B1C4FC54C00FDE995 /* SettingVC.h */,
 				CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */,
 				CCE222ED1C50AF25006B2444 /* FavoriteVC.h */,
@@ -391,6 +410,8 @@
 				CC2212871C5246AC00BC2219 /* FavoriteCell.m */,
 				CC7DDB691C55BF4000DF3583 /* SettingButton.h */,
 				CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */,
+				CC0738001C57798500012DAD /* ChildView.h */,
+				CC0738011C57798500012DAD /* ChildView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -429,6 +450,7 @@
 		CCEEEA001C4E6830005C9C93 /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				CC0737F91C57714E00012DAD /* JT3DScrollView */,
 				CCC0A2341C53B01900D29C22 /* UMSocial_Sdk_4.4 */,
 				CC2212591C51FE8700BC2219 /* fmdb */,
 				CC92CB181C4FA51200FDE995 /* FXBlurView */,
@@ -525,6 +547,7 @@
 			files = (
 				CCC0A2511C53B01900D29C22 /* UMSCommentDetailController.xib in Resources */,
 				CCEEE9EF1C4E3392005C9C93 /* LaunchScreen.storyboard in Resources */,
+				CC0738081C57923F00012DAD /* bg.png in Resources */,
 				CCEEEA221C4E741D005C9C93 /* ContentCell.xib in Resources */,
 				CCC0A2581C53B01900D29C22 /* UMSShareListController.xib in Resources */,
 				CCC0A24F1C53B01900D29C22 /* UMSocialLocalizable.strings in Resources */,
@@ -553,11 +576,11 @@
 				CC8C5EED1C4F60DF00372CFF /* UIImage+MultiFormat.m in Sources */,
 				CC2726DA1C54F4E8003D0B3D /* GuideVC.m in Sources */,
 				CC8C5EEE1C4F60DF00372CFF /* UIImage+WebP.m in Sources */,
+				CC0737FF1C57731B00012DAD /* HomeVC.m in Sources */,
 				CCEEEA211C4E741D005C9C93 /* ContentCell.m in Sources */,
 				CC8C5EE91C4F60DF00372CFF /* SDWebImageManager.m in Sources */,
 				CC92CB1B1C4FA51200FDE995 /* FXBlurView.m in Sources */,
 				CCEEEA151C4E685E005C9C93 /* AFHTTPRequestOperation.m in Sources */,
-				CCEEE9E71C4E3392005C9C93 /* ViewController.m in Sources */,
 				CCEEEA161C4E685E005C9C93 /* AFHTTPRequestOperationManager.m in Sources */,
 				CC8C5EE71C4F60DF00372CFF /* SDWebImageDownloader.m in Sources */,
 				CC2212581C51F0CB00BC2219 /* DBEngine.m in Sources */,
@@ -567,6 +590,7 @@
 				CCEEEA1C1C4E685E005C9C93 /* AFURLResponseSerialization.m in Sources */,
 				CCEEEA1A1C4E685E005C9C93 /* AFURLConnectionOperation.m in Sources */,
 				CC2212661C51FE8700BC2219 /* FMDatabaseAdditions.m in Sources */,
+				CC0738021C57798500012DAD /* ChildView.m in Sources */,
 				CC2212651C51FE8700BC2219 /* FMDatabase.m in Sources */,
 				CC8C5EE21C4F60DF00372CFF /* MKAnnotationView+WebCache.m in Sources */,
 				CCEEEA191C4E685E005C9C93 /* AFSecurityPolicy.m in Sources */,
@@ -584,6 +608,7 @@
 				CC8C5EF11C4F60DF00372CFF /* UIView+WebCacheOperation.m in Sources */,
 				CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */,
 				CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */,
+				CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */,
 				CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */,
 				CC8C5EE81C4F60DF00372CFF /* SDWebImageDownloaderOperation.m in Sources */,
 				CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */,
