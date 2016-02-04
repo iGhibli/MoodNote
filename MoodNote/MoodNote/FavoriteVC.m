@@ -126,15 +126,24 @@
     UIView *btnView = [sender superview];
     //获取tempView
     UIView *tempView = [btnView superview];
-    //获取当前Button所在cell的信息
-    FavoriteCell *currentCell = (FavoriteCell *)[[tempView superview] superview];
+    
+    //获取当前设备版本信息，并作不同处理
+    FavoriteCell *currentCell;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        // iOS 8.0+ code
+        //获取当前Button所在cell的信息
+        currentCell = (FavoriteCell *)[[tempView superview] superview];
+    }else {
+        //获取当前Button所在cell的信息
+        currentCell = (FavoriteCell *)[[[tempView superview]superview] superview];
+    }
+    
     //获取当前的IndexPath
     NSIndexPath *currentIndexPath = [self.tableView indexPathForCell:currentCell];
-    NSInteger rowIndex = currentIndexPath.row;
-    int index = (int)rowIndex;
+    NSLog(@"IndexPath-----%@",currentIndexPath);
     //得到当前Model
-    ContentModel *currentModel = self.favorites[index];
-    [self.favorites removeObjectAtIndex:index];
+    ContentModel *currentModel = self.favorites[currentIndexPath.row];
+    [self.favorites removeObjectAtIndex:currentIndexPath.row];
     //更新UI
     [self.tableView reloadData];
     
@@ -166,11 +175,21 @@
     UIView *btnView = [sender superview];
     //获取tempView
     UIView *tempView = [btnView superview];
-    //获取当前Button所在cell的信息
-    FavoriteCell *currentCell = (FavoriteCell *)[[tempView superview] superview];
+    
+    //获取当前设备版本信息，并作不同处理
+    FavoriteCell *currentCell;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        // iOS 8.0+ code
+        //获取当前Button所在cell的信息
+        currentCell = (FavoriteCell *)[[tempView superview] superview];
+    }else {
+        //获取当前Button所在cell的信息
+        currentCell = (FavoriteCell *)[[[tempView superview]superview] superview];
+    }
+    
     //获取当前的IndexPath
     NSIndexPath *currentIndexPath = [self.tableView indexPathForCell:currentCell];
-    //    NSLog(@"IndexPath-----%@",currentIndexPath);
+    NSLog(@"IndexPath-----%@",currentIndexPath);
     //得到当前Model
     ContentModel *currentModel = self.favorites[currentIndexPath.row];
     return currentModel;
