@@ -97,7 +97,7 @@
             [self switchoverVCWithIdentifier:@"HomeVCID"];
             break;
         case 11:
-            [self switchoverVCWithIdentifier:@"FavoriteVCID"];
+            [self switchoverVCWithIdentifier:@"FavoriteCVCID"];
             break;
         case 12:
             [self switchoverVCWithIdentifier:@"SettingVCID"];

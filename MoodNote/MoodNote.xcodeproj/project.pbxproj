@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0368B11C8B101C00A88F12 /* FavoriteCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0368B01C8B101C00A88F12 /* FavoriteCVC.m */; };
+		CC0368B41C8B11A500A88F12 /* FavoriteCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0368B31C8B11A500A88F12 /* FavoriteCCell.m */; };
 		CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0737FB1C57714E00012DAD /* JT3DScrollView.m */; };
 		CC0737FF1C57731B00012DAD /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0737FE1C57731B00012DAD /* HomeVC.m */; };
 		CC0738021C57798500012DAD /* ChildView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0738011C57798500012DAD /* ChildView.m */; };
@@ -75,6 +77,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0368AF1C8B101C00A88F12 /* FavoriteCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCVC.h; sourceTree = "<group>"; };
+		CC0368B01C8B101C00A88F12 /* FavoriteCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCVC.m; sourceTree = "<group>"; };
+		CC0368B21C8B11A500A88F12 /* FavoriteCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCCell.h; sourceTree = "<group>"; };
+		CC0368B31C8B11A500A88F12 /* FavoriteCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCCell.m; sourceTree = "<group>"; };
 		CC0737FA1C57714E00012DAD /* JT3DScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JT3DScrollView.h; sourceTree = "<group>"; };
 		CC0737FB1C57714E00012DAD /* JT3DScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JT3DScrollView.m; sourceTree = "<group>"; };
 		CC0737FD1C57731B00012DAD /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -395,6 +401,8 @@
 				CCE222EE1C50AF25006B2444 /* FavoriteVC.m */,
 				CC2726D81C54F4E8003D0B3D /* GuideVC.h */,
 				CC2726D91C54F4E8003D0B3D /* GuideVC.m */,
+				CC0368AF1C8B101C00A88F12 /* FavoriteCVC.h */,
+				CC0368B01C8B101C00A88F12 /* FavoriteCVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -412,6 +420,8 @@
 				CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */,
 				CC0738001C57798500012DAD /* ChildView.h */,
 				CC0738011C57798500012DAD /* ChildView.m */,
+				CC0368B21C8B11A500A88F12 /* FavoriteCCell.h */,
+				CC0368B31C8B11A500A88F12 /* FavoriteCCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -607,6 +617,7 @@
 				CC2212671C51FE8700BC2219 /* FMDatabasePool.m in Sources */,
 				CC8C5EF11C4F60DF00372CFF /* UIView+WebCacheOperation.m in Sources */,
 				CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */,
+				CC0368B11C8B101C00A88F12 /* FavoriteCVC.m in Sources */,
 				CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */,
 				CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */,
 				CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */,
@@ -618,6 +629,7 @@
 				CC2212691C51FE8700BC2219 /* FMResultSet.m in Sources */,
 				CC8C5EEF1C4F60DF00372CFF /* UIImageView+HighlightedWebCache.m in Sources */,
 				CCEEE9E11C4E3392005C9C93 /* main.m in Sources */,
+				CC0368B41C8B11A500A88F12 /* FavoriteCCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
