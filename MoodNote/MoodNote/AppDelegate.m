@@ -76,7 +76,7 @@
 
 - (void)swipeDownAction
 {
-//    NSLog(@"APP");
+    NSLog(@"APP");
     
     [self.window bringSubviewToFront:self.blurView];
     [UIView animateWithDuration:0.5 animations:^{

@@ -253,7 +253,49 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkY-9z-JzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="1073"/>
+            <point key="canvasLocation" x="19" y="1073"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LRc-YH-a0f">
+            <objects>
+                <viewController id="Dsf-yU-X8L" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bzt-0n-eOJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="WFc-gL-pbo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cvo-Jp-puL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qMu-Mz-GaE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZ4-w9-tLh">
+                                <rect key="frame" x="180" y="138" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nu-QO-5CE">
+                                <rect key="frame" x="70" y="380" width="458" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qMu-Mz-GaE" firstAttribute="top" secondItem="Cvo-Jp-puL" secondAttribute="top" id="KhS-aG-F6X"/>
+                            <constraint firstAttribute="trailing" secondItem="qMu-Mz-GaE" secondAttribute="trailing" id="Pz1-eh-QF3"/>
+                            <constraint firstAttribute="bottom" secondItem="qMu-Mz-GaE" secondAttribute="bottom" id="WIC-Y8-BzV"/>
+                            <constraint firstItem="qMu-Mz-GaE" firstAttribute="leading" secondItem="Cvo-Jp-puL" secondAttribute="leading" id="hSe-iv-3mc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="icon" destination="qZ4-w9-tLh" id="3s4-dx-0Mu"/>
+                        <outlet property="title" destination="4Nu-QO-5CE" id="43U-dh-mrC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4f6-ph-2ON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="1073"/>
         </scene>
         <!--GuideVC-->
         <scene sceneID="YOx-WI-BaB">
@@ -373,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEs-zc-6ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="1073"/>
+            <point key="canvasLocation" x="1257" y="1073"/>
         </scene>
         <!--SettingVC-->
         <scene sceneID="eIu-yw-keC">

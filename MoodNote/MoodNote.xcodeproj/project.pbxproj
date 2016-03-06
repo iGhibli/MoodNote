@@ -57,6 +57,12 @@
 		CCC0A2571C53B01900D29C22 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCC0A24B1C53B01900D29C22 /* UMSnsAccountViewController.xib */; };
 		CCC0A2581C53B01900D29C22 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCC0A24C1C53B01900D29C22 /* UMSShareListController.xib */; };
 		CCC0A2591C53B01900D29C22 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CCC0A24D1C53B01900D29C22 /* UMSocialSDKResourcesNew.bundle */; };
+		CCD040501C8BFD1F003C9823 /* DCPathButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD040491C8BFD1F003C9823 /* DCPathButton.m */; };
+		CCD040511C8BFD1F003C9823 /* DCPathItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD0404B1C8BFD1F003C9823 /* DCPathItemButton.m */; };
+		CCD040521C8BFD1F003C9823 /* bloom.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCD0404D1C8BFD1F003C9823 /* bloom.caf */; };
+		CCD040531C8BFD1F003C9823 /* fold.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCD0404E1C8BFD1F003C9823 /* fold.caf */; };
+		CCD040541C8BFD1F003C9823 /* selected.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCD0404F1C8BFD1F003C9823 /* selected.caf */; };
+		CCD0405B1C8C067C003C9823 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD040591C8C067C003C9823 /* DetailVC.m */; };
 		CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222EE1C50AF25006B2444 /* FavoriteVC.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
 		CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */; };
@@ -175,6 +181,15 @@
 		CCC0A24C1C53B01900D29C22 /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		CCC0A24D1C53B01900D29C22 /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		CCC0A24E1C53B01900D29C22 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
+		CCD040481C8BFD1F003C9823 /* DCPathButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPathButton.h; sourceTree = "<group>"; };
+		CCD040491C8BFD1F003C9823 /* DCPathButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPathButton.m; sourceTree = "<group>"; };
+		CCD0404A1C8BFD1F003C9823 /* DCPathItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPathItemButton.h; sourceTree = "<group>"; };
+		CCD0404B1C8BFD1F003C9823 /* DCPathItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPathItemButton.m; sourceTree = "<group>"; };
+		CCD0404D1C8BFD1F003C9823 /* bloom.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bloom.caf; sourceTree = "<group>"; };
+		CCD0404E1C8BFD1F003C9823 /* fold.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fold.caf; sourceTree = "<group>"; };
+		CCD0404F1C8BFD1F003C9823 /* selected.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = selected.caf; sourceTree = "<group>"; };
+		CCD040581C8C067C003C9823 /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		CCD040591C8C067C003C9823 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 		CCE222ED1C50AF25006B2444 /* FavoriteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteVC.h; sourceTree = "<group>"; };
 		CCE222EE1C50AF25006B2444 /* FavoriteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
 		CCEEE9DC1C4E3392005C9C93 /* MoodNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +360,36 @@
 			path = SocialSDKXib;
 			sourceTree = "<group>";
 		};
+		CCD040461C8BFD1F003C9823 /* DCPathButton */ = {
+			isa = PBXGroup;
+			children = (
+				CCD040471C8BFD1F003C9823 /* Classes */,
+				CCD0404C1C8BFD1F003C9823 /* Sounds */,
+			);
+			path = DCPathButton;
+			sourceTree = "<group>";
+		};
+		CCD040471C8BFD1F003C9823 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CCD040481C8BFD1F003C9823 /* DCPathButton.h */,
+				CCD040491C8BFD1F003C9823 /* DCPathButton.m */,
+				CCD0404A1C8BFD1F003C9823 /* DCPathItemButton.h */,
+				CCD0404B1C8BFD1F003C9823 /* DCPathItemButton.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CCD0404C1C8BFD1F003C9823 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0404D1C8BFD1F003C9823 /* bloom.caf */,
+				CCD0404E1C8BFD1F003C9823 /* fold.caf */,
+				CCD0404F1C8BFD1F003C9823 /* selected.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		CCEEE9D31C4E3392005C9C93 = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +448,8 @@
 				CC2726D91C54F4E8003D0B3D /* GuideVC.m */,
 				CC0368AF1C8B101C00A88F12 /* FavoriteCVC.h */,
 				CC0368B01C8B101C00A88F12 /* FavoriteCVC.m */,
+				CCD040581C8C067C003C9823 /* DetailVC.h */,
+				CCD040591C8C067C003C9823 /* DetailVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -460,6 +507,7 @@
 		CCEEEA001C4E6830005C9C93 /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				CCD040461C8BFD1F003C9823 /* DCPathButton */,
 				CC0737F91C57714E00012DAD /* JT3DScrollView */,
 				CCC0A2341C53B01900D29C22 /* UMSocial_Sdk_4.4 */,
 				CC2212591C51FE8700BC2219 /* fmdb */,
@@ -568,6 +616,9 @@
 				CC22128A1C52540600BC2219 /* Favorites.db in Resources */,
 				CCC0A2541C53B01900D29C22 /* UMShareEditViewController.xib in Resources */,
 				CCC0A2571C53B01900D29C22 /* UMSnsAccountViewController.xib in Resources */,
+				CCD040541C8BFD1F003C9823 /* selected.caf in Resources */,
+				CCD040531C8BFD1F003C9823 /* fold.caf in Resources */,
+				CCD040521C8BFD1F003C9823 /* bloom.caf in Resources */,
 				CCC0A2521C53B01900D29C22 /* UMSCommentInputController.xib in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
 				CCC0A2561C53B01900D29C22 /* UMSLoginViewController.xib in Resources */,
@@ -590,8 +641,10 @@
 				CCEEEA211C4E741D005C9C93 /* ContentCell.m in Sources */,
 				CC8C5EE91C4F60DF00372CFF /* SDWebImageManager.m in Sources */,
 				CC92CB1B1C4FA51200FDE995 /* FXBlurView.m in Sources */,
+				CCD040511C8BFD1F003C9823 /* DCPathItemButton.m in Sources */,
 				CCEEEA151C4E685E005C9C93 /* AFHTTPRequestOperation.m in Sources */,
 				CCEEEA161C4E685E005C9C93 /* AFHTTPRequestOperationManager.m in Sources */,
+				CCD040501C8BFD1F003C9823 /* DCPathButton.m in Sources */,
 				CC8C5EE71C4F60DF00372CFF /* SDWebImageDownloader.m in Sources */,
 				CC2212581C51F0CB00BC2219 /* DBEngine.m in Sources */,
 				CCEEEA181C4E685E005C9C93 /* AFNetworkReachabilityManager.m in Sources */,
@@ -622,6 +675,7 @@
 				CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */,
 				CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */,
 				CC8C5EE81C4F60DF00372CFF /* SDWebImageDownloaderOperation.m in Sources */,
+				CCD0405B1C8C067C003C9823 /* DetailVC.m in Sources */,
 				CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */,
 				CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */,
 				CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */,

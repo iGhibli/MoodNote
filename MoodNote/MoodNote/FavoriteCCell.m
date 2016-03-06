@@ -11,6 +11,7 @@
 #import "UIImageView+WebCache.h"
 #import "Common.h"
 #import "NSString+Size.h"
+#import "DCPathButton.h"
 
 @interface FavoriteCCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
@@ -57,5 +58,7 @@
         self.title.frame = CGRectMake(10, self.icon.frame.origin.y + displayH + 10, titleSize.width, titleSize.height);
     }
 }
+
+
 
 @end

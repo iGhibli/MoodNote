@@ -12,6 +12,7 @@
 #import "FavoriteCCell.h"
 #import "Common.h"
 #import "UMSocial.h"
+#import "DetailVC.h"
 
 @interface FavoriteCVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *favorites;
@@ -97,6 +98,9 @@ static NSString * const reuseIdentifier = @"CCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"++++++++++");
+    DetailVC *VC = [DetailVC new];
+    VC.model = self.favorites[indexPath.item];
+    [self presentViewController:VC animated:YES completion:nil];
 }
 
 /*
