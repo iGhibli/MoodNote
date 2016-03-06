@@ -20,7 +20,7 @@
 @implementation FavoriteCCell
 
 - (void)bandingFavoriteCCellWithModel:(ContentModel *)model {
-    
+    [self layoutCCellContentWithModel:model];
     _model = model;
     _title.text = model.title;
     //使用SDWebImage加载网络图片数据
@@ -28,25 +28,34 @@
     [self.icon sd_setImageWithURL:[NSURL URLWithString:imageURLStr]];
 }
 
-+ (CGFloat)favoriteCCellHeightWithModel:(ContentModel *)model {
-    
+- (void)layoutCCellContentWithModel:(ContentModel *)model
+{
     //图片的实际尺寸
     CGFloat realW = [model.picWidth floatValue];
     CGFloat realH = [model.picHeight floatValue];
     
     //图片显示的尺寸
-    CGFloat displayH = realH * (kScreenW - 10 - 10) / realW;
+    CGFloat displayW = kScreenW / 2.0 - 10 - 10;
+    CGFloat displayH = realH * (kScreenW / 2.0 - 10 - 10) / realW;
     
     //文字显示的尺寸
-    CGSize titleSize = [model.title sizeWithFont:[UIFont systemFontOfSize:17] AndWidth:kScreenW - 20];
+    CGSize titleSize = [model.title sizeWithFont:[UIFont systemFontOfSize:10] AndWidth:kScreenW / 2.0 - 20];
     
-    //btnView的尺寸
-    CGFloat btnViewH = 40;
+    //图片和文字及间隔的总尺寸
+    CGFloat totalH = displayH + 10 + titleSize.height;
     
-    //总尺寸
-    CGFloat totalH = 10 + displayH + 20 + titleSize.height + 30 + btnViewH;
-    
-    return totalH;
+    //控件布局
+    if (totalH >= kScreenH / 2.0) {
+        CGFloat scale = (kScreenH / 2.0 - titleSize.height - 10 - 10 - 10) / displayH;
+        CGFloat picW = displayW * scale;
+        CGFloat picH = displayH * scale;
+        
+        self.icon.frame = CGRectMake((kScreenW / 2.0 - picW) / 2, 10, picW, picH);
+        self.title.frame = CGRectMake(10, self.icon.frame.origin.y + picH + 10, titleSize.width, titleSize.height);
+    }else {
+        self.icon.frame = CGRectMake(10, (kScreenH / 2.0 - totalH) / 2, displayW, displayH);
+        self.title.frame = CGRectMake(10, self.icon.frame.origin.y + displayH + 10, titleSize.width, titleSize.height);
+    }
 }
 
 @end

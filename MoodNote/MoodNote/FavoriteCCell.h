@@ -14,5 +14,4 @@
 
 - (void)bandingFavoriteCCellWithModel:(ContentModel *)model;
 
-+ (CGFloat)favoriteCCellHeightWithModel:(ContentModel *)model;
 @end

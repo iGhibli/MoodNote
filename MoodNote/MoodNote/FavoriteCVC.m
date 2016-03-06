@@ -13,7 +13,7 @@
 #import "Common.h"
 #import "UMSocial.h"
 
-@interface FavoriteCVC ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface FavoriteCVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *favorites;
 @end
 
@@ -24,10 +24,7 @@ static NSString * const reuseIdentifier = @"CCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addSwipeGesture];
-    
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+    self.collectionView.pagingEnabled = YES;
 }
 
 - (void)addSwipeGesture
@@ -77,6 +74,14 @@ static NSString * const reuseIdentifier = @"CCell";
     return cell;
 }
 
+#pragma mark <UICollectionViewDelegateFlowLayout>
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize itemSize = CGSizeMake((kScreenW - 0) / 2.0, (kScreenH - 0) / 2.0);
+    return itemSize;
+}
+
 #pragma mark <UICollectionViewDelegate>
 
 /*
@@ -86,12 +91,13 @@ static NSString * const reuseIdentifier = @"CCell";
 }
 */
 
-/*
-// Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-*/
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"++++++++++");
+}
 
 /*
 // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item

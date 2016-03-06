@@ -204,7 +204,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mk8-3K-Dff">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Mk8-3K-Dff">
                             <size key="itemSize" width="202" height="207"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -218,10 +218,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="202" height="207"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Pg-d4-839">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround6P.png" translatesAutoresizingMaskIntoConstraints="NO" id="c1g-bW-uSA">
+                                            <rect key="frame" x="0.0" y="0.0" width="202" height="207"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Pg-d4-839">
                                             <rect key="frame" x="10" y="10" width="182" height="146.5"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMa-rF-SBW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMa-rF-SBW">
                                             <rect key="frame" x="10" y="176" width="182" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -231,13 +234,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="7Pg-d4-839" firstAttribute="leading" secondItem="h5J-LH-H7X" secondAttribute="leading" constant="10" id="Ejp-Pd-vYh"/>
-                                    <constraint firstAttribute="bottom" secondItem="iMa-rF-SBW" secondAttribute="bottom" constant="10" id="GRR-wh-vrs"/>
-                                    <constraint firstAttribute="trailing" secondItem="7Pg-d4-839" secondAttribute="trailing" constant="10" id="MmY-yi-cfl"/>
-                                    <constraint firstAttribute="trailing" secondItem="iMa-rF-SBW" secondAttribute="trailing" constant="10" id="Prz-MY-KXr"/>
-                                    <constraint firstItem="iMa-rF-SBW" firstAttribute="leading" secondItem="h5J-LH-H7X" secondAttribute="leading" constant="10" id="Vr4-qi-VqH"/>
-                                    <constraint firstItem="7Pg-d4-839" firstAttribute="top" secondItem="h5J-LH-H7X" secondAttribute="top" constant="10" id="ffs-HF-7fT"/>
-                                    <constraint firstItem="iMa-rF-SBW" firstAttribute="top" secondItem="7Pg-d4-839" secondAttribute="bottom" constant="20" id="zn7-Kh-mhA"/>
+                                    <constraint firstAttribute="bottom" secondItem="c1g-bW-uSA" secondAttribute="bottom" id="0u5-7C-T8m"/>
+                                    <constraint firstItem="c1g-bW-uSA" firstAttribute="top" secondItem="h5J-LH-H7X" secondAttribute="top" id="75I-ky-5Mb"/>
+                                    <constraint firstAttribute="trailing" secondItem="c1g-bW-uSA" secondAttribute="trailing" id="Olq-jf-njs"/>
+                                    <constraint firstItem="c1g-bW-uSA" firstAttribute="leading" secondItem="h5J-LH-H7X" secondAttribute="leading" id="Xc5-Kk-Y4P"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="icon" destination="7Pg-d4-839" id="Aru-e0-oMd"/>
