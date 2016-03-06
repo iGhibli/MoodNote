@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "set-guide.png",
+      "filename" : "separator.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "set-guide@2x.png",
+      "filename" : "separator@2x.png",
       "scale" : "2x"
     }
   ],

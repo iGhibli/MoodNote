@@ -2,16 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "iconfont-008quill.png",
+      "filename" : "set-about.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "set-about@2x.png",
       "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
     }
   ],
   "info" : {

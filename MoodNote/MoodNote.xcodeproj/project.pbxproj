@@ -63,6 +63,7 @@
 		CCD040531C8BFD1F003C9823 /* fold.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCD0404E1C8BFD1F003C9823 /* fold.caf */; };
 		CCD040541C8BFD1F003C9823 /* selected.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCD0404F1C8BFD1F003C9823 /* selected.caf */; };
 		CCD0405B1C8C067C003C9823 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD040591C8C067C003C9823 /* DetailVC.m */; };
+		CCDC0E281C8C4FD7009B2254 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDC0E271C8C4FD7009B2254 /* AboutVC.m */; };
 		CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222EE1C50AF25006B2444 /* FavoriteVC.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
 		CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */; };
@@ -190,6 +191,8 @@
 		CCD0404F1C8BFD1F003C9823 /* selected.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = selected.caf; sourceTree = "<group>"; };
 		CCD040581C8C067C003C9823 /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
 		CCD040591C8C067C003C9823 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
+		CCDC0E261C8C4FD7009B2254 /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
+		CCDC0E271C8C4FD7009B2254 /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		CCE222ED1C50AF25006B2444 /* FavoriteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteVC.h; sourceTree = "<group>"; };
 		CCE222EE1C50AF25006B2444 /* FavoriteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
 		CCEEE9DC1C4E3392005C9C93 /* MoodNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,6 +453,8 @@
 				CC0368B01C8B101C00A88F12 /* FavoriteCVC.m */,
 				CCD040581C8C067C003C9823 /* DetailVC.h */,
 				CCD040591C8C067C003C9823 /* DetailVC.m */,
+				CCDC0E261C8C4FD7009B2254 /* AboutVC.h */,
+				CCDC0E271C8C4FD7009B2254 /* AboutVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -679,6 +684,7 @@
 				CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */,
 				CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */,
 				CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */,
+				CCDC0E281C8C4FD7009B2254 /* AboutVC.m in Sources */,
 				CC8C5EF01C4F60DF00372CFF /* UIImageView+WebCache.m in Sources */,
 				CC2212691C51FE8700BC2219 /* FMResultSet.m in Sources */,
 				CC8C5EEF1C4F60DF00372CFF /* UIImageView+HighlightedWebCache.m in Sources */,
