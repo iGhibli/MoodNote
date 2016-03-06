@@ -28,6 +28,11 @@ static NSString * const reuseIdentifier = @"CCell";
     self.collectionView.pagingEnabled = YES;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.favorites = [NSMutableArray arrayWithArray:[DBEngine getFavoritesFromLocal]];
+    [self.collectionView reloadData];    
+}
+
 - (void)addSwipeGesture
 {
     //添加下滑手势
@@ -97,7 +102,6 @@ static NSString * const reuseIdentifier = @"CCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"++++++++++");
     DetailVC *VC = [DetailVC new];
     VC.model = self.favorites[indexPath.item];
     [self presentViewController:VC animated:YES completion:nil];

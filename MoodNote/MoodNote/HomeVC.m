@@ -46,8 +46,6 @@
         CGFloat x = self.scrollView.subviews.count * width;
         
         ChildView *view = [[ChildView alloc] initWithFrame:CGRectMake(x, 0, width, height)];
-//        view.backgroundColor = [UIColor colorWithRed:33/255. green:158/255. blue:238/255. alpha:1.];
-//        view.layer.cornerRadius = 8.;
         [view bandingChildViewWithModel:self.ContentArray[i]];
         
         [self.scrollView addSubview:view];
