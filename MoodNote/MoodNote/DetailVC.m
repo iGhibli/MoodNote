@@ -12,12 +12,14 @@
 #import "Common.h"
 #import "UIImageView+WebCache.h"
 #import "NSString+Size.h"
+#import "UMSocial.h"
+#import "DBEngine.h"
 
 @interface DetailVC ()<DCPathButtonDelegate>
 @property (nonatomic, strong) UIImageView *bg;
 @property (strong, nonatomic) UIImageView *icon;
 @property (strong, nonatomic) UILabel *detailLabel;
-
+@property (nonatomic, strong) DCPathButton *dcPathButton;
 @end
 
 @implementation DetailVC
@@ -83,13 +85,13 @@
 - (void)pathButton:(DCPathButton *)dcPathButton clickItemButtonAtIndex:(NSUInteger)itemButtonIndex {
     switch (itemButtonIndex) {
         case 0:
-            
+            [self likeAction];
             break;
         case 1:
-            
+            [self shareAction];
             break;
         case 2:
-            
+            [self copyAction];
             break;
         case 3:
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -108,9 +110,9 @@
 
 - (void)configureDCPathButton
 {
-    DCPathButton *dcPathButton = [[DCPathButton alloc]initWithCenterImage:[UIImage imageNamed:@"chooser-button-tab"]
+    self.dcPathButton = [[DCPathButton alloc]initWithCenterImage:[UIImage imageNamed:@"chooser-button-tab"]
                                                          highlightedImage:[UIImage imageNamed:@"chooser-button-tab-highlighted"]];
-    dcPathButton.delegate = self;
+    self.dcPathButton.delegate = self;
     
     // Configure item buttons
     DCPathItemButton *itemButton_1 = [[DCPathItemButton alloc]initWithImage:[UIImage imageNamed:@"chooser-moment-icon-music"]
@@ -135,32 +137,121 @@
     
     // Add the item button into the center button
     //
-    [dcPathButton addPathItems:@[itemButton_1,
+    [self.dcPathButton addPathItems:@[itemButton_1,
                                  itemButton_2,
                                  itemButton_3,
                                  itemButton_4,
                                  ]];
     // Change the bloom radius, default is 105.0f
     //
-    dcPathButton.bloomRadius = 150.0f;
-    dcPathButton.bloomAngel = 70.0f;
+    self.dcPathButton.bloomRadius = 150.0f;
+    self.dcPathButton.bloomAngel = 70.0f;
     // Change the DCButton's center
     //
-    dcPathButton.dcButtonCenter = CGPointMake(self.view.bounds.size.width / 2, self.view.bounds.size.height - 25.5f);
+    self.dcPathButton.dcButtonCenter = CGPointMake(self.view.bounds.size.width / 2, self.view.bounds.size.height - 25.5f);
     
     // Setting the DCButton appearance
     
-    dcPathButton.allowSounds = YES;
-    dcPathButton.allowCenterButtonRotation = YES;
+    self.dcPathButton.allowSounds = YES;
+    self.dcPathButton.allowCenterButtonRotation = YES;
     
-    dcPathButton.bottomViewColor = [UIColor grayColor];
+    self.dcPathButton.bottomViewColor = [UIColor grayColor];
     
-    dcPathButton.bloomDirection = kDCPathButtonBloomDirectionBottomLeft;
-    dcPathButton.dcButtonCenter = CGPointMake(self.view.frame.size.width - 50, 50);
+    self.dcPathButton.bloomDirection = kDCPathButtonBloomDirectionBottomLeft;
+    self.dcPathButton.dcButtonCenter = CGPointMake(self.view.frame.size.width - 50, 50);
     
-    [self.view addSubview:dcPathButton];
+    [self.view addSubview:self.dcPathButton];
 }
 
+#pragma mark - ButtonAction
+- (void)copyAction {
+    //获取剪切板
+    UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
+    //将内容赋值给剪切板
+    pasteBoard.string = self.model.title;
+#pragma mark - 截屏
+    self.dcPathButton.hidden = YES;
+    CGSize imageSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    //1.开启图片上下文
+    UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0.0);
+    //2.获取当前上下文
+    CGContextRef ctx=UIGraphicsGetCurrentContext();
+    //3.绘制
+    [self.view.layer renderInContext:ctx];
+    //4.取出图片，
+    UIImage *currentImage=UIGraphicsGetImageFromCurrentImageContext();
+    NSData *imageData=UIImagePNGRepresentation(currentImage);
+    //.关闭图形上下文
+    UIGraphicsEndImageContext();
+    self.dcPathButton.hidden = NO;
+#pragma mark - 将图片保存到相册
+    UIImageWriteToSavedPhotosAlbum([UIImage imageWithData:imageData], self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    NSString *message;
+    if (!error) {
+        message = @"已复制美图美句到本地";
+        
+    }else
+    {
+        message = @"保存到本地失败";
+    }
+    UILabel *popLabel = [[UILabel alloc]init];
+    popLabel.textAlignment = NSTextAlignmentCenter;
+    popLabel.font = [UIFont systemFontOfSize:12];
+    popLabel.text = message;
+    popLabel.layer.cornerRadius = 10;
+    popLabel.clipsToBounds = YES;
+    popLabel.backgroundColor = [UIColor orangeColor];
+    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 20);
+    [self.view addSubview:popLabel];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
+}
+
+- (void)shareAction {
+#pragma mark - 截屏
+    self.dcPathButton.hidden = YES;
+    CGSize imageSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    //1.开启图片上下文
+    UIGraphicsBeginImageContextWithOptions(imageSize, YES, 0.0);
+    //2.获取当前上下文
+    CGContextRef ctx=UIGraphicsGetCurrentContext();
+    //3.绘制
+    [self.view.layer renderInContext:ctx];
+    //4.取出图片，
+    UIImage *currentImage=UIGraphicsGetImageFromCurrentImageContext();
+    NSData *imageData=UIImagePNGRepresentation(currentImage);
+    //.关闭图形上下文
+    UIGraphicsEndImageContext();
+    self.dcPathButton.hidden = NO;
+#pragma mark - UM分享
+    UIImage *shareImage = [UIImage imageWithData:imageData];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                    appKey:@"56a3781a67e58e9bf7002cac"
+                                      shareText:[self.model.title stringByAppendingString:@"      --来自Encounter遇见，心中的小美好。"]
+                                     shareImage:shareImage
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToEmail,UMShareToSms,nil]
+                                       delegate:nil];
+}
+
+- (void)likeAction {
+    //删除数据库内容
+    [DBEngine deleteDataWithID:self.model.ID];
+    
+    UILabel *popLabel = [[UILabel alloc]init];
+    popLabel.textAlignment = NSTextAlignmentCenter;
+    popLabel.font = [UIFont systemFontOfSize:12];
+    popLabel.text = @"取消收藏成功";
+    popLabel.layer.cornerRadius = 10;
+    popLabel.clipsToBounds = YES;
+    popLabel.backgroundColor = [UIColor orangeColor];
+    popLabel.frame = CGRectMake(75, kScreenH * 5 / 6 - 40, kScreenW - 150, 20);
+    [self.view addSubview:popLabel];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:popLabel selector:@selector(removeFromSuperview) userInfo:nil repeats:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation
