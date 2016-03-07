@@ -19,10 +19,8 @@
 		CC2212671C51FE8700BC2219 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CC22125F1C51FE8700BC2219 /* FMDatabasePool.m */; };
 		CC2212681C51FE8700BC2219 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212611C51FE8700BC2219 /* FMDatabaseQueue.m */; };
 		CC2212691C51FE8700BC2219 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212641C51FE8700BC2219 /* FMResultSet.m */; };
-		CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2212871C5246AC00BC2219 /* FavoriteCell.m */; };
 		CC22128A1C52540600BC2219 /* Favorites.db in Resources */ = {isa = PBXBuildFile; fileRef = CC2212891C52540600BC2219 /* Favorites.db */; };
 		CC2726DA1C54F4E8003D0B3D /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2726D91C54F4E8003D0B3D /* GuideVC.m */; };
-		CC7DDB6B1C55BF4000DF3583 /* SettingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */; };
 		CC7DDB9F1C5618EC00DF3583 /* commom.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDB9E1C5618EC00DF3583 /* commom.png */; };
 		CC7DDBA11C5619C700DF3583 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */; };
 		CC8C5EBF1C4F399E00372CFF /* ContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EBE1C4F399E00372CFF /* ContentModel.m */; };
@@ -45,7 +43,6 @@
 		CC9004801C8D5F0000FC1380 /* OCExpandableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CC90047F1C8D5F0000FC1380 /* OCExpandableButton.m */; };
 		CC92CAEC1C4F6F5500FDE995 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CAEB1C4F6F5500FDE995 /* NSString+Size.m */; };
 		CC92CB1B1C4FA51200FDE995 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB1A1C4FA51200FDE995 /* FXBlurView.m */; };
-		CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */; };
 		CCC0A1F61C53198C00D29C22 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */; };
 		CCC0A24F1C53B01900D29C22 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCC0A2351C53B01900D29C22 /* UMSocialLocalizable.strings */; };
 		CCC0A2501C53B01900D29C22 /* libUMSocial_Sdk_4.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC0A2431C53B01900D29C22 /* libUMSocial_Sdk_4.4.a */; };
@@ -65,7 +62,6 @@
 		CCD040541C8BFD1F003C9823 /* selected.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCD0404F1C8BFD1F003C9823 /* selected.caf */; };
 		CCD0405B1C8C067C003C9823 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD040591C8C067C003C9823 /* DetailVC.m */; };
 		CCDC0E281C8C4FD7009B2254 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDC0E271C8C4FD7009B2254 /* AboutVC.m */; };
-		CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE222EE1C50AF25006B2444 /* FavoriteVC.m */; };
 		CCEEE9E11C4E3392005C9C93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E01C4E3392005C9C93 /* main.m */; };
 		CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEEE9E31C4E3392005C9C93 /* AppDelegate.m */; };
 		CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCEEE9E81C4E3392005C9C93 /* Main.storyboard */; };
@@ -109,13 +105,9 @@
 		CC2212621C51FE8700BC2219 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		CC2212631C51FE8700BC2219 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		CC2212641C51FE8700BC2219 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		CC2212861C5246AC00BC2219 /* FavoriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCell.h; sourceTree = "<group>"; };
-		CC2212871C5246AC00BC2219 /* FavoriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCell.m; sourceTree = "<group>"; };
 		CC2212891C52540600BC2219 /* Favorites.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Favorites.db; sourceTree = "<group>"; };
 		CC2726D81C54F4E8003D0B3D /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		CC2726D91C54F4E8003D0B3D /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
-		CC7DDB691C55BF4000DF3583 /* SettingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingButton.h; sourceTree = "<group>"; };
-		CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingButton.m; sourceTree = "<group>"; };
 		CC7DDB9E1C5618EC00DF3583 /* commom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commom.png; sourceTree = "<group>"; };
 		CC7DDBA01C5619C700DF3583 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CC8C5EBD1C4F399E00372CFF /* ContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentModel.h; sourceTree = "<group>"; };
@@ -159,8 +151,6 @@
 		CC92CAEB1C4F6F5500FDE995 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		CC92CB191C4FA51200FDE995 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		CC92CB1A1C4FA51200FDE995 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
-		CC92CB2B1C4FC54C00FDE995 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
-		CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		CCC0A1F51C53198C00D29C22 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		CCC0A2361C53B01900D29C22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		CCC0A2381C53B01900D29C22 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
@@ -196,8 +186,6 @@
 		CCD040591C8C067C003C9823 /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 		CCDC0E261C8C4FD7009B2254 /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
 		CCDC0E271C8C4FD7009B2254 /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
-		CCE222ED1C50AF25006B2444 /* FavoriteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteVC.h; sourceTree = "<group>"; };
-		CCE222EE1C50AF25006B2444 /* FavoriteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteVC.m; sourceTree = "<group>"; };
 		CCEEE9DC1C4E3392005C9C93 /* MoodNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEEE9E01C4E3392005C9C93 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCEEE9E21C4E3392005C9C93 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -455,10 +443,6 @@
 			children = (
 				CC0737FD1C57731B00012DAD /* HomeVC.h */,
 				CC0737FE1C57731B00012DAD /* HomeVC.m */,
-				CC92CB2B1C4FC54C00FDE995 /* SettingVC.h */,
-				CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */,
-				CCE222ED1C50AF25006B2444 /* FavoriteVC.h */,
-				CCE222EE1C50AF25006B2444 /* FavoriteVC.m */,
 				CC2726D81C54F4E8003D0B3D /* GuideVC.h */,
 				CC2726D91C54F4E8003D0B3D /* GuideVC.m */,
 				CC0368AF1C8B101C00A88F12 /* FavoriteCVC.h */,
@@ -478,10 +462,6 @@
 				CCEEEA1E1C4E741D005C9C93 /* ContentCell.h */,
 				CCEEEA1F1C4E741D005C9C93 /* ContentCell.m */,
 				CCEEEA201C4E741D005C9C93 /* ContentCell.xib */,
-				CC2212861C5246AC00BC2219 /* FavoriteCell.h */,
-				CC2212871C5246AC00BC2219 /* FavoriteCell.m */,
-				CC7DDB691C55BF4000DF3583 /* SettingButton.h */,
-				CC7DDB6A1C55BF4000DF3583 /* SettingButton.m */,
 				CC0738001C57798500012DAD /* ChildView.h */,
 				CC0738011C57798500012DAD /* ChildView.m */,
 				CC0368B21C8B11A500A88F12 /* FavoriteCCell.h */,
@@ -679,7 +659,6 @@
 				CC8C5EEC1C4F60DF00372CFF /* UIImage+GIF.m in Sources */,
 				CC9004801C8D5F0000FC1380 /* OCExpandableButton.m in Sources */,
 				CC8C5EEB1C4F60DF00372CFF /* UIButton+WebCache.m in Sources */,
-				CC7DDB6B1C55BF4000DF3583 /* SettingButton.m in Sources */,
 				CCEEEA171C4E685E005C9C93 /* AFHTTPSessionManager.m in Sources */,
 				CC8C5EEA1C4F60DF00372CFF /* SDWebImagePrefetcher.m in Sources */,
 				CC8C5EE61C4F60DF00372CFF /* SDWebImageDecoder.m in Sources */,
@@ -688,7 +667,6 @@
 				CC8C5EE51C4F60DF00372CFF /* SDWebImageCompat.m in Sources */,
 				CC2212671C51FE8700BC2219 /* FMDatabasePool.m in Sources */,
 				CC8C5EF11C4F60DF00372CFF /* UIView+WebCacheOperation.m in Sources */,
-				CCE222EF1C50AF25006B2444 /* FavoriteVC.m in Sources */,
 				CC0368B11C8B101C00A88F12 /* FavoriteCVC.m in Sources */,
 				CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */,
 				CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */,
@@ -696,8 +674,6 @@
 				CC8C5EE81C4F60DF00372CFF /* SDWebImageDownloaderOperation.m in Sources */,
 				CCD0405B1C8C067C003C9823 /* DetailVC.m in Sources */,
 				CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */,
-				CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */,
-				CC2212881C5246AC00BC2219 /* FavoriteCell.m in Sources */,
 				CCDC0E281C8C4FD7009B2254 /* AboutVC.m in Sources */,
 				CC8C5EF01C4F60DF00372CFF /* UIImageView+WebCache.m in Sources */,
 				CC2212691C51FE8700BC2219 /* FMResultSet.m in Sources */,

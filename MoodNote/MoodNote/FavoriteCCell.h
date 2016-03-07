@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class ContentModel;
 @interface FavoriteCCell : UICollectionViewCell
-@property (nonatomic, strong) ContentModel *model;
-
-- (void)bandingFavoriteCCellWithModel:(ContentModel *)model;
-
+@property (nonatomic, strong) UIImageView *icon;
+@property (nonatomic, strong) UILabel *title;
 @end

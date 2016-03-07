@@ -13,6 +13,8 @@
 #import "Common.h"
 #import "UMSocial.h"
 #import "DetailVC.h"
+#import "NSString+Size.h"
+#import "UIImageView+WebCache.h"
 
 @interface FavoriteCVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *favorites;
@@ -26,11 +28,12 @@ static NSString * const reuseIdentifier = @"CCell";
     [super viewDidLoad];
     [self addSwipeGesture];
     self.collectionView.pagingEnabled = YES;
+    [self.collectionView registerClass:[FavoriteCCell class] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.favorites = [NSMutableArray arrayWithArray:[DBEngine getFavoritesFromLocal]];
-    [self.collectionView reloadData];    
+    [self.collectionView reloadData];
 }
 
 - (void)addSwipeGesture
@@ -74,11 +77,47 @@ static NSString * const reuseIdentifier = @"CCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FavoriteCCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    [cell bandingFavoriteCCellWithModel:self.favorites[indexPath.item]];
+    FavoriteCCell *cell = (FavoriteCCell *)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+
+    ContentModel *model = self.favorites[indexPath.item];
+    //图片的实际尺寸
+    CGFloat realW = [model.picWidth floatValue];
+    CGFloat realH = [model.picHeight floatValue];
+    
+    //图片显示的尺寸
+    CGFloat displayW = kScreenW / 2.0 - 10 - 10;
+    CGFloat displayH = realH * (kScreenW / 2.0 - 10 - 10) / realW;
+    
+    //文字显示的尺寸
+    CGSize titleSize = [model.title sizeWithFont:[UIFont systemFontOfSize:10] AndWidth:kScreenW / 2.0 - 20];
+    
+    //图片和文字及间隔的总尺寸
+    CGFloat totalH = displayH + 10 + titleSize.height;
+    
+    cell.title.font = [UIFont systemFontOfSize:10];
+    cell.title.numberOfLines = 0;
+    //控件布局
+    if (totalH >= kScreenH / 2.0) {
+        CGFloat scale = (kScreenH / 2.0 - titleSize.height - 10 - 10 - 10) / displayH;
+        CGFloat picW = displayW * scale;
+        CGFloat picH = displayH * scale;
+        
+        cell.icon.frame = CGRectMake((kScreenW / 2.0 - picW) / 2, 10, picW, picH);
+        cell.title.frame = CGRectMake(10, cell.icon.frame.origin.y + picH + 10, titleSize.width, titleSize.height);
+    }else {
+        cell.icon.frame = CGRectMake(10, (kScreenH / 2.0 - totalH) / 2, displayW, displayH);
+        cell.title.frame = CGRectMake(10, cell.icon.frame.origin.y + displayH + 10, titleSize.width, titleSize.height);
+    }
+    
+    cell.title.text = model.title;
+    //使用SDWebImage加载网络图片数据
+    NSString *imageURLStr = [kImageBaseURL stringByAppendingPathComponent:model.pic_url];
+    [cell.icon sd_setImageWithURL:[NSURL URLWithString:imageURLStr]];
     
     return cell;
 }
+
+
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
 
@@ -90,13 +129,6 @@ static NSString * const reuseIdentifier = @"CCell";
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
@@ -106,20 +138,5 @@ static NSString * const reuseIdentifier = @"CCell";
     VC.model = self.favorites[indexPath.item];
     [self presentViewController:VC animated:YES completion:nil];
 }
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end
