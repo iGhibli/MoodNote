@@ -15,6 +15,9 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        UIImageView *bg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"BackGround6P"]];
+        bg.frame = frame;
+        self.backgroundView = bg;
         self.icon = [[UIImageView alloc]init];
         [self addSubview:self.icon];
         self.title = [[UILabel alloc]init];
