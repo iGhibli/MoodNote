@@ -42,6 +42,7 @@
 		CC8C5EEF1C4F60DF00372CFF /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EDD1C4F60DF00372CFF /* UIImageView+HighlightedWebCache.m */; };
 		CC8C5EF01C4F60DF00372CFF /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EDF1C4F60DF00372CFF /* UIImageView+WebCache.m */; };
 		CC8C5EF11C4F60DF00372CFF /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8C5EE11C4F60DF00372CFF /* UIView+WebCacheOperation.m */; };
+		CC9004801C8D5F0000FC1380 /* OCExpandableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CC90047F1C8D5F0000FC1380 /* OCExpandableButton.m */; };
 		CC92CAEC1C4F6F5500FDE995 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CAEB1C4F6F5500FDE995 /* NSString+Size.m */; };
 		CC92CB1B1C4FA51200FDE995 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB1A1C4FA51200FDE995 /* FXBlurView.m */; };
 		CC92CB2D1C4FC54C00FDE995 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CC92CB2C1C4FC54C00FDE995 /* SettingVC.m */; };
@@ -152,6 +153,8 @@
 		CC8C5EDF1C4F60DF00372CFF /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		CC8C5EE01C4F60DF00372CFF /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CC8C5EE11C4F60DF00372CFF /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		CC90047E1C8D5F0000FC1380 /* OCExpandableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCExpandableButton.h; sourceTree = "<group>"; };
+		CC90047F1C8D5F0000FC1380 /* OCExpandableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCExpandableButton.m; sourceTree = "<group>"; };
 		CC92CAEA1C4F6F5500FDE995 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		CC92CAEB1C4F6F5500FDE995 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		CC92CB191C4FA51200FDE995 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -307,6 +310,15 @@
 				CC8C5EE11C4F60DF00372CFF /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		CC90047D1C8D5F0000FC1380 /* OCExpandableBtn */ = {
+			isa = PBXGroup;
+			children = (
+				CC90047E1C8D5F0000FC1380 /* OCExpandableButton.h */,
+				CC90047F1C8D5F0000FC1380 /* OCExpandableButton.m */,
+			);
+			path = OCExpandableBtn;
 			sourceTree = "<group>";
 		};
 		CC92CB181C4FA51200FDE995 /* FXBlurView */ = {
@@ -512,6 +524,7 @@
 		CCEEEA001C4E6830005C9C93 /* OpenSources */ = {
 			isa = PBXGroup;
 			children = (
+				CC90047D1C8D5F0000FC1380 /* OCExpandableBtn */,
 				CCD040461C8BFD1F003C9823 /* DCPathButton */,
 				CC0737F91C57714E00012DAD /* JT3DScrollView */,
 				CCC0A2341C53B01900D29C22 /* UMSocial_Sdk_4.4 */,
@@ -664,6 +677,7 @@
 				CCEEEA191C4E685E005C9C93 /* AFSecurityPolicy.m in Sources */,
 				CC8C5EE31C4F60DF00372CFF /* NSData+ImageContentType.m in Sources */,
 				CC8C5EEC1C4F60DF00372CFF /* UIImage+GIF.m in Sources */,
+				CC9004801C8D5F0000FC1380 /* OCExpandableButton.m in Sources */,
 				CC8C5EEB1C4F60DF00372CFF /* UIButton+WebCache.m in Sources */,
 				CC7DDB6B1C55BF4000DF3583 /* SettingButton.m in Sources */,
 				CCEEEA171C4E685E005C9C93 /* AFHTTPSessionManager.m in Sources */,
@@ -741,8 +755,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
@@ -765,7 +779,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "76ee27d4-3818-460f-9cc6-c59918108343";
+				PROVISIONING_PROFILE = "8b0f0238-3e2e-4e29-9886-722a025d5088";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -787,8 +801,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -804,7 +818,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "76ee27d4-3818-460f-9cc6-c59918108343";
+				PROVISIONING_PROFILE = "8b0f0238-3e2e-4e29-9886-722a025d5088";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -32,7 +32,6 @@
     self.scrollView.effect = JT3DScrollViewEffectCarousel;
     self.scrollView.delegate = self;
     
-    
     [self addSwipeGesture];
 //    [self addSubViews];
 }

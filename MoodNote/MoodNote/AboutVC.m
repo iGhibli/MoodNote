@@ -9,11 +9,13 @@
 #import "AboutVC.h"
 #import "SDImageCache.h"
 #import "AppDelegate.h"
+#import "OCExpandableButton.h"
+#import "Common.h"
 
 @interface AboutVC ()
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
-@property (weak, nonatomic) IBOutlet UILabel *clearLabel;
-
+@property (weak, nonatomic) IBOutlet OCExpandableButton *OCButton;
+@property (nonatomic, strong) UILabel *label;
 @end
 
 @implementation AboutVC
@@ -25,9 +27,30 @@
     [self addSwipeGesture];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSMutableArray *subviews = [[NSMutableArray alloc] init];
+    
+    UIButton *clearBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40.f, 40.f)];
+    clearBtn.backgroundColor = [UIColor clearColor];
+    [clearBtn setImage:[UIImage imageNamed:@"set-clear"] forState:UIControlStateNormal];
+    [clearBtn addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
+    [subviews addObject:clearBtn];
+    self.label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW - 50 - 50 - 40 - 50, 30.f)];
+    self.label.backgroundColor = [UIColor clearColor];
+    self.label.text = [NSString stringWithFormat:@"当前缓存:  %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
+    self.label.textAlignment = NSTextAlignmentCenter;
+    [subviews addObject:self.label];
+    [self.OCButton setOptionViews:subviews];
+    self.OCButton.alignment = OCExpandableButtonAlignmentLeft;
+}
+
+- (void)clearAction {
+    //清除缓存
+    [[SDImageCache sharedImageCache] clearDisk];
     NSString *memoryString = [NSString stringWithFormat:@"当前缓存:  %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
-    self.clearLabel.text = memoryString;
+    self.label.text = memoryString;
 }
 
 - (void)addSwipeGesture
@@ -52,13 +75,6 @@
                      @"itms-apps://itunes.apple.com/cn/app/encounter/id%d?mt=8",
                      myAPPID ];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-}
-
-- (IBAction)clearAction:(UIButton *)sender {
-    //清除缓存
-    [[SDImageCache sharedImageCache] clearDisk];
-    NSString *memoryString = [NSString stringWithFormat:@"当前缓存:  %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
-    self.clearLabel.text = memoryString;
 }
 
 - (IBAction)emailAction:(UIButton *)sender {
