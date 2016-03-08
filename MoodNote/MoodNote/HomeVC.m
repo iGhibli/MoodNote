@@ -200,13 +200,19 @@
 - (void)shareAction
 {
 #pragma mark - UM分享
+    NSString *shareText = self.currentModel.title;
+    NSInteger length = [shareText length];
+    if (length > 120) {
+        shareText = [shareText substringToIndex:120];
+        shareText = [shareText stringByAppendingString:@"……"];
+    }
     //获取Tempora目录下存储的截屏文件路径
     NSString *tempPath = NSTemporaryDirectory();
     NSString *imageDataPath = [tempPath stringByAppendingPathComponent:@"CurrentScreenData"];
     UIImage *shareImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:imageDataPath]];
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"56a3781a67e58e9bf7002cac"
-                                      shareText:[self.currentModel.title stringByAppendingString:@"      --来自Encounter遇见，心中的小美好。"]
+                                      shareText:[shareText stringByAppendingString:@"      --来自遇见，心中的小美好。"]
                                      shareImage:shareImage
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,
                                     UMShareToWechatFavorite,UMShareToSina, UMShareToTencent,UMShareToRenren, UMShareToEmail,    UMShareToSms,nil]
