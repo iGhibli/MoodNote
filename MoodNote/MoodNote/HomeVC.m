@@ -253,6 +253,21 @@
 }
 
 - (IBAction)clickAction:(UITapGestureRecognizer *)sender {
+    if (self.ContentArray.count < 1 ) {
+        //获取当前版本号
+        NSString *message = @"当前网络状态不好，请检查网络！";
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+            // iOS 8.0+ code
+            UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"提醒" message:message preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [alertC addAction:cancleAction];
+            [self presentViewController:alertC animated:YES completion:nil];
+        }else {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提醒" message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+            [alertView show];
+        }
+        return;
+    }
     int index = self.scrollView.contentOffset.x / kScreenW;
     self.currentModel = self.ContentArray[index];
 #pragma mark - 截屏
