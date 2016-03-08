@@ -208,7 +208,8 @@
                                          appKey:@"56a3781a67e58e9bf7002cac"
                                       shareText:[self.currentModel.title stringByAppendingString:@"      --来自Encounter遇见，心中的小美好。"]
                                      shareImage:shareImage
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToEmail,UMShareToSms,nil]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,
+                                    UMShareToWechatFavorite,UMShareToSina, UMShareToTencent,UMShareToRenren, UMShareToEmail,    UMShareToSms,nil]
                                        delegate:nil];
 }
 

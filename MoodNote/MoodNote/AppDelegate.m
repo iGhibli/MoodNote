@@ -10,6 +10,8 @@
 #import "Common.h"
 #import "FXBlurView.h"
 #import "UMSocial.h"
+#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialWechatHandler.h"
 #import "GuideVC.h"
 
 @interface AppDelegate ()
@@ -115,9 +117,16 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+/****************************Umeng分享*****************************/
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:@"56a3781a67e58e9bf7002cac"];
+    //设置微信AppId、appSecret，分享url
+    [UMSocialWechatHandler setWXAppId:@"wxdcd7e3c164f780dd" appSecret:@"625d39f9076ffd870d16d763704a0b08" url:@"http://www.umeng.com/social"];
+    //打开新浪微博的SSO开关，设置新浪微博回调地址，这里必须要和你在新浪微博后台设置的回调地址一致。需要 #import "UMSocialSinaSSOHandler.h"
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"4292852456"
+                                              secret:@"2d47c9da108e59ee2d7164c4dd6fc378"
+                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+/*****************************************************************/
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 
     self.window.rootViewController = [self determineIsFirst];
@@ -185,6 +194,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [UMSocialSnsService handleOpenURL:url];
+    if (result == FALSE) {
+        //调用其他SDK，例如支付宝SDK等
+    }
+    return result;
 }
 
 @end
