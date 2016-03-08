@@ -39,7 +39,7 @@
     [subviews addObject:clearBtn];
     self.label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenW - 50 - 50 - 40 - 50, 30.f)];
     self.label.backgroundColor = [UIColor clearColor];
-    self.label.text = [NSString stringWithFormat:@"当前缓存:  %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
+    self.label.text = [NSString stringWithFormat:@"缓存: %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
     self.label.textAlignment = NSTextAlignmentCenter;
     [subviews addObject:self.label];
     [self.OCButton setOptionViews:subviews];
@@ -49,7 +49,7 @@
 - (void)clearAction {
     //清除缓存
     [[SDImageCache sharedImageCache] clearDisk];
-    NSString *memoryString = [NSString stringWithFormat:@"当前缓存:  %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
+    NSString *memoryString = [NSString stringWithFormat:@"缓存: %.2f Mb",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
     self.label.text = memoryString;
 }
 
