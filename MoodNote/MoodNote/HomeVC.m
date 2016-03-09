@@ -185,10 +185,28 @@
     UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
     //将内容赋值给剪切板
     pasteBoard.string = self.currentModel.title;
+#pragma mark - 将图片保存到相册
+    //获取Tempora目录下存储的截屏文件路径
+    NSString *tempPath = NSTemporaryDirectory();
+    NSString *imageDataPath = [tempPath stringByAppendingPathComponent:@"CurrentScreenData"];
+    UIImage *shareImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:imageDataPath]];
+    UIImageWriteToSavedPhotosAlbum(shareImage, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    NSString *message;
+    if (!error) {
+        message = @"已复制美图美句到本地";
+        
+    }else
+    {
+        message = @"保存到本地失败";
+    }
     UILabel *popLabel = [[UILabel alloc]init];
     popLabel.textAlignment = NSTextAlignmentCenter;
     popLabel.font = [UIFont systemFontOfSize:12];
-    popLabel.text = @"已复制美句到剪切板";
+    popLabel.text = message;
     popLabel.layer.cornerRadius = 10;
     popLabel.clipsToBounds = YES;
     popLabel.backgroundColor = [UIColor orangeColor];
