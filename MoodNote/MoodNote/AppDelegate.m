@@ -22,7 +22,7 @@
 
 - (FXBlurView *)blurView {
     if (_blurView == nil) {
-        
+        CGFloat btnW = kScreenW / 7;
         _blurView = [[FXBlurView alloc]initWithFrame:[UIScreen mainScreen].bounds];
         [self.window addSubview:_blurView];
 //        TopView *tView = [TopView topView];
@@ -35,8 +35,8 @@
         
         //创建HomeButton
         UIButton *homeBtn = [[UIButton alloc]init];
-        homeBtn.center = CGPointMake(kScreenW / 4, kScreenH / 6 / 2);
-        homeBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        homeBtn.center = CGPointMake(kScreenW / 6, kScreenH / 6 / 2);
+        homeBtn.bounds = CGRectMake(0, 0, btnW, btnW);
         UIImage *homeImage = [UIImage imageNamed:@"btn_main_normal"];
         homeImage = [homeImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [homeBtn setImage:homeImage forState:UIControlStateNormal];
@@ -46,32 +46,57 @@
         homeBtn.tag = 10;
         [topView addSubview:homeBtn];
         
-        //创建SettingButton
-        UIButton *settingBtn = [[UIButton alloc]init];
-        settingBtn.center = CGPointMake(kScreenW * 3 / 4, kScreenH / 6 / 2);
-        settingBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
-        settingBtn.tintColor = [UIColor whiteColor];
-        UIImage *settingImage = [UIImage imageNamed:@"btn_setting_normal"];
-        settingImage = [settingImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        [settingBtn setImage:settingImage forState:UIControlStateNormal];
-        [settingBtn setImage:[UIImage imageNamed:@"btn_setting_highlight"] forState:UIControlStateHighlighted];
-        [settingBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
-        settingBtn.tag = 12;
-        [topView addSubview:settingBtn];
+        //创建TodayButton
+        UIButton *todayBtn = [[UIButton alloc]init];
+        todayBtn.center = CGPointMake(kScreenW * 2 / 6, kScreenH / 6 / 2);
+        todayBtn.bounds = CGRectMake(0, 0, btnW, btnW);
+        todayBtn.tintColor = [UIColor whiteColor];
+        UIImage *todayImage = [UIImage imageNamed:@"btn_today"];
+        todayImage = [todayImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [todayBtn setImage:todayImage forState:UIControlStateNormal];
+        [todayBtn setImage:[UIImage imageNamed:@"btn_today_h"] forState:UIControlStateHighlighted];
+        [todayBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
+        todayBtn.tag = 11;
+        [topView addSubview:todayBtn];
+        
+        //创建VideoButton
+        UIButton *videoBtn = [[UIButton alloc]init];
+        videoBtn.center = CGPointMake(kScreenW * 3 / 6, kScreenH / 6 / 2);
+        videoBtn.bounds = CGRectMake(0, 0, btnW, btnW);
+        videoBtn.tintColor = [UIColor whiteColor];
+        UIImage *videoImage = [UIImage imageNamed:@"btn_video"];
+        videoImage = [videoImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [videoBtn setImage:videoImage forState:UIControlStateNormal];
+        [videoBtn setImage:[UIImage imageNamed:@"btn_video_h"] forState:UIControlStateHighlighted];
+        [videoBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
+        videoBtn.tag = 12;
+        [topView addSubview:videoBtn];
         
         //创建FavoriteButton
         UIButton *favoriteBtn = [[UIButton alloc]init];
-        favoriteBtn.center = CGPointMake(kScreenW / 2, kScreenH / 6 / 2);
-        favoriteBtn.bounds = CGRectMake(0, 0, kScreenH / 6, kScreenH / 6);
+        favoriteBtn.center = CGPointMake(kScreenW * 4 / 6, kScreenH / 6 / 2);
+        favoriteBtn.bounds = CGRectMake(0, 0, btnW, btnW);
         favoriteBtn.tintColor = [UIColor whiteColor];
         UIImage *favoriteImage = [UIImage imageNamed:@"btn_fav_normal"];
         favoriteImage = [favoriteImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         [favoriteBtn setImage:favoriteImage forState:UIControlStateNormal];
         [favoriteBtn setImage:[UIImage imageNamed:@"btn_fav_highlight"] forState:UIControlStateHighlighted];
         [favoriteBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
-        favoriteBtn.tag = 11;
+        favoriteBtn.tag = 13;
         [topView addSubview:favoriteBtn];
         
+        //创建SettingButton
+        UIButton *settingBtn = [[UIButton alloc]init];
+        settingBtn.center = CGPointMake(kScreenW * 5 / 6, kScreenH / 6 / 2);
+        settingBtn.bounds = CGRectMake(0, 0, btnW, btnW);
+        settingBtn.tintColor = [UIColor whiteColor];
+        UIImage *settingImage = [UIImage imageNamed:@"btn_setting_normal"];
+        settingImage = [settingImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [settingBtn setImage:settingImage forState:UIControlStateNormal];
+        [settingBtn setImage:[UIImage imageNamed:@"btn_setting_highlight"] forState:UIControlStateHighlighted];
+        [settingBtn addTarget:self action:@selector(switchoverVCWithButton:) forControlEvents:UIControlEventTouchUpInside];
+        settingBtn.tag = 14;
+        [topView addSubview:settingBtn];
     }
     return _blurView;
 }
@@ -99,9 +124,15 @@
             [self switchoverVCWithIdentifier:@"HomeVCID"];
             break;
         case 11:
-            [self switchoverVCWithIdentifier:@"FavoriteCVCID"];
+            [self switchoverVCWithIdentifier:@"TodayVCID"];
             break;
         case 12:
+            [self switchoverVCWithIdentifier:@"VideoVCID"];
+            break;
+        case 13:
+            [self switchoverVCWithIdentifier:@"FavoriteCVCID"];
+            break;
+        case 14:
             [self switchoverVCWithIdentifier:@"AboutVCID"];
             break;
             
