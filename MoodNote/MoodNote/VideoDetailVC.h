@@ -13,4 +13,7 @@
 @property (nonatomic, strong) NSString *titleText;
 @property (nonatomic, strong) NSString *descText;
 @property (nonatomic, strong) NSString *coverBlurred;
+@property (nonatomic, strong) NSString *sortText;
+@property (nonatomic, strong) NSString *timeText;
+@property (nonatomic, strong) NSString *coverForDetail;
 @end

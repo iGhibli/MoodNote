@@ -117,6 +117,9 @@ static NSString *identifier = @"VideoCellID";
     VC.titleText = model.title;
     VC.descText = model.desc;
     VC.coverBlurred = model.coverBlurred;
+    VC.coverForDetail = model.coverForDetail;
+    VC.timeText = model.duration;
+    VC.sortText = model.category;
     [self presentViewController:VC animated:YES completion:nil];
 }
 

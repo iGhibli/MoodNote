@@ -7,6 +7,7 @@
 //
 
 #import "VideoModel.h"
+#import "NSString+DateFormater.h"
 
 @implementation VideoModel
 
@@ -14,11 +15,15 @@
     if (self = [super init]) {
         self.title = dict[@"title"];
         self.desc = dict[@"description"];
-        self.duration = dict[@"duration"];
+        NSString *durationStr = dict[@"duration"];
+        self.duration = [NSString getFormateDateWithSecond:durationStr];
         self.playUrl = dict[@"playUrl"];
         self.rawWebUrl = dict[@"rawWebUrl"];
         self.coverForFeed = dict[@"coverForFeed"];
         self.coverBlurred = dict[@"coverBlurred"];
+        self.coverForDetail = dict[@"coverForDetail"];
+        NSString *categoryStr = dict[@"category"];
+        self.category = [NSString stringWithFormat:@"#%@",categoryStr];
     }
     return self;
 }

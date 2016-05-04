@@ -11,11 +11,13 @@
 @interface VideoModel : NSObject
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *desc;
+@property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSString *playUrl;
 @property (nonatomic, strong) NSString *duration;
 @property (nonatomic, strong) NSString *rawWebUrl;
 @property (nonatomic, strong) NSString *coverForFeed;
 @property (nonatomic, strong) NSString *coverBlurred;
+@property (nonatomic, strong) NSString *coverForDetail;
 
 - (instancetype)initVideoModelWithDictionary:(NSDictionary *)dict;
 

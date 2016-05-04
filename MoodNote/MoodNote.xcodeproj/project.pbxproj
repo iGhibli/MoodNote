@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5363AB741CD9AB41009DAB1F /* UIImage+CompressForSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */; };
+		5363AB781CD9EBDB009DAB1F /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5363AB771CD9EBDB009DAB1F /* 1.txt */; };
+		5363AB7B1CDA0719009DAB1F /* TodayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB7A1CDA0719009DAB1F /* TodayView.m */; };
+		5363AB7D1CDA0732009DAB1F /* TodayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5363AB7C1CDA0732009DAB1F /* TodayView.xib */; };
+		5363AB801CDA0F8A009DAB1F /* TodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB7F1CDA0F8A009DAB1F /* TodayModel.m */; };
 		53A757311CD87C2B00BC44AF /* TodayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A757301CD87C2B00BC44AF /* TodayVC.m */; };
 		53A757341CD87C3800BC44AF /* VideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A757331CD87C3800BC44AF /* VideoVC.m */; };
 		53A757391CD88D1800BC44AF /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A757371CD88D1800BC44AF /* VideoCell.m */; };
@@ -120,6 +125,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5363AB721CD9AB41009DAB1F /* UIImage+CompressForSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CompressForSize.h"; sourceTree = "<group>"; };
+		5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CompressForSize.m"; sourceTree = "<group>"; };
+		5363AB771CD9EBDB009DAB1F /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 1.txt; path = ../../../../1.txt; sourceTree = "<group>"; };
+		5363AB791CDA0719009DAB1F /* TodayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayView.h; sourceTree = "<group>"; };
+		5363AB7A1CDA0719009DAB1F /* TodayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayView.m; sourceTree = "<group>"; };
+		5363AB7C1CDA0732009DAB1F /* TodayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayView.xib; sourceTree = "<group>"; };
+		5363AB7E1CDA0F8A009DAB1F /* TodayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayModel.h; sourceTree = "<group>"; };
+		5363AB7F1CDA0F8A009DAB1F /* TodayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayModel.m; sourceTree = "<group>"; };
 		53A7572F1CD87C2B00BC44AF /* TodayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayVC.h; sourceTree = "<group>"; };
 		53A757301CD87C2B00BC44AF /* TodayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayVC.m; sourceTree = "<group>"; };
 		53A757321CD87C3800BC44AF /* VideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
@@ -373,6 +386,8 @@
 				CC92CAEB1C4F6F5500FDE995 /* NSString+Size.m */,
 				53A7573F1CD8949B00BC44AF /* NSString+DateFormater.h */,
 				53A757401CD8949B00BC44AF /* NSString+DateFormater.m */,
+				5363AB721CD9AB41009DAB1F /* UIImage+CompressForSize.h */,
+				5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */,
 			);
 			name = Categorys;
 			sourceTree = "<group>";
@@ -692,6 +707,7 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5363AB771CD9EBDB009DAB1F /* 1.txt */,
 				CC9FB2D21C8E819000B20A7D /* BackGround6P.png */,
 				CC9FB2CC1C8E7DBB00B20A7D /* Default-568h@2x.png */,
 				CC9FB2CE1C8E7DEF00B20A7D /* commom.png */,
@@ -742,6 +758,9 @@
 				53A757361CD88D1800BC44AF /* VideoCell.h */,
 				53A757371CD88D1800BC44AF /* VideoCell.m */,
 				53A757381CD88D1800BC44AF /* VideoCell.xib */,
+				5363AB791CDA0719009DAB1F /* TodayView.h */,
+				5363AB7A1CDA0719009DAB1F /* TodayView.m */,
+				5363AB7C1CDA0732009DAB1F /* TodayView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -753,6 +772,8 @@
 				CC8C5EBE1C4F399E00372CFF /* ContentModel.m */,
 				53A7573B1CD8903000BC44AF /* VideoModel.h */,
 				53A7573C1CD8903000BC44AF /* VideoModel.m */,
+				5363AB7E1CDA0F8A009DAB1F /* TodayModel.h */,
+				5363AB7F1CDA0F8A009DAB1F /* TodayModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -903,8 +924,10 @@
 				CC9FB2F81C8ED54A00B20A7D /* UMSShareListController.xib in Resources */,
 				CC9FB2F61C8ED54A00B20A7D /* UMSLoginViewController.xib in Resources */,
 				CCD040521C8BFD1F003C9823 /* bloom.caf in Resources */,
+				5363AB7D1CDA0732009DAB1F /* TodayView.xib in Resources */,
 				CC9FB3131C8EDE0B00B20A7D /* WeiboSDK.bundle in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
+				5363AB781CD9EBDB009DAB1F /* 1.txt in Resources */,
 				CC9FB2CF1C8E7DEF00B20A7D /* commom.png in Resources */,
 				53A757581CD8ABF000BC44AF /* ZFPlayerView.xib in Resources */,
 			);
@@ -934,6 +957,7 @@
 				CCD040501C8BFD1F003C9823 /* DCPathButton.m in Sources */,
 				53A757441CD8A9DA00BC44AF /* VideoDetailVC.m in Sources */,
 				CC8C5EE71C4F60DF00372CFF /* SDWebImageDownloader.m in Sources */,
+				5363AB801CDA0F8A009DAB1F /* TodayModel.m in Sources */,
 				53A757761CD8B04600BC44AF /* MASViewConstraint.m in Sources */,
 				CC2212581C51F0CB00BC2219 /* DBEngine.m in Sources */,
 				53A757801CD8B06E00BC44AF /* XXNibConvention.m in Sources */,
@@ -968,6 +992,7 @@
 				CC0368B11C8B101C00A88F12 /* FavoriteCVC.m in Sources */,
 				CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */,
 				53A757721CD8B04600BC44AF /* MASConstraint.m in Sources */,
+				5363AB7B1CDA0719009DAB1F /* TodayView.m in Sources */,
 				53A7573D1CD8903000BC44AF /* VideoModel.m in Sources */,
 				CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */,
 				CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */,
@@ -975,6 +1000,7 @@
 				53A757751CD8B04600BC44AF /* MASViewAttribute.m in Sources */,
 				CCD0405B1C8C067C003C9823 /* DetailVC.m in Sources */,
 				CCEEE9E41C4E3392005C9C93 /* AppDelegate.m in Sources */,
+				5363AB741CD9AB41009DAB1F /* UIImage+CompressForSize.m in Sources */,
 				53A757741CD8B04600BC44AF /* MASLayoutConstraint.m in Sources */,
 				53A7577F1CD8B06E00BC44AF /* XXNibBridge.m in Sources */,
 				CCDC0E281C8C4FD7009B2254 /* AboutVC.m in Sources */,

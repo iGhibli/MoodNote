@@ -9,12 +9,17 @@
 #import "VideoDetailVC.h"
 #import "ZFPlayer.h"
 #import "UIImageView+WebCache.h"
+#import "UIImage+CompressForSize.h"
+#import "Common.h"
 
 @interface VideoDetailVC ()
 @property (weak, nonatomic) IBOutlet ZFPlayerView *videoView;
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *tilteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *desc;
+@property (weak, nonatomic) IBOutlet UILabel *sortLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *bottomIcon;
 
 @end
 
@@ -37,9 +42,15 @@
 
 - (void)setupSubViews
 {
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:self.coverBlurred] placeholderImage:nil options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.icon.image = [UIImage imageCompressForSize:image targetSize:CGSizeMake(kScreenW, CGRectGetHeight(self.icon.bounds))];
+    }];
     [self.icon sd_setImageWithURL:[NSURL URLWithString:self.coverBlurred] placeholderImage:nil];
+    [self.bottomIcon sd_setImageWithURL:[NSURL URLWithString:self.coverForDetail] placeholderImage:nil];
     self.tilteLabel.text = self.titleText;
     self.desc.text = self.descText;
+    self.sortLabel.text = self.sortText;
+    self.timeLabel.text = self.timeText;
 }
 
 - (void)setupVideoView
