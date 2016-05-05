@@ -9,22 +9,33 @@
 #import "TodayVC.h"
 #import "AFNetworking.h"
 #import "JT3DScrollView.h"
-#import "TodayView.h"
+#import "TodayCell.h"
 #import "TodayModel.h"
+#import "Common.h"
 
-@interface TodayVC ()<UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet JT3DScrollView *JTScorll;
+@interface TodayVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray *numArray;
-@property (nonatomic, strong) NSMutableArray *contentArray;
 
 @end
 
 @implementation TodayVC
 
+static NSString *identifier = @"TodayCellID";
+
 - (void)viewDidLoad {
     [self loadDatas];
     [super viewDidLoad];
     [self addSwipeGesture];
+    [self setupCollectionView];
+}
+
+#pragma mark - Getter & Setter
+- (NSMutableArray *)dataSource {
+    if (_dataSource == nil) {
+        _dataSource = [NSMutableArray array];
+    }
+    return _dataSource;
 }
 
 - (NSMutableArray *)numArray {
@@ -32,13 +43,6 @@
         _numArray = [NSMutableArray array];
     }
     return _numArray;
-}
-
-- (NSMutableArray *)contentArray {
-    if (_contentArray == nil) {
-        _contentArray = [NSMutableArray array];
-    }
-    return _contentArray;
 }
 
 #pragma mark - 手势
@@ -50,17 +54,16 @@
     [self.view addGestureRecognizer:swipeDown];
 }
 
-- (void)setupJTScrollView
+- (void)setupCollectionView
 {
-    self.JTScorll.effect = JT3DScrollViewEffectDepth;
-    self.JTScorll.delegate = self;
+    self.collectionView.pagingEnabled = YES;
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TodayCell" bundle:nil] forCellWithReuseIdentifier:identifier];
 }
 
 - (void)loadDatas
 {
     //完整的URL
     NSString *URLString = @"http://v3.wufazhuce.com:8000/api/music/idlist/0";
-//    NSString *URLString = @"http://v3.wufazhuce.com:8000/api/music/detail/90";
 
     //使用AFNetWorking进行网络数据请求
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -69,7 +72,25 @@
         for (NSString *str in tempArray) {
             [self.numArray addObject:str];
         }
-        [self loadDataForManyTimes];
+        [self loadDetailData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"!!!!!!%@",error);
+    }];
+}
+
+- (void)loadDetailData
+{
+    //完整的URL
+    NSString *URLString = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/music/detail/%@",self.numArray.firstObject];
+    
+    //使用AFNetWorking进行网络数据请求
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *dict = responseObject[@"data"];
+        TodayModel *model = [[TodayModel alloc]initTodayModelWithDict:dict];
+        [self.dataSource addObject:model];
+        
+        [self.collectionView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"!!!!!!%@",error);
     }];
@@ -82,7 +103,7 @@
         int count = dispatch_source_get_data(source);
         if (count == self.numArray.count) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self addSubViews];
+                [self.collectionView reloadData];
             });
         }
     });
@@ -99,7 +120,7 @@
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSDictionary *dict = responseObject[@"data"];
             TodayModel *model = [[TodayModel alloc]initTodayModelWithDict:dict];
-            [self.contentArray addObject:model];
+            [self.dataSource addObject:model];
             dispatch_source_merge_data(source, 1);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"!!!!!!error%@",error);
@@ -115,23 +136,44 @@
     [queue addOperations:operations waitUntilFinished:YES];
 }
 
-- (void)addSubViews
-{
-    for (int i = 0; i < self.numArray.count; i++) {
-        CGFloat width = CGRectGetWidth(self.JTScorll.frame);
-        CGFloat height = CGRectGetHeight(self.JTScorll.frame);
-        
-        CGFloat x = self.JTScorll.subviews.count * width;
-        
-        TodayView *view = [[TodayView alloc] initWithFrame:CGRectMake(x, 0, width, height)];
+#pragma mark <UICollectionViewDataSource>
 
-        [view bandingTodayViewWithTodayModel:self.contentArray[i]];
-        [self.JTScorll addSubview:view];
-        self.JTScorll.contentSize = CGSizeMake(x + width, height);
-    }
-    
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.dataSource.count;
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    TodayModel *model = self.dataSource[indexPath.row];
+    TodayCell *cell = (TodayCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    [cell bandingTodayCellWithTodayModel:model];
+    return cell;
+}
+
+#pragma mark <UICollectionViewDelegateFlowLayout>
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize itemSize = CGSizeMake(kScreenW, kScreenH);
+    return itemSize;
+}
+
+#pragma mark <UICollectionViewDelegate>
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    VideoModel *model = self.dataSource[indexPath.row];
+//    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    VideoDetailVC *VC = [SB instantiateViewControllerWithIdentifier:@"VideoDetailVCID"];
+//    VC.videoUrlStr = model.playUrl;
+//    VC.titleText = model.title;
+//    VC.descText = model.desc;
+//    VC.coverBlurred = model.coverBlurred;
+//    VC.coverForDetail = model.coverForDetail;
+//    VC.timeText = model.duration;
+//    VC.sortText = model.category;
+//    [self presentViewController:VC animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		535A04CA1CDAF2A30058945D /* TodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 535A04C81CDAF2A30058945D /* TodayCell.m */; };
+		535A04CB1CDAF2A30058945D /* TodayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535A04C91CDAF2A30058945D /* TodayCell.xib */; };
 		5363AB741CD9AB41009DAB1F /* UIImage+CompressForSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */; };
 		5363AB781CD9EBDB009DAB1F /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5363AB771CD9EBDB009DAB1F /* 1.txt */; };
-		5363AB7B1CDA0719009DAB1F /* TodayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB7A1CDA0719009DAB1F /* TodayView.m */; };
-		5363AB7D1CDA0732009DAB1F /* TodayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5363AB7C1CDA0732009DAB1F /* TodayView.xib */; };
 		5363AB801CDA0F8A009DAB1F /* TodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB7F1CDA0F8A009DAB1F /* TodayModel.m */; };
 		53A757311CD87C2B00BC44AF /* TodayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A757301CD87C2B00BC44AF /* TodayVC.m */; };
 		53A757341CD87C3800BC44AF /* VideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A757331CD87C3800BC44AF /* VideoVC.m */; };
@@ -125,12 +125,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		535A04C71CDAF2A30058945D /* TodayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayCell.h; sourceTree = "<group>"; };
+		535A04C81CDAF2A30058945D /* TodayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayCell.m; sourceTree = "<group>"; };
+		535A04C91CDAF2A30058945D /* TodayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayCell.xib; sourceTree = "<group>"; };
 		5363AB721CD9AB41009DAB1F /* UIImage+CompressForSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CompressForSize.h"; sourceTree = "<group>"; };
 		5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CompressForSize.m"; sourceTree = "<group>"; };
 		5363AB771CD9EBDB009DAB1F /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 1.txt; path = ../../../../1.txt; sourceTree = "<group>"; };
-		5363AB791CDA0719009DAB1F /* TodayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayView.h; sourceTree = "<group>"; };
-		5363AB7A1CDA0719009DAB1F /* TodayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayView.m; sourceTree = "<group>"; };
-		5363AB7C1CDA0732009DAB1F /* TodayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayView.xib; sourceTree = "<group>"; };
 		5363AB7E1CDA0F8A009DAB1F /* TodayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayModel.h; sourceTree = "<group>"; };
 		5363AB7F1CDA0F8A009DAB1F /* TodayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayModel.m; sourceTree = "<group>"; };
 		53A7572F1CD87C2B00BC44AF /* TodayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayVC.h; sourceTree = "<group>"; };
@@ -758,9 +758,9 @@
 				53A757361CD88D1800BC44AF /* VideoCell.h */,
 				53A757371CD88D1800BC44AF /* VideoCell.m */,
 				53A757381CD88D1800BC44AF /* VideoCell.xib */,
-				5363AB791CDA0719009DAB1F /* TodayView.h */,
-				5363AB7A1CDA0719009DAB1F /* TodayView.m */,
-				5363AB7C1CDA0732009DAB1F /* TodayView.xib */,
+				535A04C71CDAF2A30058945D /* TodayCell.h */,
+				535A04C81CDAF2A30058945D /* TodayCell.m */,
+				535A04C91CDAF2A30058945D /* TodayCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -923,8 +923,8 @@
 				CC9FB2F51C8ED54A00B20A7D /* UMShareEditViewControlleriPad.xib in Resources */,
 				CC9FB2F81C8ED54A00B20A7D /* UMSShareListController.xib in Resources */,
 				CC9FB2F61C8ED54A00B20A7D /* UMSLoginViewController.xib in Resources */,
+				535A04CB1CDAF2A30058945D /* TodayCell.xib in Resources */,
 				CCD040521C8BFD1F003C9823 /* bloom.caf in Resources */,
-				5363AB7D1CDA0732009DAB1F /* TodayView.xib in Resources */,
 				CC9FB3131C8EDE0B00B20A7D /* WeiboSDK.bundle in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
 				5363AB781CD9EBDB009DAB1F /* 1.txt in Resources */,
@@ -949,6 +949,7 @@
 				CC8C5EE91C4F60DF00372CFF /* SDWebImageManager.m in Sources */,
 				CC92CB1B1C4FA51200FDE995 /* FXBlurView.m in Sources */,
 				53A757311CD87C2B00BC44AF /* TodayVC.m in Sources */,
+				535A04CA1CDAF2A30058945D /* TodayCell.m in Sources */,
 				CCD040511C8BFD1F003C9823 /* DCPathItemButton.m in Sources */,
 				CCEEEA151C4E685E005C9C93 /* AFHTTPRequestOperation.m in Sources */,
 				53A757781CD8B04600BC44AF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -992,7 +993,6 @@
 				CC0368B11C8B101C00A88F12 /* FavoriteCVC.m in Sources */,
 				CCEEEA1B1C4E685E005C9C93 /* AFURLRequestSerialization.m in Sources */,
 				53A757721CD8B04600BC44AF /* MASConstraint.m in Sources */,
-				5363AB7B1CDA0719009DAB1F /* TodayView.m in Sources */,
 				53A7573D1CD8903000BC44AF /* VideoModel.m in Sources */,
 				CC0737FC1C57714E00012DAD /* JT3DScrollView.m in Sources */,
 				CCEEEA1D1C4E685E005C9C93 /* AFURLSessionManager.m in Sources */,

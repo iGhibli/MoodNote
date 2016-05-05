@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TodayVC : UIViewController
+@interface TodayVC : UICollectionViewController
 
 @end

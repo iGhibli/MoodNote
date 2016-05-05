@@ -1,20 +1,25 @@
 //
-//  TodayView.m
+//  TodayCell.m
 //  MoodNote
 //
-//  Created by 赛驰 on 16/5/4.
+//  Created by 赛驰 on 16/5/5.
 //  Copyright © 2016年 qingyun. All rights reserved.
 //
 
-#import "TodayView.h"
+#import "TodayCell.h"
 #import "TodayModel.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+CompressForSize.h"
 #import "Common.h"
 
-@implementation TodayView
+@implementation TodayCell
 
-- (void)bandingTodayViewWithTodayModel:(TodayModel *)model {
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
+
+- (void)bandingTodayCellWithTodayModel:(TodayModel *)model {
     [self.headIcon sd_setImageWithURL:[NSURL URLWithString:model.cover] placeholderImage:nil options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.headIcon.image = [UIImage imageCompressForSize:image targetSize:CGSizeMake(kScreenW, kScreenW * 4 / 10)];
     }];
