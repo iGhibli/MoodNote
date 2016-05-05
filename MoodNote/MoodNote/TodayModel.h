@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *user_name;
 @property (nonatomic, strong) NSString *web_urlStr;
 @property (nonatomic, strong) NSString *desc;
+@property (nonatomic, strong) NSString *time;
 
 - (instancetype)initTodayModelWithDict:(NSDictionary *)dict;
 

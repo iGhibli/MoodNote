@@ -14,6 +14,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *story_titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *story_authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *storyLabel;
+//musicView
+@property (weak, nonatomic) IBOutlet UIView *musicView;
+@property (weak, nonatomic) IBOutlet UIImageView *authorHeadIcon;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
 - (void)bandingTodayCellWithTodayModel:(TodayModel *)model;
 

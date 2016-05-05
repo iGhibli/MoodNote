@@ -15,12 +15,15 @@
         self.title = dict[@"title"];
         self.cover = dict[@"cover"];
         self.story_title = dict[@"story_title"];
-        self.story = dict[@"story"];
+        NSString *storyStr = dict[@"story"];
+        self.story = [storyStr stringByReplacingOccurrencesOfString:@"<br>" withString:@""];
         self.lyric = dict[@"lyric"];
         self.info = dict[@"info"];
         self.music_id = dict[@"music_id"];
         self.charge_edt = dict[@"charge_edt"];
         self.web_url = dict[@"web_url"];
+        NSString *timeStr = dict[@"maketime"];
+        self.time = [timeStr substringToIndex:10];
         NSDictionary *authorDict = dict[@"author"];
         self.user_name = authorDict[@"user_name"];
         self.web_urlStr = authorDict[@"web_url"];
