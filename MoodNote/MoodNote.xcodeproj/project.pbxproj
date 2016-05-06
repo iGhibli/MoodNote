@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		531FE0741CDC400F008EFA4A /* SongPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE0731CDC400F008EFA4A /* SongPlayer.m */; };
-		531FE07A1CDC4E49008EFA4A /* SJPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE0791CDC4E49008EFA4A /* SJPlayerManager.m */; };
 		531FE07D1CDC555C008EFA4A /* MusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE07C1CDC555C008EFA4A /* MusicVC.m */; };
 		531FE0801CDC963F008EFA4A /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE07F1CDC963F008EFA4A /* SettingVC.m */; };
 		535A04CA1CDAF2A30058945D /* TodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 535A04C81CDAF2A30058945D /* TodayCell.m */; };
@@ -129,10 +127,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		531FE0721CDC400F008EFA4A /* SongPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongPlayer.h; sourceTree = "<group>"; };
-		531FE0731CDC400F008EFA4A /* SongPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongPlayer.m; sourceTree = "<group>"; };
-		531FE0781CDC4E49008EFA4A /* SJPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJPlayerManager.h; sourceTree = "<group>"; };
-		531FE0791CDC4E49008EFA4A /* SJPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPlayerManager.m; sourceTree = "<group>"; };
 		531FE07B1CDC555C008EFA4A /* MusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicVC.h; sourceTree = "<group>"; };
 		531FE07C1CDC555C008EFA4A /* MusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicVC.m; sourceTree = "<group>"; };
 		531FE07E1CDC963F008EFA4A /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
@@ -797,13 +791,9 @@
 		CCEEE9F91C4E343D005C9C93 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				531FE0721CDC400F008EFA4A /* SongPlayer.h */,
-				531FE0731CDC400F008EFA4A /* SongPlayer.m */,
 				CC2212891C52540600BC2219 /* Favorites.db */,
 				CC2212561C51F0CB00BC2219 /* DBEngine.h */,
 				CC2212571C51F0CB00BC2219 /* DBEngine.m */,
-				531FE0781CDC4E49008EFA4A /* SJPlayerManager.h */,
-				531FE0791CDC4E49008EFA4A /* SJPlayerManager.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -963,7 +953,6 @@
 				CC8C5EED1C4F60DF00372CFF /* UIImage+MultiFormat.m in Sources */,
 				CC2726DA1C54F4E8003D0B3D /* GuideVC.m in Sources */,
 				53A757771CD8B04600BC44AF /* NSArray+MASAdditions.m in Sources */,
-				531FE07A1CDC4E49008EFA4A /* SJPlayerManager.m in Sources */,
 				CC8C5EEE1C4F60DF00372CFF /* UIImage+WebP.m in Sources */,
 				CC0737FF1C57731B00012DAD /* HomeVC.m in Sources */,
 				531FE07D1CDC555C008EFA4A /* MusicVC.m in Sources */,
@@ -1004,7 +993,6 @@
 				CC8C5EE31C4F60DF00372CFF /* NSData+ImageContentType.m in Sources */,
 				CC8C5EEC1C4F60DF00372CFF /* UIImage+GIF.m in Sources */,
 				CC9004801C8D5F0000FC1380 /* OCExpandableButton.m in Sources */,
-				531FE0741CDC400F008EFA4A /* SongPlayer.m in Sources */,
 				CC8C5EEB1C4F60DF00372CFF /* UIButton+WebCache.m in Sources */,
 				CCEEEA171C4E685E005C9C93 /* AFHTTPSessionManager.m in Sources */,
 				CC8C5EEA1C4F60DF00372CFF /* SDWebImagePrefetcher.m in Sources */,

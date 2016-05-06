@@ -12,6 +12,8 @@
 
 @interface SettingVC ()
 @property (weak, nonatomic) IBOutlet UILabel *memoryLabel;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @end
 
@@ -25,7 +27,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupShaowStyleTwoWith:self.topView];
+    [self setupShaowStyleTwoWith:self.bottomView];
     [self addSwipeGesture];
+}
+
+- (void)setupShaowStyleTwoWith:(UIView *)view
+{
+    view.layer.masksToBounds = NO;
+    //shadowColor阴影颜色
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
+    //shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
+    view.layer.shadowOffset = CGSizeMake(0,0);
+    //阴影透明度，默认0
+    view.layer.shadowOpacity = 0.8;
+    //阴影半径，默认3
+    view.layer.shadowRadius = 5;
 }
 
 - (void)addSwipeGesture
