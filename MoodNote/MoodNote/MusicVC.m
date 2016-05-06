@@ -55,6 +55,7 @@
     self.storyTextView.editable = NO;//禁止编辑
     self.storyTextView.showsVerticalScrollIndicator = NO;
     self.storyTextView.showsHorizontalScrollIndicator = NO;
+    self.storyTextView.backgroundColor = [UIColor clearColor];
     [self.scrollView addSubview:self.storyTextView];
     
     //lrcTextView
@@ -69,6 +70,7 @@
     self.lrcTextView.editable = NO;//禁止编辑
     self.lrcTextView.showsHorizontalScrollIndicator = NO;
     self.lrcTextView.showsVerticalScrollIndicator = NO;
+    self.lrcTextView.backgroundColor = [UIColor clearColor];
     [self.scrollView addSubview:self.lrcTextView];
     
     //infoTextView
@@ -83,6 +85,7 @@
     self.infoTextView.editable = NO;//禁止编辑
     self.infoTextView.showsVerticalScrollIndicator = NO;
     self.infoTextView.showsHorizontalScrollIndicator = NO;
+    self.infoTextView.backgroundColor = [UIColor clearColor];
     [self.scrollView addSubview:self.infoTextView];
 }
 

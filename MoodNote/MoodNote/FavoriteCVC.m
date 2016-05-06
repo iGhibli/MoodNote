@@ -26,6 +26,11 @@ static NSString * const reuseIdentifier = @"CCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
+    bgImageView.image = [UIImage imageNamed:@"BG"];
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
+    
     [self addSwipeGesture];
     self.collectionView.pagingEnabled = YES;
     [self.collectionView registerClass:[FavoriteCCell class] forCellWithReuseIdentifier:reuseIdentifier];

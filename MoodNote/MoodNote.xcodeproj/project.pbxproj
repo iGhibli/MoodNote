@@ -10,6 +10,7 @@
 		531FE0741CDC400F008EFA4A /* SongPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE0731CDC400F008EFA4A /* SongPlayer.m */; };
 		531FE07A1CDC4E49008EFA4A /* SJPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE0791CDC4E49008EFA4A /* SJPlayerManager.m */; };
 		531FE07D1CDC555C008EFA4A /* MusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE07C1CDC555C008EFA4A /* MusicVC.m */; };
+		531FE0801CDC963F008EFA4A /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 531FE07F1CDC963F008EFA4A /* SettingVC.m */; };
 		535A04CA1CDAF2A30058945D /* TodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 535A04C81CDAF2A30058945D /* TodayCell.m */; };
 		535A04CB1CDAF2A30058945D /* TodayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535A04C91CDAF2A30058945D /* TodayCell.xib */; };
 		5363AB741CD9AB41009DAB1F /* UIImage+CompressForSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */; };
@@ -134,6 +135,8 @@
 		531FE0791CDC4E49008EFA4A /* SJPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJPlayerManager.m; sourceTree = "<group>"; };
 		531FE07B1CDC555C008EFA4A /* MusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicVC.h; sourceTree = "<group>"; };
 		531FE07C1CDC555C008EFA4A /* MusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicVC.m; sourceTree = "<group>"; };
+		531FE07E1CDC963F008EFA4A /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		531FE07F1CDC963F008EFA4A /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		535A04C71CDAF2A30058945D /* TodayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayCell.h; sourceTree = "<group>"; };
 		535A04C81CDAF2A30058945D /* TodayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayCell.m; sourceTree = "<group>"; };
 		535A04C91CDAF2A30058945D /* TodayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayCell.xib; sourceTree = "<group>"; };
@@ -751,6 +754,8 @@
 				53A757431CD8A9DA00BC44AF /* VideoDetailVC.m */,
 				531FE07B1CDC555C008EFA4A /* MusicVC.h */,
 				531FE07C1CDC555C008EFA4A /* MusicVC.m */,
+				531FE07E1CDC963F008EFA4A /* SettingVC.h */,
+				531FE07F1CDC963F008EFA4A /* SettingVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -972,6 +977,7 @@
 				53A757781CD8B04600BC44AF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				53A757391CD88D1800BC44AF /* VideoCell.m in Sources */,
 				CCEEEA161C4E685E005C9C93 /* AFHTTPRequestOperationManager.m in Sources */,
+				531FE0801CDC963F008EFA4A /* SettingVC.m in Sources */,
 				CCD040501C8BFD1F003C9823 /* DCPathButton.m in Sources */,
 				53A757441CD8A9DA00BC44AF /* VideoDetailVC.m in Sources */,
 				CC8C5EE71C4F60DF00372CFF /* SDWebImageDownloader.m in Sources */,

@@ -23,6 +23,11 @@ static NSString *identifier = @"VideoCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
+    bgImageView.image = [UIImage imageNamed:@"BG"];
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
+    
     [self addSwipeGesture];
     [self setupCollectionView];
     [self loadDatas];
@@ -49,7 +54,6 @@ static NSString *identifier = @"VideoCellID";
 {
     self.collectionView.pagingEnabled = YES;
     [self.collectionView registerNib:[UINib nibWithNibName:@"VideoCell" bundle:nil] forCellWithReuseIdentifier:identifier];
-//    [self.collectionView registerClass:[FavoriteCCell class] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
 - (void)loadDatas
