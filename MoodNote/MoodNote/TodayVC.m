@@ -12,6 +12,8 @@
 #import "TodayCell.h"
 #import "TodayModel.h"
 #import "Common.h"
+#import "SJPlayerManager.h"
+#import "MusicVC.h"
 
 @interface TodayVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *dataSource;
@@ -71,17 +73,18 @@ static NSString *identifier = @"TodayCellID";
         NSArray *tempArray = responseObject[@"data"];
         for (NSString *str in tempArray) {
             [self.numArray addObject:str];
+            [self loadDetailDataWithIDStr:str];
         }
-        [self loadDetailData];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"!!!!!!%@",error);
     }];
 }
 
-- (void)loadDetailData
+- (void)loadDetailDataWithIDStr:(NSString *)str
 {
     //完整的URL
-    NSString *URLString = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/music/detail/%@",self.numArray.firstObject];
+    NSString *URLString = [NSString stringWithFormat:@"http://v3.wufazhuce.com:8000/api/music/detail/%@",str];
     
     //使用AFNetWorking进行网络数据请求
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -146,7 +149,21 @@ static NSString *identifier = @"TodayCellID";
     TodayModel *model = self.dataSource[indexPath.row];
     TodayCell *cell = (TodayCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     [cell bandingTodayCellWithTodayModel:model];
+    cell.playBtn.tag = indexPath.item;
+    [cell.playBtn addTarget:self action:@selector(playBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
+}
+
+- (void)playBtnAction:(UIButton *)sender
+{
+    TodayModel *model = self.dataSource[sender.tag];
+    if (sender.selected) {
+        sender.selected = NO;
+        [[SJPlayerManager defaultManager] pauseMusic:model.music_id];
+    }else {
+        sender.selected = YES;
+        [[SJPlayerManager defaultManager] playingMusic:model.music_id];
+    }
 }
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
@@ -162,17 +179,11 @@ static NSString *identifier = @"TodayCellID";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    VideoModel *model = self.dataSource[indexPath.row];
-//    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    VideoDetailVC *VC = [SB instantiateViewControllerWithIdentifier:@"VideoDetailVCID"];
-//    VC.videoUrlStr = model.playUrl;
-//    VC.titleText = model.title;
-//    VC.descText = model.desc;
-//    VC.coverBlurred = model.coverBlurred;
-//    VC.coverForDetail = model.coverForDetail;
-//    VC.timeText = model.duration;
-//    VC.sortText = model.category;
-//    [self presentViewController:VC animated:YES completion:nil];
+    TodayModel *model = self.dataSource[indexPath.item];
+    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MusicVC *VC = [SB instantiateViewControllerWithIdentifier:@"MusicVCID"];
+    VC.model = model;
+    [self presentViewController:VC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

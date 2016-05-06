@@ -33,15 +33,16 @@
     self.storyLabel.text = model.story;
     
     //musicView
-    self.authorHeadIcon.layer.cornerRadius = self.authorHeadIcon.bounds.size.width / 4;
+    CGFloat authorHeadIconW = (kScreenW * 3.f / 10.f) * 0.4f;
+    self.authorHeadIcon.layer.cornerRadius = authorHeadIconW / 2;
     self.authorHeadIcon.clipsToBounds = YES;
     [self.authorHeadIcon sd_setImageWithURL:[NSURL URLWithString:model.web_urlStr] placeholderImage:nil];
     self.titleLabel.text = model.title;
     self.timeLabel.text = model.time;
     self.nameLabel.text = model.user_name;
     self.typeLabel.text = model.desc;
-    
 }
+
 
 - (void)setupShaowStyleTwoWith:(UIView *)view
 {
