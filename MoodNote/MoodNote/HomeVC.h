@@ -10,8 +10,4 @@
 
 @interface HomeVC : UIViewController
 
-// 设置本地通知
-+ (void)registerLocalNotification:(NSInteger)alertTime;
-+ (void)cancelLocalNotificationWithKey:(NSString *)key;
-
 @end

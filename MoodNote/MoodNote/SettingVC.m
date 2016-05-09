@@ -107,7 +107,7 @@
 
 - (IBAction)aboutBtnAction:(UIButton *)sender {
     //获取当前版本号
-    NSString *message = [NSString stringWithFormat:@"Author: iGhibli\nEmail: iGhibli@163.com\nVersion: %@\n^_^ 谢谢使用 ^_^",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    NSString *message = [NSString stringWithFormat:@"于千万人之中，遇见你要遇见的人。\n于千万年之中，时间无涯的荒野里，\n没有早一步，也没有迟一步，\n遇上了也只能轻轻地说一句：\n“喔 原来你也在这里”\n我要你知道，\n在这个世界上总有一个人是等着你的，\n不管在什么时候，不管在什么地方，\n反正你知道，总有这么个人。\n\nAuthor: ZhouShuaijie\nEmail: iGhibli@163.com\nVersion: %@\n^_^ 感谢生命中遇见你 ^_^",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         // iOS 8.0+ code
         UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"关于遇见" message:message preferredStyle:UIAlertControllerStyleAlert];

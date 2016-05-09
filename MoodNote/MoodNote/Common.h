@@ -30,6 +30,7 @@
 #define kPicWidth       @"picWidth"
 
 /* Others */
-#define kAppVersion     @"kAppversion"
+#define kAppVersion                 @"kAppversion"
+#define KSJLocalNotificationKey     @"KSJLocalNotificationKey"
 
 #endif /* Common_h */

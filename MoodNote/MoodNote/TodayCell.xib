@@ -59,7 +59,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ve-Nf-Rtd">
-                                <rect key="frame" x="10" y="179" width="373" height="282"/>
+                                <rect key="frame" x="10" y="179" width="373" height="248"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -71,10 +71,30 @@
                                     <constraint firstAttribute="width" secondItem="rTt-m3-RIA" secondAttribute="height" multiplier="10:3" constant="20" id="joR-bM-xpk"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0q-Qf-8j9">
+                                <rect key="frame" x="0.0" y="427" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ffK-3g-Yfi"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xhV-JW-StP"/>
+                                    <barButtonItem style="plain" id="TWD-cq-v9I">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ChA-vj-F0d">
+                                            <rect key="frame" x="171" y="-3" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="btn-link-2"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gJL-Mh-w3y"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Z0q-Qf-8j9" firstAttribute="leading" secondItem="AjD-3O-x6J" secondAttribute="leading" id="6d9-06-a8x"/>
+                            <constraint firstAttribute="trailing" secondItem="Z0q-Qf-8j9" secondAttribute="trailing" id="8Tp-4i-rie"/>
                             <constraint firstAttribute="trailing" secondItem="Aqh-vR-gH1" secondAttribute="trailing" constant="10" id="F1l-Di-pdj"/>
+                            <constraint firstItem="Z0q-Qf-8j9" firstAttribute="top" secondItem="2Ve-Nf-Rtd" secondAttribute="bottom" id="GMI-3E-afm"/>
                             <constraint firstItem="Aqh-vR-gH1" firstAttribute="leading" secondItem="AjD-3O-x6J" secondAttribute="leading" constant="10" id="GML-eU-Fzg"/>
                             <constraint firstItem="owD-5K-ylL" firstAttribute="top" secondItem="cN9-nm-GWc" secondAttribute="bottom" constant="5" id="Jva-2w-VTF"/>
                             <constraint firstAttribute="trailing" secondItem="rTt-m3-RIA" secondAttribute="trailing" id="LO5-rL-wnh"/>
@@ -83,6 +103,7 @@
                             <constraint firstItem="cN9-nm-GWc" firstAttribute="top" secondItem="AjD-3O-x6J" secondAttribute="top" constant="5" id="P7V-aa-vM0"/>
                             <constraint firstItem="rTt-m3-RIA" firstAttribute="top" secondItem="AjD-3O-x6J" secondAttribute="top" id="QPa-RM-baW"/>
                             <constraint firstItem="Aqh-vR-gH1" firstAttribute="top" secondItem="2Ls-hX-vHL" secondAttribute="bottom" constant="5" id="QpO-Z4-REo"/>
+                            <constraint firstAttribute="bottom" secondItem="Z0q-Qf-8j9" secondAttribute="bottom" id="Wim-zd-2I9"/>
                             <constraint firstItem="2Ve-Nf-Rtd" firstAttribute="top" secondItem="Aqh-vR-gH1" secondAttribute="bottom" constant="10" id="ZXN-up-cG4"/>
                             <constraint firstItem="rTt-m3-RIA" firstAttribute="leading" secondItem="AjD-3O-x6J" secondAttribute="leading" id="bXm-Hq-XzE"/>
                             <constraint firstAttribute="trailing" secondItem="owD-5K-ylL" secondAttribute="trailing" constant="10" id="c3a-Gr-yXt"/>
@@ -98,6 +119,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="P7V-aa-vM0"/>
+                                <exclude reference="MZf-Hh-Leu"/>
                             </mask>
                         </variation>
                     </view>
@@ -200,6 +222,7 @@
                 <outlet property="musicView" destination="943-m9-TTJ" id="Mb5-T1-z9k"/>
                 <outlet property="nameLabel" destination="pO8-2k-aPL" id="yTI-Xo-PhP"/>
                 <outlet property="playBtn" destination="jff-CK-tYd" id="Lvx-eU-ute"/>
+                <outlet property="shareBtn" destination="ChA-vj-F0d" id="YFG-xJ-ejC"/>
                 <outlet property="storyLabel" destination="2Ve-Nf-Rtd" id="nVD-LX-GB6"/>
                 <outlet property="story_authorLabel" destination="Aqh-vR-gH1" id="u4P-pd-MDC"/>
                 <outlet property="story_titleLabel" destination="2Ls-hX-vHL" id="w2G-PP-4WU"/>
@@ -211,6 +234,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="btn-link-2" width="32" height="32"/>
         <image name="play" width="200" height="200"/>
         <image name="stop" width="200" height="200"/>
     </resources>

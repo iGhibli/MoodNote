@@ -14,6 +14,7 @@
 #import "Common.h"
 #import "ZFPlayer.h"
 #import "MusicVC.h"
+#import "UMSocial.h"
 
 @interface TodayVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *dataSource;
@@ -34,6 +35,10 @@ static NSString *identifier = @"TodayCellID";
 - (void)viewDidLoad {
     [self loadDatas];
     [super viewDidLoad];
+    UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:self.view.frame];
+    bgImageView.image = [UIImage imageNamed:@"BG"];
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
     [self addSwipeGesture];
     [self setupCollectionView];
 }
@@ -97,10 +102,13 @@ static NSString *identifier = @"TodayCellID";
     [manager GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *dict = responseObject[@"data"];
         NSLog(@"------>%@",dict);
-        TodayModel *model = [[TodayModel alloc]initTodayModelWithDict:dict];
-        [self.dataSource addObject:model];
-        
-        [self.collectionView reloadData];
+        NSString *music_idStr = dict[@"music_id"];
+        if ([music_idStr hasPrefix:@"http"]) {
+            TodayModel *model = [[TodayModel alloc]initTodayModelWithDict:dict];
+            [self.dataSource addObject:model];
+            
+            [self.collectionView reloadData];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"!!!!!!%@",error);
     }];
@@ -118,6 +126,8 @@ static NSString *identifier = @"TodayCellID";
     [cell bandingTodayCellWithTodayModel:model];
     cell.playBtn.tag = indexPath.item;
     [cell.playBtn addTarget:self action:@selector(playBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    cell.shareBtn.tag = indexPath.item;
+    [cell.shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
@@ -138,6 +148,21 @@ static NSString *identifier = @"TodayCellID";
         [self.playerView setVideoURL:URL];
         self.currentTitle = model.title;
     }
+}
+
+- (void)shareBtnAction:(UIButton *)sender
+{
+    TodayModel *model = self.dataSource[sender.tag];
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.cover]];
+    UIImage *shareImage = [UIImage imageWithData:imageData];
+    NSString *shareText = model.story_title;
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"56a3781a67e58e9bf7002cac"
+                                      shareText:[shareText stringByAppendingString:@"      --来自遇见，心中的小美好。"]
+                                     shareImage:shareImage
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,
+                                                 UMShareToWechatFavorite,UMShareToSina, UMShareToTencent,UMShareToRenren, UMShareToEmail,    UMShareToSms,nil]
+                                       delegate:nil];
 }
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
