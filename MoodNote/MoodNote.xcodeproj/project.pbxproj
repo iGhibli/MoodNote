@@ -12,7 +12,6 @@
 		535A04CA1CDAF2A30058945D /* TodayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 535A04C81CDAF2A30058945D /* TodayCell.m */; };
 		535A04CB1CDAF2A30058945D /* TodayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535A04C91CDAF2A30058945D /* TodayCell.xib */; };
 		5363AB741CD9AB41009DAB1F /* UIImage+CompressForSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */; };
-		5363AB781CD9EBDB009DAB1F /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5363AB771CD9EBDB009DAB1F /* 1.txt */; };
 		5363AB801CDA0F8A009DAB1F /* TodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5363AB7F1CDA0F8A009DAB1F /* TodayModel.m */; };
 		53A757311CD87C2B00BC44AF /* TodayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A757301CD87C2B00BC44AF /* TodayVC.m */; };
 		53A757341CD87C3800BC44AF /* VideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A757331CD87C3800BC44AF /* VideoVC.m */; };
@@ -137,14 +136,12 @@
 		535A04C91CDAF2A30058945D /* TodayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayCell.xib; sourceTree = "<group>"; };
 		5363AB721CD9AB41009DAB1F /* UIImage+CompressForSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CompressForSize.h"; sourceTree = "<group>"; };
 		5363AB731CD9AB41009DAB1F /* UIImage+CompressForSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CompressForSize.m"; sourceTree = "<group>"; };
-		5363AB771CD9EBDB009DAB1F /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 1.txt; path = ../../../../1.txt; sourceTree = "<group>"; };
 		5363AB7E1CDA0F8A009DAB1F /* TodayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayModel.h; sourceTree = "<group>"; };
 		5363AB7F1CDA0F8A009DAB1F /* TodayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayModel.m; sourceTree = "<group>"; };
 		53A7572F1CD87C2B00BC44AF /* TodayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayVC.h; sourceTree = "<group>"; };
 		53A757301CD87C2B00BC44AF /* TodayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayVC.m; sourceTree = "<group>"; };
 		53A757321CD87C3800BC44AF /* VideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoVC.h; sourceTree = "<group>"; };
 		53A757331CD87C3800BC44AF /* VideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoVC.m; sourceTree = "<group>"; };
-		53A757351CD87F3100BC44AF /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		53A757361CD88D1800BC44AF /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
 		53A757371CD88D1800BC44AF /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
 		53A757381CD88D1800BC44AF /* VideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
@@ -715,7 +712,6 @@
 		CCEEE9DF1C4E3392005C9C93 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5363AB771CD9EBDB009DAB1F /* 1.txt */,
 				CC9FB2D21C8E819000B20A7D /* BackGround6P.png */,
 				CC9FB2CC1C8E7DBB00B20A7D /* Default-568h@2x.png */,
 				CC9FB2CE1C8E7DEF00B20A7D /* commom.png */,
@@ -724,7 +720,6 @@
 				CCEEE9EB1C4E3392005C9C93 /* Assets.xcassets */,
 				CCEEE9F01C4E3392005C9C93 /* Info.plist */,
 				CCEEE9E01C4E3392005C9C93 /* main.m */,
-				53A757351CD87F3100BC44AF /* PrefixHeader.pch */,
 				53B0C8CB1CE02CA200F4B432 /* DefaultPreferences.plist */,
 			);
 			name = "Supporting Files";
@@ -941,7 +936,6 @@
 				CCD040521C8BFD1F003C9823 /* bloom.caf in Resources */,
 				CC9FB3131C8EDE0B00B20A7D /* WeiboSDK.bundle in Resources */,
 				CCEEE9EA1C4E3392005C9C93 /* Main.storyboard in Resources */,
-				5363AB781CD9EBDB009DAB1F /* 1.txt in Resources */,
 				CC9FB2CF1C8E7DEF00B20A7D /* commom.png in Resources */,
 				53A757581CD8ABF000BC44AF /* ZFPlayerView.xib in Resources */,
 			);
@@ -1079,8 +1073,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
@@ -1103,7 +1097,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "24d9039e-0710-49da-b71c-0dafacdb20fd";
+				PROVISIONING_PROFILE = "ce789db6-a973-4303-9812-43504e0eeaa8";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1125,8 +1119,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -1142,7 +1136,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "24d9039e-0710-49da-b71c-0dafacdb20fd";
+				PROVISIONING_PROFILE = "ce789db6-a973-4303-9812-43504e0eeaa8";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1152,8 +1146,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1179,7 +1173,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qy15094.Encounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "24d9039e-0710-49da-b71c-0dafacdb20fd";
+				PROVISIONING_PROFILE = "ce789db6-a973-4303-9812-43504e0eeaa8";
 			};
 			name = Debug;
 		};
@@ -1187,8 +1181,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Ji (4SBEB6YH7C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Henan Qingyun Information Technology Co., Ltd. (LSRRXAH5MP)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1214,7 +1208,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qy15094.Encounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "24d9039e-0710-49da-b71c-0dafacdb20fd";
+				PROVISIONING_PROFILE = "ce789db6-a973-4303-9812-43504e0eeaa8";
 			};
 			name = Release;
 		};
