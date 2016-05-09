@@ -428,16 +428,16 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fov-pA-qI4">
                                         <rect key="frame" x="0.0" y="0.0" width="1800" height="580"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_1" translatesAutoresizingMaskIntoConstraints="NO" id="8Jr-Bz-udt">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guideV2_1" translatesAutoresizingMaskIntoConstraints="NO" id="8Jr-Bz-udt">
                                                 <rect key="frame" x="18" y="220" width="163" height="240"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_2" translatesAutoresizingMaskIntoConstraints="NO" id="ABW-un-QeH">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guideV2_2" translatesAutoresizingMaskIntoConstraints="NO" id="ABW-un-QeH">
                                                 <rect key="frame" x="189" y="220" width="98" height="240"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-UV-WFd">
                                                 <rect key="frame" x="428" y="220" width="172" height="240"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_4" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-QX-NUF">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guideV2_4" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-QX-NUF">
                                                         <rect key="frame" x="-34" y="56" width="240" height="128"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epH-PH-5PH">
@@ -465,7 +465,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="5BJ-QX-NUF" secondAttribute="bottom" id="xoV-8g-o6B"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guide_3" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-ud-Sj1">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="guideV2_3" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-ud-Sj1">
                                                 <rect key="frame" x="295" y="220" width="125" height="240"/>
                                             </imageView>
                                         </subviews>
@@ -1172,10 +1172,10 @@
         <image name="BackGround6P.png" width="1242" height="2208"/>
         <image name="btn_guanbi" width="50" height="50"/>
         <image name="btn_guanbi_h" width="50" height="50"/>
-        <image name="guide_1" width="1244" height="2208"/>
-        <image name="guide_2" width="1242" height="2209"/>
-        <image name="guide_3" width="1242" height="2208"/>
-        <image name="guide_4" width="1242" height="2208"/>
+        <image name="guideV2_1" width="1242" height="2209"/>
+        <image name="guideV2_2" width="1242" height="2209"/>
+        <image name="guideV2_3" width="1242" height="2209"/>
+        <image name="guideV2_4" width="1242" height="2209"/>
         <image name="me_about" width="70" height="70"/>
         <image name="me_clear2" width="70" height="70"/>
         <image name="me_good1" width="70" height="70"/>

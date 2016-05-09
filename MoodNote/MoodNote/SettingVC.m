@@ -9,6 +9,7 @@
 #import "SettingVC.h"
 #import "AppDelegate.h"
 #import "SDImageCache.h"
+#import "Common.h"
 
 @interface SettingVC ()
 @property (weak, nonatomic) IBOutlet UILabel *memoryLabel;
@@ -132,6 +133,7 @@
         // 出现以上问题，可以通过调用synchornize方法强制写入
         // 现在这个版本不用写也会马上写入 不过之前的版本不会
         [defaults synchronize];
+        [self cancelLocalNotificationWithKey:KSJLocalNotificationKey];
     }else {
         self.messageImage.image = [UIImage imageNamed:@"me_message_on"];
         self.isOn = YES;
@@ -143,10 +145,62 @@
         // 出现以上问题，可以通过调用synchornize方法强制写入
         // 现在这个版本不用写也会马上写入 不过之前的版本不会
         [defaults synchronize];
+        [self registerLocalNotification];
     }
     
 }
 
+// 设置本地通知
+- (void)registerLocalNotification {
+    //初始化一个 UILocalNotification
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    // 设置触发通知的时间
+    NSDate *fireDate = [NSDate dateWithTimeIntervalSince1970:2*60*60+10];
+    notification.fireDate = fireDate;
+    // 时区
+    notification.timeZone = [NSTimeZone defaultTimeZone];
+    // 通知重复提示的单位，可以是天、周、月
+    notification.repeatInterval = kCFCalendarUnitDay;
+    // 通知内容
+    notification.alertBody =  @"💞遇见你是我的缘，守望你是我的歌！一切等待不再是等待，我的一生就选择了你！我要你知道，在这个世界上总有一个人是等着你的，不管在什么时候，不管在什么地方.赶紧看看今天能遇见什么吧！💝";
+    // 设置 icon 上 红色数字
+    notification.applicationIconBadgeNumber = 1;
+    // 通知被触发时播放的声音
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    // 通知参数
+    NSDictionary *userDict = [NSDictionary dictionaryWithObject:@"SJEncounter" forKey:KSJLocalNotificationKey];
+    notification.userInfo = userDict;
+    
+    // ios8后，需要添加这个注册，才能得到授权
+    float sysVersion=[[UIDevice currentDevice]systemVersion].floatValue;
+    if (sysVersion>=8.0) {
+        UIUserNotificationType type =  UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:type categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+    // 执行通知注册
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+}
+
+// 取消某个本地推送通知
+- (void)cancelLocalNotificationWithKey:(NSString *)key {
+    // 获取所有本地通知数组
+    NSArray *localNotifications = [UIApplication sharedApplication].scheduledLocalNotifications;
+    //便利这个数组 根据 key 拿到我们想要的 UILocalNotification
+    for (UILocalNotification *notification in localNotifications) {
+        NSDictionary *userInfo = notification.userInfo;
+        if (userInfo) {
+            // 根据设置通知参数时指定的key来获取通知参数
+            NSString *info = userInfo[key];
+            
+            // 如果找到需要取消的通知，则取消
+            if ([info isEqualToString:@"SJEncounter"]) {
+                [[UIApplication sharedApplication] cancelLocalNotification:notification];
+                break;
+            }
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
