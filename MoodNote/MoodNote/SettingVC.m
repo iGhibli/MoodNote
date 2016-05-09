@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *memoryLabel;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet UIImageView *messageImage;
+@property (nonatomic, assign) BOOL isOn;
 
 @end
 
@@ -22,6 +24,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     NSString *memoryStr = [NSString stringWithFormat:@"%.2f",[[SDImageCache sharedImageCache] getSize] / 1024.f / 1024.f];
     self.memoryLabel.text = memoryStr;
+    // 读取用户偏好设置
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.isOn = [defaults boolForKey:@"SJLocalNotifications"];
+    if (self.isOn) {
+        self.messageImage.image = [UIImage imageNamed:@"me_message_on"];
+    }else {
+        self.messageImage.image = [UIImage imageNamed:@"me_message_off"];
+    }
 }
 
 - (void)viewDidLoad {
@@ -109,6 +119,34 @@
         [alertView show];
     }
 }
+
+- (IBAction)messageSwitch:(UIButton *)sender {
+    if (self.isOn) {
+        self.messageImage.image = [UIImage imageNamed:@"me_message_off"];
+        self.isOn = NO;
+        // 获取用户偏好设置对象
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        // 保存用户偏好设置
+        [defaults setBool:NO forKey:@"SJLocalNotifications"];
+        // 注意：UserDefaults设置数据时，不是立即写入，而是根据时间戳定时地把缓存中的数据写入本地磁盘。所以调用了set方法之后数据有可能还没有写入磁盘应用程序就终止了。
+        // 出现以上问题，可以通过调用synchornize方法强制写入
+        // 现在这个版本不用写也会马上写入 不过之前的版本不会
+        [defaults synchronize];
+    }else {
+        self.messageImage.image = [UIImage imageNamed:@"me_message_on"];
+        self.isOn = YES;
+        // 获取用户偏好设置对象
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        // 保存用户偏好设置
+        [defaults setBool:YES forKey:@"SJLocalNotifications"];
+        // 注意：UserDefaults设置数据时，不是立即写入，而是根据时间戳定时地把缓存中的数据写入本地磁盘。所以调用了set方法之后数据有可能还没有写入磁盘应用程序就终止了。
+        // 出现以上问题，可以通过调用synchornize方法强制写入
+        // 现在这个版本不用写也会马上写入 不过之前的版本不会
+        [defaults synchronize];
+    }
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
