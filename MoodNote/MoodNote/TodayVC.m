@@ -185,4 +185,15 @@ static NSString *identifier = @"TodayCellID";
 }
 */
 
+#pragma mark - 控制屏幕旋转
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 @end
